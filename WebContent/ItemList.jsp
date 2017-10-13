@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<style type="text/css">
+
+<style type="text/css">
 
 		body {
 			margin:0;
@@ -15,6 +16,7 @@
 			color:#5f6527;
 			font-family:メイリオ;
 			font-size:12px;
+			text-align:center;
 		}
 
 		h1 {
@@ -49,64 +51,100 @@
 			cursor:pointer;
 		}
 
-		.entranceImg {
-			margin:0 auto;
-			border:1px solid #7b8d42;
-			width:360px;
-			height:240px;
-		}
-
 		header{
 			margin:0%;
 			width:100%;
 			height:50px;
+			font-size:16px;
+			line-height:50px;
 			background-color:#7b8d42;
-			color:#7b8d42;
-			text-align:center;
+			color:#fff3b8;
 		}
 
 		footer{
-			margin-top:10%;
 			width:100%;
 			height:80px;
 			background-color:#7b8d42;
 			clear:both;
 		}
 
+		.contents{
+			text-align:center;
+			paddng:10px;
+			margin:0 auto;
+			width:1000px;
+			height:100%;
+			background-color:lightyellow;
+		}
+
+		.side_menu{
+			margin:30px;
+			float:left;
+			border:2px solid #7b8d42;
+			width:180px;
+			folat:left;
+			height:360px;
+		}
+
+		.item_list{
+			padding:20px;
+			float:left;
+			margin:30px;
+			border:2px solid #7b8d42;
+			width:580px;
+			height:580px;
+			text-align:left;
+		}
+
+		.clear{
+			clear:both;
+		}
+
+
 	</style>
+
 </head>
 <body>
 <header>
-
+about Mypage Cart Logout
 </header>
 
-<h1>てすと</h1>
 
+<div class="contents">
+<div class="side_menu"></div>
+<div class="item_list">
+商品名
 <br>
+   この辺に商品詳細<br>
+   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+   bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+   ccccccccccccccccccccccccccccccc
+ <select>
+ 	<option value="1">1</option>
+ 	<option value="2">2</option>
+ 	<option value="3">3</option>
+ 	<option value="4">4</option>
+ 	<option value="5">5</option>
+ </select>
+ <br>
+ <button class="actbtn">カートにいれる</button>
 
-<div class="entranceImg">
-  (ここに画像)
+</div>
+<div class="clear"></div>
 </div>
 
-<br>
-<br>
-
-<table style="margin:0 auto;">
-  <tr>
-    <td style="padding:10px;">
-      <button class="actbtn" >商品を見る</button>
-   </td>
-   <td style="padding:10px;">
-     <s:form action="HomeAction">
-       <button class="actbtn">ログイン</button>
-     </s:form>
-   </td>
-  </tr>
-</table>
 
 
-<footer>
 
+
+
+
+
+
+
+<footer style="margin-top:50px;">
+<small>All Rights Reserved</small>
 </footer>
+
 </body>
 </html>

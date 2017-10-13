@@ -23,6 +23,7 @@
 			color:#5f6527;
 			font-family:メイリオ;
 			font-size:12px;
+			text-align:center;
 		}
 
 		h1 {
@@ -48,7 +49,7 @@
 			float:left;
 			width:120px;
 			height:40px;
-			background-color:#7b8d42;
+			background-color:#9fc24b;
 			color:#fff3b8;
 			border-style:none;
 			-moz-border-radius: 5px;
@@ -92,15 +93,20 @@
 </header>
 
 <h1>ログイン画面</h1>
+
+ユーザー情報を入力してください<br>
+<small>Please input your user-infomation.</small>
+<br>
+入力に誤りがあります
+<s:property value="errorMsg"/>
+
+
+
 <div class="formBox_login">
-<h3>ユーザー情報を入力してください</h3>
-Please input your user-infomation.
-<br>
-<br>
+<form action="LoginAction">
 	<table>
-	<s:form action="LoginAction">
 		<tr>
-			<td>ユーザーアドレス:</td><td><input type="text" name="userAddress"></td>
+			<td>ユーザーアドレス:</td><td><input type="text" name="userAddress"/></td>
 		</tr>
 		<tr>
 			<td>パスワード:</td><td><input type="text" name="userPassword"></td>
@@ -108,8 +114,8 @@ Please input your user-infomation.
 		<tr>
 			<td colspan="2"><button class="actbtn" style="margin-left:160px">ログイン</button></td>
 		</tr>
-	</s:form>
 	</table>
+</form>
 </div>
 <footer>
 </footer>
