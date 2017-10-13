@@ -72,13 +72,13 @@
 			text-align:center;
 			paddng:10px;
 			margin:0 auto;
-			width:1000px;
+			width:840px;
 			height:100%;
 			background-color:lightyellow;
 		}
 
 		.side_menu{
-			margin:30px;
+			margin:32px;
 			float:left;
 			border:2px solid #7b8d42;
 			width:180px;
@@ -91,13 +91,26 @@
 			float:left;
 			margin:30px;
 			border:2px solid #7b8d42;
-			width:580px;
+			width:480px;
 			height:580px;
 			text-align:left;
 		}
 
 		.clear{
 			clear:both;
+		}
+
+		table{
+			width:430px;
+			margin-left:5%;
+			margin-right:5%;
+			cellpadding:0px;
+			/*border:1px dashed #7b8d42;*/
+		}
+
+		td{
+			border:1px dashed #7b8d42;
+
 		}
 
 
@@ -113,21 +126,45 @@ about Mypage Cart Logout
 <div class="contents">
 <div class="side_menu"></div>
 <div class="item_list">
-商品名
-<br>
-   この辺に商品詳細<br>
-   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-   bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
-   ccccccccccccccccccccccccccccccc
- <select>
- 	<option value="1">1</option>
- 	<option value="2">2</option>
- 	<option value="3">3</option>
- 	<option value="4">4</option>
- 	<option value="5">5</option>
- </select>
- <br>
- <button class="actbtn">カートにいれる</button>
+   <table>
+     <tr>
+       <th colspan="3" style="font-size:16px">商品名</th>
+     </tr>
+     <tr>
+      <td colspan="3">\980円</td>
+     </tr>
+     <tr>
+       <td style="width:100px; height:100px">ここ画像</td>
+       <td colspan="2">
+       ここ商品詳細
+       当店のイメージキャラをあしらったマグカップ。<br>
+       耐熱素材でレンジ加熱もOKです。
+       </td>
+     </tr>
+     <tr>
+     	<td></td>
+       <td style="text-align:right;">
+         購入数:
+         <select>
+         	<option value="1">1</option>
+         	<option value="2">2</option>
+         	<option value="3">3</option>
+         	<option value="4">4</option>
+         	<option value="5">5</option>
+         	<option value="6">6</option>
+         	<option value="7">7</option>
+         	<option value="8">8</option>
+         	<option value="9">9</option>
+         	<option value="10">10</option>
+         </select>個
+       </td>
+       <td style="padding-left:10%; padding-right:10%">
+         <button class="actbtn">カートに入れる</button>
+        </td>
+     </tr>
+   </table>
+   <br>
+   <hr style="border:1px dashed #7b8d42">
 
 </div>
 <div class="clear"></div>
