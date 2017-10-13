@@ -14,83 +14,104 @@
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
 	<title>Login画面</title>
-	<style type="text/css">
+<style type="text/css">
 
-		/* ========TAG LAYOUT======== */
 		body {
-		   margin:0;
-		   padding:0;
-		   line-height:1.6;
-		   letter-spacing:1px;
-		   font-family:Verdana, Helvetica, sans-serif;
-		   font-size:12px;
-		   color:#333;
-		   background:#fff;
+			margin:0;
+			padding:0;
+			background-color:#fff3b8;
+			color:#5f6527;
+			font-family:メイリオ;
+			font-size:12px;
 		}
 
-		table {
+		h1 {
 			text-align:center;
-			margin:0 auto;
+			margin-top:50px;
+			margin-right:0 auto;
+			margin-left:0 auto;
 		}
 
-		/* ========ID LAYOUT======== */
-		#top {
-		   width:780px;
-		   margin:30px auto;
-		   border:1px solid #333;
+		button.actbtn {
+			float:left;
+			width:120px;
+			height:40px;
+			background-color:#7b8d42;
+			color:#fff3b8;
+			border-style:none;
+			-moz-border-radius: 5px;
+			-webkit-borderus: 5px;
+			border-radius:5px;
 		}
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
+		button.actbtn:hover {
+			float:left;
+			width:120px;
+			height:40px;
+			background-color:#7b8d42;
+			color:#fff3b8;
+			border-style:none;
+			-moz-border-radius: 5px;
+			-webkit-borderadius: 5px;
+			border-radius:5px;
+			cursor:pointer;
 		}
 
-		#main {
-		   width: 100%;
-		   height: 500px;
-		   text-align: center;
+		header{
+			margin:0%;
+			width:100%;
+			height:50px;
+			background-color:#7b8d42;
+			color:#7b8d42;
+			text-align:center;
 		}
 
-		#footer {
-			width: 100%;
-			height: 80px;
-			background-color: black;
+		footer{
+			margin-top:10%;
+			width:100%;
+			height:80px;
+			background-color:#7b8d42;
 			clear:both;
 		}
 
-		#text-link {
-			display: inline-block;
-			text-align: right;
+		.formBox_login{
+			width:360px;
+			margin-left:auto;
+			margin-right:auto;
+			text-align:center;
+			align:center;
 		}
+
+
+
+
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
-	<div id="main">
-		<div id="top">
-			<p>Login</p>
-		</div>
-		<div>
-			<h3>商品を購入する際にはログインをお願いします。</h3>
-			<s:form action="LoginAction">
-				<s:textfield name="loginUserId"/>
-				<s:password name="loginPassword"/>
-				<s:submit value="ログイン"/>
-			</s:form>
-			<br/>
-			<div id="text-link">
-				<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction" />'>こちら</a></p>
-				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-			</div>
-		</div>
-	</div>
-	<div id="footer">
-	 	<div id="pr">
-		</div>
-	</div>
+<header>
+</header>
+
+<h1>ログイン画面</h1>
+<div class="formBox_login">
+<h3>ユーザー情報を入力してください</h3>
+Please input your user-infomation.
+<br>
+<br>
+	<table>
+	<s:form action="LoginAction">
+		<tr>
+			<td>ユーザーアドレス:</td><td><input type="text" name="userAddress"></td>
+		</tr>
+		<tr>
+			<td>パスワード:</td><td><input type="text" name="userPassword"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><button class="actbtn" style="margin-left:160px">ログイン</button></td>
+		</tr>
+	</s:form>
+	</table>
+</div>
+<footer>
+</footer>
 </body>
 </html>

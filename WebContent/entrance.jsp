@@ -51,6 +51,9 @@
 
 		.entranceImg {
 			margin:0 auto;
+			border:1px solid #7b8d42;
+			width:360px;
+			height:240px;
 		}
 
 		header{
@@ -58,10 +61,12 @@
 			width:100%;
 			height:50px;
 			background-color:#7b8d42;
+			color:#7b8d42;
+			text-align:center;
 		}
 
 		footer{
-			margin-top:30%;
+			margin-top:10%;
 			width:100%;
 			height:80px;
 			background-color:#7b8d42;
@@ -76,8 +81,15 @@
 </header>
 
 <h1>てすと</h1>
+
 <br>
 
+<div class="entranceImg">
+  (ここに画像)
+</div>
+
+<br>
+<br>
 
 <table style="margin:0 auto;">
   <tr>
