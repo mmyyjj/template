@@ -49,6 +49,8 @@
 			cursor:pointer;
 		}
 
+
+		/*ここ固有*/
 		.entranceImg {
 			margin:0 auto;
 			border:1px solid #7b8d42;

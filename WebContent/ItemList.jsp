@@ -68,6 +68,7 @@
 			clear:both;
 		}
 
+		/*以下、アイテムリスト画面固有*/
 		.contents{
 			text-align:center;
 			paddng:10px;
@@ -76,6 +77,7 @@
 			height:100%;
 			background-color:lightyellow;
 		}
+
 
 		.side_menu{
 			margin:32px;
