@@ -15,6 +15,7 @@
 			color:#5f6527;
 			font-family:メイリオ;
 			font-size:12px;
+			text-align:center;
 		}
 
 		h1 {
@@ -53,7 +54,7 @@
 		/*ここ固有*/
 		.entranceImg {
 			margin:0 auto;
-			border:1px solid #7b8d42;
+			//border:1px solid #7b8d42;
 			width:360px;
 			height:240px;
 		}
@@ -81,18 +82,16 @@
 <header>
 
 </header>
-
-<h1>てすと</h1>
-
 <br>
-
+<br>
+<br>
+生活雑貨とミニインテリアの販売サイト
+<br>
+<br>
 <div class="entranceImg">
-  (ここに画像)
+  <img src="img/mimizuku_logo.png" alt="みみずく商店ロゴ"/>
 </div>
-
 <br>
-<br>
-
 <table style="margin:0 auto;">
   <tr>
     <td style="padding:10px;">
