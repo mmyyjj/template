@@ -18,12 +18,6 @@
 			text-align:center;
 		}
 
-		h1 {
-			text-align:center;
-			margin-top:50px;
-			margin-right:0 auto;
-			margin-left:0 auto;
-		}
 
 		button.actbtn {
 			float:left;
@@ -52,6 +46,14 @@
 
 
 		/*ここ固有*/
+
+		h1 {
+			text-align:center;
+			margin-top:50px;
+			margin-right:0 auto;
+			margin-left:0 auto;
+		}
+
 		.entranceImg {
 			margin:0 auto;
 			//border:1px solid #7b8d42;

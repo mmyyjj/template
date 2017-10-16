@@ -18,13 +18,6 @@
 			text-align:center;
 		}
 
-		h1 {
-			text-align:center;
-			margin-top:50px;
-			margin-right:0 auto;
-			margin-left:0 auto;
-		}
-
 		button.actbtn {
 			float:left;
 			width:120px;
@@ -67,14 +60,20 @@
 			clear:both;
 		}
 
+
+		/*ここからぺージ固有*/
+		h1 {
+			text-align:center;
+			margin-top:0px;
+			margin-right:0 auto;
+			margin-left:0 auto;
+		}
 		.contents{
 			text-align:center;
-			paddng:0px;
 			margin:0 auto;
 			width:840px;
 			height:100%;
 			background-color:lightyellow;
-
 		}
 
 		.cart_table{
@@ -109,7 +108,7 @@
 
 <div class="contents">
 
-
+<br>
 <h1>カート画面</h1>
 
 <table class="cart_table">
@@ -123,6 +122,7 @@
 
 <br>
 <div style="text-align:center; font-size:18px">合計金額　1.000円</div>
+<br>
 <br>
 <hr style="border:1px dashed">
 

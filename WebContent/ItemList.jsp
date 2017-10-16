@@ -71,7 +71,6 @@
 		/*以下、アイテムリスト画面固有*/
 		.contents{
 			text-align:center;
-			paddng:10px;
 			margin:0 auto;
 			width:840px;
 			height:100%;
