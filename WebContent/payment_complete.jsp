@@ -12,7 +12,7 @@
 			background-color:#fff3b8;
 			color:#5f6527;
 			font-family:メイリオ;
-			font-size:12px;
+			font-size:14px;
 			text-align:center;
 		}
 
@@ -77,20 +77,20 @@
 </head>
 <body>
 <header>
+
 </header>
 
 
-<div class="contents">
+<div class="contents" style="height:520px; padding-top:5px;">
+<div style="text-align:right; margin-right:20px;">お支払情報入力_お支払情報確認_<b>お手続き完了</b></div>
 <br>
 <br>
 <h1>お支払手続き完了</h1>
-<br>
 <br>
 お手続きが完了いたしました。
 <br>
 ご購入ありがとうございます。
 <br>
-
 <table style="width:120px; margin:0 auto; margin-top:50px; margin-bottom:50px;">
 <tr>
 <td>
@@ -102,7 +102,6 @@
 </tr>
 </table>
 </div>
-
 
 <footer>
 </footer>

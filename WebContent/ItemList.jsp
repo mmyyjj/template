@@ -15,7 +15,7 @@
 			background-color:#fff3b8;
 			color:#5f6527;
 			font-family:メイリオ;
-			font-size:12px;
+			font-size:14px;
 			text-align:center;
 		}
 
@@ -108,7 +108,7 @@
 		}
 
 		td{
-			border:1px dashed #7b8d42;
+			//border:1px dashed #7b8d42;
 
 		}
 
@@ -127,22 +127,20 @@ about Mypage Cart Logout
 <div class="item_list">
    <table>
      <tr>
-       <th colspan="3" style="font-size:16px">商品名</th>
+       <th colspan="3" style="font-size:16px">オリジナルマグカップ</th>
      </tr>
      <tr>
-      <td colspan="3">\980円</td>
-     </tr>
-     <tr>
-       <td style="width:100px; height:100px">ここ画像</td>
-       <td colspan="2">
-       ここ商品詳細
+       <td style="width:100px; height:100px"><img src="img/sample_1.png"></td>
+       <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top;">
+       <b>価格：1,280円(税込み)</b>
+       <br>
        当店のイメージキャラをあしらったマグカップ。<br>
        耐熱素材でレンジ加熱もOKです。
        </td>
      </tr>
      <tr>
      	<td></td>
-       <td style="text-align:right;">
+       <td style="width:240px;text-align:right; padding-right:10px;">
          購入数:
          <select>
          	<option value="1">1</option>
@@ -157,7 +155,7 @@ about Mypage Cart Logout
          	<option value="10">10</option>
          </select>個
        </td>
-       <td style="padding-left:10%; padding-right:10%">
+       <td>
          <button class="actbtn">カートに入れる</button>
         </td>
      </tr>

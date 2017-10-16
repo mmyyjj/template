@@ -14,7 +14,7 @@
 			background-color:#fff3b8;
 			color:#5f6527;
 			font-family:メイリオ;
-			font-size:12px;
+			font-size:14px;
 			text-align:center;
 		}
 

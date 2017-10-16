@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
 <style>
 		body {
 			margin:0;
@@ -73,62 +72,38 @@
 			height:100%;
 			background-color:lightyellow;
 		}
-
 </style>
 
-<title>このサイトについて</title>
+<title>お客様マイページ</title>
 </head>
 <body>
 <header>
 </header>
 
-<div class="contents">
+<div class="contents" style="height:540px; padding-top:50px;">
+<h1>お客様マイページ</h1>
 <br>
-<br>
-<h1>うぇるかむページ</h1>
-<br>
+お名前：【user_name】様
 
-毎日をささやかに彩る<br>
-生活グッズの販売サイトです。
-<br>
-<br>
-……（文面考え中）……
-<br>
-ごゆっくりとショッピングを
-お楽しみください。
+
 
 <table style="width:120px; margin:0 auto; margin-top:50px; margin-bottom:50px;">
 <tr>
 <td>
-<button class="actbtn">トップに戻る</button>
+<button class="actbtn">購入履歴を見る</button>
+</td>
+</tr>
+<tr>
 <td>
+<button class="actbtn">トップに戻る</button>
+</td>
 </tr>
 </table>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 <footer>
 </footer>
-
 </body>
 </html>
