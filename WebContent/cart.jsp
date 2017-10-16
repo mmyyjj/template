@@ -76,17 +76,18 @@
 		}
 
 		/*ここからぺージ固有*/
-		.visible_table{
-			border:1px solid #7b8d42;
-			width:840px;
+		table.visible_table{
+			border:2px solid #7b8d42;
+			//width:840px;
 			height:100%;
-			cellpadding:0%;
+			margin:0 auto;
+			border-collapse:collapse;
+			padding:0px 0px;
 		}
 
 		tr, td, th{
 			border:1px solid #7b8d42;
-			sellspacing:0px;
-			cellpadding:0px;
+			padding:5px 0px;
 		}
 
 
@@ -111,12 +112,30 @@
 <br>
 <h1>カート画面</h1>
 
-<table class="visible_table">
+<table class="visible_table" style="width:680px">
 <tr>
   <th>商品画像</th><th>商品名</th><th>単価</th><th>購入数</th><th>小計</th><th>操作</th>
 </tr>
 <tr>
-<td style="width:50px">商品画像</td><td>商品名</td><td>単価</td><td>購入数</td><td>小計</td><td style="width:80px;"><button class="actbtn">削除</button></td>
+<td style="width:100px">商品画像</td>
+<td>商品名</td>
+<td>単価</td>
+<td>購入数
+	<select>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+	</select>
+</td>
+<td>小計</td>
+<td style="width:80px;"><button class="actbtn" style="width:80px">削除</button></td>
 </tr>
 </table>
 

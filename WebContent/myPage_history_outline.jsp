@@ -75,18 +75,18 @@
 		}
 
 		/*ここからぺージ固有、カート画面と同一*/
-		.visible_table{
-			border:1px solid #7b8d42;
+		table.visible_table{
+			border:2px solid #7b8d42;
 			width:840px;
 			height:100%;
-			cellpadding:0%;
 			margin:0 auto;
+			border-collapse:collapse;
+			padding:0px 0px;
 		}
 
 		tr, td, th{
 			border:1px solid #7b8d42;
-			sellspacing:0px;
-			cellpadding:0px;
+			padding:5px 0px;
 		}
 
 
@@ -106,7 +106,7 @@
 <div class="contents" style="padding-top:40px;">
 <h1>ご購入履歴</h1>
 
-<table class="visible_table" style="width:480px;">
+<table class="visible_table" style="width:480px; padding:0px 0px;">
 <tr>
   <th>購入日</th><th>合計金額</th><th>操作</th><th>操作</th>
 </tr>
