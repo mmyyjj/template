@@ -101,23 +101,45 @@
 </header>
 
 <div class="contents" style="height:100％; padding-top:5px;">
-<div style="text-align:right; margin-right:20px;"><b>お支払情報入力</b>_お支払情報確認_お手続き完了</div>
+<div style="text-align:right; margin-right:20px;"><b>ご注文情報入力</b>_ご注文情報確認_お手続き完了</div>
 
 <br>
-<h1>お支払情報の入力</h1>
-<small>
-現金支払い・クレジットカード決済がご利用いただけます。<br>
-クレジットカードをご利用の方は、
-以下のフォームに情報をご入力ください。
-<br>
-</small>
-<form action="payment_input.jsp">
-<table style="margin:0 auto; height:80px;">
+<h1>ご注文情報の入力</h1>
+<h3>--------【1/2】お届け日の指定---------</h3>
+<small>お届けはご注文日の3日後からご指定が可能です。<br>
+お日にち、時間帯を以下のフォームからお選びください</small>
+
+<table class="visible_table">
 <tr>
-<td style="border:0px">現金でのお支払はこちら：</td>
-<td style="border:0px; width:80px"><button class="actbtn" style="width:80px;"  onClick="this.form.submit()">現金支払い</button>
+<th>お日にち</th>
+<td>
+  <select>
+	<option value="2017/10/16">2017/10/16</option>
+  </select>
+</td>
+<th>時間帯</th>
+<td>
+<input type="radio" checked/>朝～お昼
+<input type="radio" />お昼～夕方
+<input type="radio" />夕方～夜
+</td>
 </tr>
 </table>
+
+<br>
+
+<h3>---------【2/2】お支払い情報の入力----------</h3>
+
+
+<form action="payment_input.jsp">
+お支払い方法を選んでください。<br>
+<div style="width:240px; margin:0 auto; text-align:left;">
+<input type="radio" checked/>代金引換<br>
+<input type="radio"/>クレジットカード決済
+</div>
+<br>
+クレジットカードをご利用の方は、<br>
+以下のフォームに情報を入力してください。
 <table class="visible_table" style="width:540px">
 <tr>
  <th>クレジットカード種類</th>
