@@ -72,6 +72,27 @@
 			height:100%;
 			background-color:lightyellow;
 		}
+
+		/*ここから固有・カート画面と同じ*/
+		.visible_table{
+			border:1px solid #7b8d42;
+			width:840px;
+			height:100%;
+			cellpadding:0%;
+		}
+
+		tr, td, th{
+			border:1px solid #7b8d42;
+			sellspacing:0px;
+			cellpadding:0px;
+		}
+
+
+		.button_table{
+			border:0px;
+			margin:0 auto;
+			height:120px;
+		}
 </style>
 
 <title>お客様マイページ</title>
@@ -87,7 +108,7 @@
 
 
 
-<table style="width:120px; margin:0 auto; margin-top:50px; margin-bottom:50px;">
+<table style="height:120px; margin:0 auto; margin-top:50px; margin-bottom:50px;">
 <tr>
 <td>
 <button class="actbtn">購入履歴を見る</button>

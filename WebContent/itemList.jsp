@@ -125,6 +125,7 @@ about Mypage Cart Logout
 <div class="contents">
 <div class="side_menu"></div>
 <div class="item_list">
+<form>
    <table>
      <tr>
        <th colspan="3" style="font-size:16px">オリジナルマグカップ</th>
@@ -160,6 +161,7 @@ about Mypage Cart Logout
         </td>
      </tr>
    </table>
+</form>
    <br>
    <hr style="border:1px dashed #7b8d42">
 
