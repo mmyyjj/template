@@ -5,9 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-	<style type="text/css">
 
+<style>
 		body {
 			margin:0;
 			padding:0;
@@ -17,7 +16,6 @@
 			font-size:12px;
 			text-align:center;
 		}
-
 
 		button.actbtn {
 			float:left;
@@ -44,63 +42,93 @@
 			cursor:pointer;
 		}
 
-		/*ここ固有*/
-		.entranceImg {
-			margin:0 auto;
-			//border:1px solid #7b8d42;
-			width:360px;
-			height:240px;
-		}
-
 		header{
 			margin:0%;
 			width:100%;
 			height:50px;
+			font-size16px;
+			line-height:50px;
 			background-color:#7b8d42;
-			color:#7b8d42;
-			text-align:center;
+			color:#fff3b8;
 		}
 
 		footer{
-			margin-top:10%;
 			width:100%;
 			height:80px;
 			background-color:#7b8d42;
 			clear:both;
 		}
 
-	</style>
+		h1 {
+			text-align:center;
+			margin-top:0px;
+			margin-right:0 auto;
+			margin-left:0 auto;
+		}
+
+		.contents{
+			text-align:center;
+			margin:0 auto;
+			width:840px;
+			height:100%;
+			background-color:lightyellow;
+		}
+
+</style>
+
+<title>このサイトについて</title>
 </head>
 <body>
 <header>
-
 </header>
+
+<div class="contents">
 <br>
 <br>
+<h1>うぇるかむページ</h1>
 <br>
-生活雑貨とミニインテリアの販売サイト
+
+毎日をささやかに彩る<br>
+生活グッズの販売サイトです。
 <br>
 <br>
-<div class="entranceImg">
-  <img src="img/mimizuku_logo.png" alt="みみずく商店ロゴ"/>
-</div>
+……（文面考え中）……
 <br>
-<table style="margin:0 auto;">
-  <tr>
-    <td style="padding:10px;">
-      <button class="actbtn" >商品を見る</button>
-   </td>
-   <td style="padding:10px;">
-     <s:form action="HomeAction">
-       <button class="actbtn">ログイン</button>
-     </s:form>
-   </td>
-  </tr>
+ごゆっくりとショッピングを
+お楽しみください。
+
+<table style="width:120px; margin:0 auto; margin-top:50px; margin-bottom:50px;">
+<tr>
+<td>
+<button class="actbtn">トップに戻る</button>
+<td>
+</tr>
 </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <footer>
-
 </footer>
+
 </body>
 </html>

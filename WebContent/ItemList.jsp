@@ -21,7 +21,6 @@
 
 		h1 {
 			text-align:center;
-			margin-top:50px;
 			margin-right:0 auto;
 			margin-left:0 auto;
 		}
@@ -68,7 +67,6 @@
 			clear:both;
 		}
 
-		/*以下、アイテムリスト画面固有*/
 		.contents{
 			text-align:center;
 			margin:0 auto;
@@ -77,7 +75,7 @@
 			background-color:lightyellow;
 		}
 
-
+		/*以下、アイテムリスト画面固有*/
 		.side_menu{
 			margin:32px;
 			float:left;

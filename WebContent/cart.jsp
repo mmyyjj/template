@@ -60,14 +60,13 @@
 			clear:both;
 		}
 
-
-		/*ここからぺージ固有*/
 		h1 {
 			text-align:center;
 			margin-top:0px;
 			margin-right:0 auto;
 			margin-left:0 auto;
 		}
+
 		.contents{
 			text-align:center;
 			margin:0 auto;
@@ -76,6 +75,7 @@
 			background-color:lightyellow;
 		}
 
+		/*ここからぺージ固有*/
 		.cart_table{
 			border:1px solid #7b8d42;
 			width:840px;
@@ -130,8 +130,6 @@
 <table style="margin:0 auto; height:120px;">
 <tr>
   <td style="border:0px"><button class="actbtn">お買い物を続ける</button></td>
-</tr>
-<tr>
   <td style="border:0px"><button class="actbtn">お会計へ</button></td>
 </tr>
 </table>
