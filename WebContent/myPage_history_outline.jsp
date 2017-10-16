@@ -77,7 +77,6 @@
 		/*ここからぺージ固有、カート画面と同一*/
 		table.visible_table{
 			border:2px solid #7b8d42;
-			width:840px;
 			height:100%;
 			margin:0 auto;
 			border-collapse:collapse;
