@@ -52,7 +52,7 @@
 <th rowspan="2">選択中の画像：</th><td>【画像名】</td>
 </tr>
 <tr>
-<td>画像更新：<input type="file" onChange="this.form.submit()"></td>
+<td>画像更新：<input type="file"></td>
 </tr>
 <tr>
 <th style="height:100px;">画像プレビュー</th><td></td>
