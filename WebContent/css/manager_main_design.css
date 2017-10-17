@@ -90,10 +90,14 @@
 	th{
 		border:1px solid #333333;
 		background-color:#eeeeee;
+		padding-top:5px;
+		padding-bottom:5px;
 	}
 
 	tr,td{
 		border:1px solid #333333;
+		padding-top:5px;
+		padding-bottom:5px;
 	}
 
 
