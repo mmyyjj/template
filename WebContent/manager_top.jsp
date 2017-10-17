@@ -6,41 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者画面トップ</title>
-
-<style type="text/css">
-
-	body{
-		margin:0px;
-		padding:0px;
-		text-align:center;
-		color:#333333;
-		font-size:14px;
-	}
-	header{
-		margin:0%;
-		width:100%;
-		height:40px;
-		padding-top:20px;
-		background-color:#cccccc;
-		color:#333333;
-		text-align:center;
-	}
-
-	footer{
-		margin-top:10%;
-		width:100%;
-		height:80px;
-		background-color:#cccccc;
-		clear:both;
-	}
-
-	.contents{
-		height:100%;
-		width:840px;
-		margin:0 auto;
-	}
-
-</style>
+<!-- cssの設定・読み込み -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
+<link rel="stylesheet" type="text/css" href="css/manager_main_design.css">
 
 </head>
 
