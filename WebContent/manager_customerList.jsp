@@ -8,27 +8,6 @@
 <title>顧客情報</title>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
 <link rel="stylesheet" type="text/css" href="css/manager_main_design.css">
-<style type="text/css">
-
-table{
-	border:2px solid #333333;
-	border-collapse:collapse;
-	padding:0px;
-	margin:0 auto;
-	word-break:break-all;
-}
-
-th{
-	border:1px solid #333333;
-	background-color:#eeeeee;
-}
-
-tr,td{
-	border:1px solid #333333;
-}
-
-
-</style>
 </head>
 <body>
 <header>

@@ -8,16 +8,6 @@
 <title>顧客情報</title>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
 <link rel="stylesheet" type="text/css" href="css/manager_main_design.css">
-<style type="text/css">
-
-table{
-	border:1px solid #333333;
-	boder-collapse;collapse;
-	margin:0 auto;
-}
-
-
-</style>
 </head>
 <body>
 <header>
@@ -27,6 +17,19 @@ table{
 <h1>注文履歴詳細</h1>
 <h2>表示中の履歴：【注文ID】</h2>
 
+
+<table style="width:640px;">
+<tr>
+<th>注文履歴ID</th>
+<th>受注日時</th>
+<th style="width:180px;">ユーザーID</th>
+<th>合計金額</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>01</td><td>2017/10/17</td><td>01</td><td>10.000円</td><td><button class="oprbtn">詳細</button></td>
+</tr>
+</table>
 </div>
 
 

@@ -29,3 +29,45 @@
 		width:840px;
 		margin:0 auto;
 	}
+
+	button.oprbtn {
+		width:80px;
+		height:30px;
+		background-color:#bbbbbb;
+		color:#333333;
+		border-style:none;
+		-moz-border-radius: 5px;
+		-webkit-borderus: 5px;
+		border-radius:5px;
+	}
+
+	button.oprbtn:hover {
+		width:80px;
+		height:30px;
+		background-color:#cccccc;
+		color:#333333;
+		border-style:none;
+		-moz-border-radius: 5px;
+		-webkit-borderadius: 5px;
+		border-radius:5px;
+		cursor:pointer;
+	}
+
+	table{
+		border:2px solid #333333;
+		border-collapse:collapse;
+		padding:0px;
+		margin:0 auto;
+		word-break:break-all;
+	}
+
+	th{
+		border:1px solid #333333;
+		background-color:#eeeeee;
+	}
+
+	tr,td{
+		border:1px solid #333333;
+	}
+
+
