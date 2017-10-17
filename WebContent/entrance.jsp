@@ -5,71 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-	<style type="text/css">
-
-		body {
-			margin:0;
-			padding:0;
-			background-color:#fff3b8;
-			color:#5f6527;
-			font-family:メイリオ;
-			font-size:14px;
-			text-align:center;
-		}
-
-
-		button.actbtn {
-			float:left;
-			width:120px;
-			height:40px;
-			background-color:#7b8d42;
-			color:#fff3b8;
-			border-style:none;
-			-moz-border-radius: 5px;
-			-webkit-borderus: 5px;
-			border-radius:5px;
-		}
-
-		button.actbtn:hover {
-			float:left;
-			width:120px;
-			height:40px;
-			background-color:#9fc24b;
-			color:#fff3b8;
-			border-style:none;
-			-moz-border-radius: 5px;
-			-webkit-borderadius: 5px;
-			border-radius:5px;
-			cursor:pointer;
-		}
-
-		/*ここ固有*/
-		.entranceImg {
-			margin:0 auto;
-			//border:1px solid #7b8d42;
-			width:360px;
-			height:240px;
-		}
-
-		header{
-			margin:0%;
-			width:100%;
-			height:50px;
-			background-color:#7b8d42;
-			color:#7b8d42;
-			text-align:center;
-		}
-
-		footer{
-			margin-top:10%;
-			width:100%;
-			height:80px;
-			background-color:#7b8d42;
-			clear:both;
-		}
-
-	</style>
+<title>入り口</title>
+<!-- cssの設定・読み込み -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
+<link rel="stylesheet" type="text/css" href="css/user_main_design.css">
 </head>
 <body>
 <header>

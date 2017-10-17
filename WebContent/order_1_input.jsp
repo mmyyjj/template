@@ -67,6 +67,10 @@
 			margin-left:0 auto;
 		}
 
+		hr{
+			border:1px dashed #7b8d42;
+		}
+
 		.contents{
 			text-align:center;
 			margin:0 auto;
@@ -198,7 +202,7 @@
 </tr>
 </table>
 <br>
-<hr style="border:1px dashed">
+<hr>
 
 <br>
 <!-- 操作ボタンの部分 -->
