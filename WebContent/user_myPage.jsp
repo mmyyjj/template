@@ -5,97 +5,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style>
-		body {
-			margin:0;
-			padding:0;
-			background-color:#fff3b8;
-			color:#5f6527;
-			font-family:メイリオ;
-			font-size:14px;
-			text-align:center;
-		}
-
-		button.actbtn {
-			float:left;
-			width:120px;
-			height:40px;
-			background-color:#7b8d42;
-			color:#fff3b8;
-			border-style:none;
-			-moz-border-radius: 5px;
-			-webkit-borderus: 5px;
-			border-radius:5px;
-		}
-
-		button.actbtn:hover {
-			float:left;
-			width:120px;
-			height:40px;
-			background-color:#9fc24b;
-			color:#fff3b8;
-			border-style:none;
-			-moz-border-radius: 5px;
-			-webkit-borderadius: 5px;
-			border-radius:5px;
-			cursor:pointer;
-		}
-
-		header{
-			margin:0%;
-			width:100%;
-			height:50px;
-			font-size16px;
-			line-height:50px;
-			background-color:#7b8d42;
-			color:#fff3b8;
-		}
-
-		footer{
-			width:100%;
-			height:80px;
-			background-color:#7b8d42;
-			clear:both;
-		}
-
-		h1 {
-			text-align:center;
-			margin-top:0px;
-			margin-right:0 auto;
-			margin-left:0 auto;
-		}
-
-		.contents{
-			text-align:center;
+<title>お客様マイページ</title>
+<!-- cssの設定・読み込み -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
+<link rel="stylesheet" type="text/css" href="css/user_main_design.css">
+<style type="text/css">
+		table{
+			height:120px;
 			margin:0 auto;
-			width:840px;
-			height:100%;
-			background-color:lightyellow;
-		}
-
-		/*ここから固有・カート画面と同じ*/
-		.visible_table{
-			border:1px solid #7b8d42;
-			width:840px;
-			height:100%;
-			cellpadding:0%;
+			margin-top:50px;
+			margin-bottom:50px;
+			border:collapse:collapse;
+			padding:0px;
+			border:0px;
 		}
 
 		tr, td, th{
-			border:1px solid #7b8d42;
-			sellspacing:0px;
-			cellpadding:0px;
-		}
-
-
-		.button_table{
 			border:0px;
-			margin:0 auto;
-			height:120px;
 		}
 </style>
 
-<title>お客様マイページ</title>
 </head>
 <body>
 <header>
@@ -105,10 +34,7 @@
 <h1>お客様マイページ</h1>
 <br>
 お名前：【user_name】様
-
-
-
-<table style="height:120px; margin:0 auto; margin-top:50px; margin-bottom:50px;">
+<table>
 <tr>
 <td>
 <button class="actbtn">購入履歴を見る</button>
