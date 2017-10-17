@@ -18,6 +18,8 @@
 
 
 <small>商品情報を入力してください(商品IDは自動で入ります)</small>
+<br>
+<br>
 <form>
 <table style="width:480px;">
 <tr>
@@ -67,11 +69,8 @@
 <hr>
 <div style="height:50px"></div>
 <table style="border:0px;">
-<tr style="border:0px;">
-<td style="border:0px; padding-top:5px; padding-bottom:5px;"><button class="oprbtn_large">商品の追加</button></td>
-</tr>
 <tr style="border:0px">
-<td style="border:0px; padding-top:5px; padding-bottom:5px;"><button class="oprbtn_large">トップに戻る</button></td>
+<td style="border:0px; padding-top:5px; padding-bottom:5px;"><button class="oprbtn_large">一覧に戻る</button></td>
 </tr>
 </table>
 </div>
