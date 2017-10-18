@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS ec_templete;
+DROP DATABASE IF EXISTS ec_template;
 
-CREATE DATABASE IF NOT EXISTS ec_templete;
+CREATE DATABASE IF NOT EXISTS ec_template;
 
-USE ec_templete;
+USE ec_template;
 
 -- ユーザー情報テーブルの作成・データ挿入
 
