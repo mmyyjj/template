@@ -14,6 +14,7 @@
 		/*以下、アイテムリスト画面のみで使用*/
 		.side_menu{
 			margin:32px;
+			margin-top:20px;
 			float:left;
 			border:2px solid #7b8d42;
 			width:180px;
@@ -25,6 +26,7 @@
 			padding:20px;
 			float:left;
 			margin:30px;
+			margin-top:20px;
 			border:2px solid #7b8d42;
 			width:480px;
 			height:580px;
@@ -52,15 +54,13 @@
 </head>
 <body>
 <header>
-<table style="margin:0 auto; width:640px; color:lightyellow; padding:40px; padding-top:5px;">
-<tr>
-<th style="font-size:20px">TOP</th><th style="width:50px"></th><th>ABOUT</th><th>MY PAGE</th><th>CART</th><th>LOGOUT</th>
-</tr>
-</table>
+ <s:include value="header.jsp"/>
 </header>
 
 
 <div class="contents">
+<div style="height:5px;"></div>
+<h1 style="margin-top:15px;">商品一覧</h1>
 <div class="side_menu"></div>
 <div class="item_list">
 <form>
@@ -105,6 +105,7 @@
 
 </div>
 <div class="clear"></div>
+<div style="height:50px"></div>
 </div>
 
 
