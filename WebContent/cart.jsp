@@ -28,7 +28,7 @@
 <td style="width:100px">商品画像</td>
 <td>商品名</td>
 <td>単価</td>
-<td>
+<td><!-- name属性指定で値を渡せるように -->
 	<s:select list="{1,2,3,4,5,6,7,8,9,10}" value="3" theme="simple">
 	</s:select>個
 </td>
