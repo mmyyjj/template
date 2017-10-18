@@ -13,6 +13,7 @@
 
 <body>
 <header>
+	<s:include value="header.jsp"/>
 </header>
 
 <div class="contents">
