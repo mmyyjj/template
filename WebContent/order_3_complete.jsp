@@ -22,6 +22,7 @@
 
 		tr, td, th{
 			border:0px;
+		}
 </style>
 
 

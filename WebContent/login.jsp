@@ -25,6 +25,20 @@
 			text-align:center;
 			align:center;
 		}
+
+		table{
+			height:120px;
+			margin:0 auto;
+			margin-top:50px;
+			margin-bottom:50px;
+			border:collapse:collapse;
+			padding:0px;
+			border:0px;
+		}
+
+		tr, td, th{
+			border:0px;
+		}
 	</style>
 </head>
 <body>
@@ -56,6 +70,7 @@
 	</table>
 </form>
 </div>
+<div style="height:85px"></div>
 <footer>
 </footer>
 </body>
