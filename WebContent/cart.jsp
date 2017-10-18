@@ -29,34 +29,12 @@
 <td>商品名</td>
 <td>単価</td>
 <td>
-	<select>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
-		<option value="9">9</option>
-		<option value="10">10</option>
-		<s:property value='"5"'/>
-	</select>個
+	<s:select list="{1,2,3,4,5,6,7,8,9,10}" value="3" theme="simple">
+	</s:select>個
 </td>
 <td>
-	<select>
-		<option value="">-</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
-		<option value="9">9</option>
-		<option value="10">10</option>
-	</select>個
+	<s:select list="{1,2,3,4,5,6,7,8,9,10}" value="3" theme="simple">
+	</s:select>個
 </td>
 <td>小計</td>
 <td style="width:80px;"><button class="actbtn" style="width:80px; margin-left:10px; margin-right:10px;">削除</button></td>
@@ -73,7 +51,7 @@
 <table style="margin:0 auto; height:120px;">
 <tr>
   <td style="border:0px"><button class="actbtn">お買い物を続ける</button></td>
-  <td style="border:0px"><button class="actbtn">お会計へ</button></td>
+  <td style="border:0px"><button class="actbtn">ご注文へ</button></td>
 </tr>
 </table>
 
