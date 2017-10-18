@@ -3,6 +3,9 @@ package com.internousdev.template.dto;
 /**
  * ログイン情報を格納するクラス。
  * この中身の情報をセッションに保管し、ログイン中のユーザー情報を保持させる。
+ * @author YUKA MATSUMURA
+ * @since 2017/10/18
+ * @version 2017/10/18
  * */
 public class LoginInfoDTO {
 
