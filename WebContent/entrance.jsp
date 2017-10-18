@@ -26,11 +26,11 @@
 <br>
 <table style="margin:0 auto;">
   <tr>
-    <td style="padding:10px;">
+    <td style="padding:10px; border:0px">
       <button class="actbtn" >商品を見る</button>
    </td>
-   <td style="padding:10px;">
-     <s:form action="HomeAction">
+   <td style="padding:10px; border:0px">
+     <s:form action="GoLoginPageAction">
        <button class="actbtn">ログイン</button>
      </s:form>
    </td>
