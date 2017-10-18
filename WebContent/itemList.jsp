@@ -52,9 +52,9 @@
 </head>
 <body>
 <header>
-<table style="width:100%; color:lightyellow; padding-top:10px">
+<table style="margin:0 auto; width:640px; color:lightyellow; padding:40px; padding-top:5px;">
 <tr>
-<th>TOP</th><th style="width:400px"></th><th>ABOUT</th><th>MY PAGE</th><th>CART</th><th>LOGOUT</th>
+<th style="font-size:20px">TOP</th><th style="width:50px"></th><th>ABOUT</th><th>MY PAGE</th><th>CART</th><th>LOGOUT</th>
 </tr>
 </table>
 </header>
@@ -116,7 +116,7 @@
 
 
 
-<footer style="margin-top:50px;">
+<footer style="margin-top:0px;">
 <small>All Rights Reserved</small>
 </footer>
 
