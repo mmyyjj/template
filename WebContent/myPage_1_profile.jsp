@@ -28,6 +28,7 @@
 </head>
 <body>
 <header>
+	<s:include value="header.jsp"/>
 </header>
 
 <div class="contents" style="height:540px; padding-top:50px;">

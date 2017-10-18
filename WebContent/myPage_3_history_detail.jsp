@@ -42,17 +42,13 @@
 
 <table style="margin:0 auto; height:120px;">
 <tr>
-  <td style="border:0px"><button class="actbtn">戻る</button></td>
+  <td style="border:0px"><button class="actbtn">お買い物に戻る</button></td>
 </tr>
 </table>
 
-
+<div style="height:120px;"></div>
 </div>
-
-
-
-
-<footer style="margin-top:100%;">
+<footer style="margin-top:0px;">
 </footer>
 </body>
 </html>

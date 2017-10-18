@@ -117,7 +117,7 @@
 
 
 
-<footer style="margin-top:0px;">
+<footer>
 <small>All Rights Reserved</small>
 </footer>
 
