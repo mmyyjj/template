@@ -11,10 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/user_main_design.css">
 <style type="text/css">
 		table{
-			height:120px;
 			margin:0 auto;
-			margin-top:50px;
-			margin-bottom:50px;
 			border:collapse:collapse;
 			padding:0px;
 			border:0px;
@@ -29,11 +26,11 @@
 </head>
 <body>
 <header>
-
+	<s:include value="header.jsp"/>
 </header>
 
 
-<div class="contents" style="height:520px; padding-top:5px;">
+<div class="contents" style="padding-top:10px;">
 <div style="text-align:right; margin-right:20px;">お支払情報入力_お支払情報確認_<b>お手続き完了</b></div>
 <br>
 <br>
@@ -43,6 +40,7 @@
 <br>
 ご購入ありがとうございます。
 <br>
+<div style="height:50px;"></div>
 <table>
 <tr>
 <td>
@@ -53,9 +51,10 @@
 </td>
 </tr>
 </table>
+<div style="height:290px;"></div>
 </div>
 
-<footer>
+<footer style="margin-top:0px;">
 </footer>
 </body>
 </html>

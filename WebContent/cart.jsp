@@ -17,10 +17,9 @@
 </header>
 
 <div class="contents">
-
-<br>
+<div style="height:5px;"></div>
 <h1>カート画面</h1>
-
+<br>
 <table class="visible_table" style="width:820px">
 <tr>
   <th>商品画像</th><th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th><th>プレゼント包装</th><th style="width:100px">小計</th><th>操作</th>
@@ -78,7 +77,7 @@
 </tr>
 </table>
 
-<div style="height:150px"></div>
+<div style="height:200px"></div>
 </div>
 
 
