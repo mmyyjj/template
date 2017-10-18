@@ -115,21 +115,16 @@ CREATE TABLE history_detail_table(
 CREATE TABLE test_creditcard_table(
  register_id INT NOT NULL AUTO_INCREMENT,
  card_type VARCHAR(20) NOT NULL,
- card_number INT(16) NOT NULL,
+ card_number VARCHAR(16) NOT NULL,
  holder_name VARCHAR(50) NOT NULL,
  expiration_month INT(2) NOT NULL,
- expiration_year INT(2) NOT NULL,
+ expiration_year INT(4) NOT NULL,
  security_code INT(3) NOT NULL,
  PRIMARY KEY(register_id)
 );
 
 INSERT INTO test_creditcard_table VALUES
-( 0, 'TEST_A', 0000111122223333, 'testuser', 9, 2019, 123),
-( 0, 'TEST_B', 0000444455556666, 'testuser', 10, 2020, 456),
-( 0, 'TEST_C', 0000777788889999, 'testuser', 11, 2021, 789);
-
-
-
-
-
+( 0, 'TEST_A', '0000111122223333', 'testuser', 9, 2019, 123),
+( 0, 'TEST_B', '0000444455556666', 'testuser', 10, 2020, 456),
+( 0, 'TEST_C', '0000777788889999', 'testuser', 11, 2021, 789);
 
