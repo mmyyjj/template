@@ -4,6 +4,9 @@ package com.internousdev.template.dto;
  * ユーザー情報を格納するためのクラス。
  * ユーザー側のマイページ、管理側の顧客管理等で使用。<br>
  * 顧客管理の一覧ではこのDTOをリストにして情報を受け渡しをする。
+ * @author YUKA MATSUMURA
+ * @since 2017/10/19
+ * @version 1.0
  * */
 public class UserInfoDTO {
 
