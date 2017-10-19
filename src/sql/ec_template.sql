@@ -81,8 +81,8 @@ CREATE TABLE history_outline_table(
  user_id INT NOT NULL,
  total_price DECIMAL(10,0) NOT NULL,
  order_date DATETIME NOT NULL,
- send_date DATE NOT NULL,
- send_time INT(1) NOT NULL,
+ delivery_date DATE NOT NULL,
+ delivery_time_id INT(1) NOT NULL,
  delete_flg INT(1) NOT NULL,
  PRIMARY KEY(order_id),
  INDEX(user_id)
@@ -90,8 +90,8 @@ CREATE TABLE history_outline_table(
 
 -- 配達時間テーブルの作成
 CREATE TABLE send_time_table(
- time_id INT(1) NOT NULL,
- time_string VARCHAR(10) NOT NULL,
+ delivery_time_id INT(1) NOT NULL,
+ delivery_time_string VARCHAR(10) NOT NULL,
  PRIMARY KEY(time_id)
 );
 
