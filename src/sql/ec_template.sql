@@ -92,7 +92,7 @@ CREATE TABLE history_outline_table(
 CREATE TABLE delivery_time_table(
  delivery_time_id INT(1) NOT NULL,
  delivery_time_string VARCHAR(10) NOT NULL,
- PRIMARY KEY(time_id)
+ PRIMARY KEY(delivery_time_id)
 );
 
 
@@ -120,7 +120,8 @@ CREATE TABLE test_creditcard_table(
  expiration_month INT(2) NOT NULL,
  expiration_year INT(4) NOT NULL,
  security_code INT(3) NOT NULL,
- PRIMARY KEY(register_id)
+ PRIMARY KEY(card_register_id),
+ UNIQUE INDEX(card_type)
 );
 
 INSERT INTO test_creditcard_table VALUES
