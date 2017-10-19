@@ -33,6 +33,11 @@ public class OrderInfoDTO {
 	private String delivery_time_string;
 
 	/**
+	 * お支払い方法
+	 * */
+	private String payment_method;
+
+	/**
 	 * カード種別
 	 * */
 	private String card_type;
@@ -126,6 +131,22 @@ public class OrderInfoDTO {
 	 */
 	public void setDelivery_time_string(String delivery_time_string) {
 		this.delivery_time_string = delivery_time_string;
+	}
+
+	/**
+	 * お支払い方法取得メソッド
+	 * @return payment_method
+	 */
+	public String getPayment_method() {
+		return payment_method;
+	}
+
+	/**
+	 * お支払い方法格納メソッド
+	 * @param payment_method セットする payment_method
+	 */
+	public void setPayment_method(String payment_method) {
+		this.payment_method = payment_method;
 	}
 
 	/**

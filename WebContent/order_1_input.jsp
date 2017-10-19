@@ -20,14 +20,14 @@
 
 <br>
 <h1>ご注文情報の入力</h1>
-<h3>--------【1/2】お届け日の指定---------</h3>
+<h3>-----------------【1/2】お届け日の指定------------------</h3>
 <small>お届けはご注文日の3日後からご指定が可能です。<br>
 お日にち、時間帯を以下のフォームからお選びください</small>
 <br>
 <table class="visible_table" style="width:540px">
 <tr>
 <th style="width:80px">お日にち</th>
-<td>
+<td>この中身イテレーターで
   <select>
 	<option value="2017/10/16">2017/10/16</option>
   </select>
@@ -43,27 +43,32 @@
 
 <br>
 
-<h3>---------【2/2】お支払い情報の入力----------</h3>
+<h3>------------------【2/2】お支払い情報の入力-------------------</h3>
 
 
 <form action="payment_input.jsp">
-お支払い方法を選んでください。<br>
+<small>お支払い方法を選んでください。</small><br>
 
-<table style="margin:0 auto;:">
+<table style="margin:0 auto; text-align:left;">
 <tr>
 <td style="border:0px">
-<input type="radio" checked/>代金引換　　
+<input type="radio" checked/>代金引換(※手数料<font color="red">250円</font>がかかります)
+</td>
+</tr>
+<tr>
+<td style="border:0px">
 <input type="radio"/>クレジットカード決済
 </td>
 </tr>
 </table>
-
+<br>
 
 
 
 
 <small>
-クレジットカード情報
+クレジットカードをご利用の方は<br>
+以下のフォームに情報を入力してください。
 </small>
 <table class="visible_table" style="width:540px">
 <tr>
