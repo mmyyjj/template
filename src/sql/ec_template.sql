@@ -113,7 +113,7 @@ CREATE TABLE history_detail_table(
 -- クレジットカード(架空)テーブルの作成・データ挿入
 
 CREATE TABLE test_creditcard_table(
- register_id INT NOT NULL AUTO_INCREMENT,
+ card_register_id INT NOT NULL AUTO_INCREMENT,
  card_type VARCHAR(20) NOT NULL,
  card_number VARCHAR(16) NOT NULL,
  holder_name VARCHAR(50) NOT NULL,
