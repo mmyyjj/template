@@ -5,9 +5,14 @@ import java.math.BigDecimal;
 /**
  * カートに入っている商品の情報を格納するクラス。
  * 画面で言うとカートリストの1行分のデータが入る。<br>
- * これをリストにして、jspのiterator処理でリストの表示を行う。
+ * これをリストにして、jspのiterator処理でリストの表示を行う。<br>
+ * このリストの情報はセッションにも保持し、注文確定時に注文履歴テーブルへの登録も行う。
  * */
 public class CartItemDTO {
+	/*データ取得先：cart_table
+	 * 商品名はproduct_tableとのテーブル結合で取得。
+	 * 合計金額はここでは保持せず、別個に変数を用意。
+	 * */
 
 	/**
 	 * ユーザーID
@@ -18,6 +23,11 @@ public class CartItemDTO {
 	 * 商品ID
 	 * */
 	private int product_id;
+
+	/**
+	 * 商品名
+	 * */
+	private String product_name;
 
 	/**
 	 * 単価
@@ -73,6 +83,22 @@ public class CartItemDTO {
 	 */
 	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
+	}
+
+	/**
+	 * 商品名取得メソッド
+	 * @return product_name
+	 */
+	public String getProduct_name() {
+		return product_name;
+	}
+
+	/**
+	 * 商品名格納メソッド
+	 * @param product_name セットする product_name
+	 */
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
 
 	/**
