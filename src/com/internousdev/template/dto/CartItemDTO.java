@@ -37,7 +37,7 @@ public class CartItemDTO {
 	/**
 	 * 購入数
 	 * */
-	private int purchase_number;
+	private int order_number;
 
 	/**
 	 * ラッピング指定数
@@ -122,15 +122,15 @@ public class CartItemDTO {
 	 * @return purchase_number
 	 */
 	public int getPurchase_number() {
-		return purchase_number;
+		return order_number;
 	}
 
 	/**
 	 * 購入数格納メソッド
 	 * @param purchase_number セットする purchase_number
 	 */
-	public void setPurchase_number(int purchase_number) {
-		this.purchase_number = purchase_number;
+	public void setPurchase_number(int order_number) {
+		this.order_number = order_number;
 	}
 
 	/**
