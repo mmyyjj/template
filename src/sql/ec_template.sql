@@ -89,7 +89,7 @@ CREATE TABLE history_outline_table(
 );
 
 -- 配達時間テーブルの作成
-CREATE TABLE send_time_table(
+CREATE TABLE delivery_time_table(
  delivery_time_id INT(1) NOT NULL,
  delivery_time_string VARCHAR(10) NOT NULL,
  PRIMARY KEY(time_id)
