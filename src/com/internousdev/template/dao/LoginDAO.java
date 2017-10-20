@@ -33,6 +33,7 @@ public class LoginDAO {
 
 			if(rs.next()){
 				if(rs.getInt("login_flg") == 0){
+					lidto.setUser_id(rs.getInt("user_id"));
 					lidto.setUser_name(rs.getString("user_name"));
 					lidto.setMail_address(rs.getString("mail_address"));
 					lidto.setPassword(rs.getString("password"));

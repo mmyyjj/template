@@ -10,6 +10,11 @@ package com.internousdev.template.dto;
 public class LoginInfoDTO {
 
 	/**
+	 * ログイン中ユーザーのユーザーID
+	 * */
+	private int user_id;
+
+	/**
 	 * ログイン中ユーザーのユーザー名
 	 * */
 	private String user_name;
@@ -33,6 +38,22 @@ public class LoginInfoDTO {
 
 
 	//以下、getter/setter---------------------------------
+
+	/**
+	 * ユーザーID取得メソッド
+	 * @return user_id
+	 */
+	public int getUser_id() {
+		return user_id;
+	}
+
+	/**
+	 * ユーザーID格納メソッド
+	 * @param user_id セットする user_id
+	 */
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
 
 	/**
 	 * ユーザー名取得メソッド
