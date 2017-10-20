@@ -29,7 +29,7 @@
 			margin-top:20px;
 			border:2px solid #7b8d42;
 			width:480px;
-			height:580px;
+			height:100%;
 			text-align:left;
 		}
 
@@ -62,7 +62,7 @@
 
 <!-- ここからiterator処理 -->
 <s:iterator value="paginatedItemList">
-<s:form theme="simple">
+<s:form theme="simple" action="GoEntranceAction">
    <table class="item_table">
      <tr>
        <th colspan="3" style="font-size:16px; border:0px;"><s:property value="product_name"/></th>
@@ -104,9 +104,35 @@
 
 </div>
 <div class="clear"></div>
-<div style="height:50px"></div>
+
+<div style="padding:20px; margin-left:360px;">
+<!-- 前へボタン -->
+<s:if test="(currentPage -1) >= 1 ">
+  <s:form theme="simple" action="GoItemListPageAction">
+    <s:hidden name="currentPage" value="%{currentPage-1}"/>
+  <button class="actbtn">前へ</button>
+  </s:form>
+</s:if>
+<s:else>
+
+</s:else>
+
+<!-- 次へボタン -->
+<s:if test="currentPage < maxPage ">
+  <s:form theme="simple" action="GoItemListPageAction">
+    <s:hidden name="currentPage" value="%{currentPage+1}"/>
+  <button class="actbtn">次へ</button>
+  </s:form>
+</s:if>
+<s:else>
+</s:else>
 </div>
 
+
+
+
+<div style="height:50px"></div>
+</div>
 
 
 

@@ -1,7 +1,11 @@
 package com.internousdev.template.action;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.SelectItemDAO;
 import com.internousdev.template.dto.ProductInfoDTO;
@@ -16,7 +20,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @since 2017/10/20
  * @version1.0
  * */
-public class GoItemListPageAction extends ActionSupport {
+public class GoItemListPageAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * 検索ワード
@@ -49,6 +53,11 @@ public class GoItemListPageAction extends ActionSupport {
 	 * */
 	private int maxPage;
 
+	/**
+	 * セッション
+	 * */
+	private Map<String, Object> session = new HashMap<String, Object>();
+
 
 
 	/**
@@ -57,6 +66,7 @@ public class GoItemListPageAction extends ActionSupport {
 	public String execute(){
 
 		System.out.println("GoItemListPageAction-currentPage" + currentPage);
+		System.out.println("GoItemListPageAction-maxPage" + maxPage);
 
 		String result = ERROR;
 
@@ -185,6 +195,24 @@ public class GoItemListPageAction extends ActionSupport {
 	 */
 	public void setMaxPage(int maxPage) {
 		this.maxPage = maxPage;
+	}
+
+
+
+	/**
+	 * @return session
+	 */
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+
+
+	/**
+	 * @param session セットする session
+	 */
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 
 

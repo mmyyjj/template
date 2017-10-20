@@ -29,12 +29,15 @@ public class ItemListPaginator {
 		int maxPage = 0;
 		int allItem = allItemList.size();
 
+		System.out.println("ItemListPagination-allItem:" +  allItem);
+
 		if(allItem % maxInPage == 0){
-			maxPage = (allItem % maxInPage);
-		}else if(allItem % maxInPage == 1){
-			maxPage = (allItem % maxInPage) + 1;
+			maxPage = (allItem / maxInPage);
+		}else if(allItem / maxInPage != 0){
+			maxPage = (allItem / maxInPage) + 1;
 		}
 
+		System.out.println("ItemListPagination-maxPage:" + maxPage);
 		return maxPage;
 
 	}
@@ -52,7 +55,7 @@ public class ItemListPaginator {
 
 		/*どこまで*/
 		int lastIndex = 0;
-		lastIndex = lastIndex + maxInPage;
+		lastIndex = lastIndex + (currentPage * maxInPage);
 
 		for(int i = firstIndex; i < lastIndex; i++){
 			if(i >= allItemList.size()){
