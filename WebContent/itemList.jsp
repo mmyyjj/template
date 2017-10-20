@@ -59,7 +59,9 @@
 <h1 style="margin-top:15px;">商品一覧</h1>
 <div class="side_menu"></div>
 <div class="item_list">
-<form>
+
+<!-- ここからiterator処理 -->
+<s:form theme="simple">
    <table class="item_table">
      <tr>
        <th colspan="3" style="font-size:16px; border:0px;">オリジナルマグカップ</th>
@@ -77,7 +79,7 @@
      	<td style="border:0px"></td>
        <td style="width:240px;text-align:right; padding-right:10px; border:0px;">
          購入数:
-         <select>
+         <select name="order_number">
          	<option value="1">1</option>
          	<option value="2">2</option>
          	<option value="3">3</option>
@@ -95,8 +97,9 @@
         </td>
      </tr>
    </table>
-</form>
+</s:form>
    <hr>
+<!-- ここまでiterator処理 -->
 
 </div>
 <div class="clear"></div>

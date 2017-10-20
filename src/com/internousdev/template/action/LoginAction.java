@@ -61,13 +61,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	 * */
 	public String execute(){
 
-		System.out.println("LoginAction-取得メールアドレス：" + mail_address);
-		System.out.println("LoginAction-取得パスワード：" + password);
-
 		String result = ERROR;
 
-		if(session.get("LoginInfo") != null){
+		if(lidto.getMail_address() != null  && lidto.getPassword() != null){
 			result = "nowLogin";
+			System.out.println("LoginAction-result:" + result);
 			return result;
 		}
 
@@ -75,11 +73,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		lidto = ldao.login(mail_address, password);
 
-		if(lidto != null){
-			session.put("LoginInfo", lidto);
+		if(lidto.getMail_address() != null  && lidto.getPassword() != null){
+			session.put("loginInfo", lidto);
+			user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
+			System.out.println("LoginAction-取得セッションのユーザー名：" + user_name);
 			result = SUCCESS;
 		}
 
+		System.out.println("LoginAction-result:" + result);
 		return result;
 
 

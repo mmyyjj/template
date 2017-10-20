@@ -26,8 +26,8 @@ public class LoginDAO {
 
 			PreparedStatement ps = con.prepareStatement(sql);
 
-			ps.setString(1, "%" + mail_address + "%");
-			ps.setString(2, "%" + password + "%");
+			ps.setString(1, mail_address);
+			ps.setString(2, password);
 
 			ResultSet rs = ps.executeQuery();
 
