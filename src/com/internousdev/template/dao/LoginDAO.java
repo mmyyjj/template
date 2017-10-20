@@ -3,54 +3,47 @@ package com.internousdev.template.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import com.internousdev.template.dto.LoginDTO;
+import com.internousdev.template.dto.LoginInfoDTO;
 import com.internousdev.template.util.DBConnector;
 
 public class LoginDAO {
 
-	private DBConnector dbConnector = new DBConnector();
+	public LoginInfoDTO login(String mail_address, String password){
 
-	private Connection connection = dbConnector.getConnection();
+		/*空のdtoを準備*/
+		LoginInfoDTO lidto = new LoginInfoDTO();
 
-	private LoginDTO loginDTO = new LoginDTO();
+		try{
 
-	/**
-	 * ログインユーザ情報取得メソッド
-	 *
-	 * @param loginUserId
-	 * @param loginPassword
-	 * @return LoginDTO
-	 */
-	public LoginDTO getLoginUserInfo(String loginUserId, String loginPassword) {
+			/*接続準備*/
+			DBConnector dbc = new DBConnector();
+			Connection con = dbc.getConnection();
 
-		String sql = "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
+			/*sql文を準備*/
+			String sql = "SELECT * FROM user_info_table WHERE mail_address = ? AND password = ?";
 
-		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, loginUserId);
-			preparedStatement.setString(2, loginPassword);
+			PreparedStatement ps = con.prepareStatement(sql);
 
-			ResultSet resultSet = preparedStatement.executeQuery();
+			ps.setString(1, "%" + mail_address + "%");
+			ps.setString(2, "%" + password + "%");
 
-			if(resultSet.next()) {
-				loginDTO.setLoginId(resultSet.getString("login_id"));
-				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
-				loginDTO.setUserName(resultSet.getString("user_name"));
+			ResultSet rs = ps.executeQuery();
 
-				if(!(resultSet.getString("login_id").equals(null))) {
-					loginDTO.setLoginFlg(true);
-				}
+			while(rs.next()){
+				lidto.setUser_name(rs.getString("user_name"));
+				lidto.setMail_address(rs.getString("mail_address"));
+				lidto.setPassword(rs.getString("password"));
+				lidto.setLogin_flg(true);
 			}
 
-		} catch(Exception e) {
+		} catch(SQLException e){
 			e.printStackTrace();
 		}
 
-		return loginDTO;
+		return lidto;
+
 	}
 
-	public LoginDTO getLoginDTO() {
-		return loginDTO;
-	}
 }

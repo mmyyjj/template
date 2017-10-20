@@ -5,10 +5,8 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.template.dao.BuyItemDAO;
 import com.internousdev.template.dao.LoginDAO;
-import com.internousdev.template.dto.BuyItemDTO;
-import com.internousdev.template.dto.LoginDTO;
+import com.internousdev.template.dto.LoginInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -25,87 +23,182 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware{
 
 	/**
-	 * ログインID
-	 */
-	public String loginUserId;
+	 * ログイン中ユーザーのユーザー名
+	 * */
+	private String user_name;
 
 	/**
-	 * ログインパスワード
-	 */
-	public String loginPassword;
+	 * ログイン中ユーザーのメールアドレス
+	 * */
+	/*ログイン時認証に使用 1/2*/
+	private String mail_address;
 
 	/**
-	 * 処理結果を格納
-	 */
-	public String result;
+	 * ログイン中ユーザーのパスワード
+	 * */
+	/*ログイン認証に使用 2/2*/
+	private String password;
 
 	/**
-	 * ログイン情報を格納
-	 */
-	public Map<String, Object> loginUserInfoMap = new HashMap<>();
+	 * ログイン中ユーザーのログインフラグ
+	 * */
+	private boolean login_flg = false;
 
 	/**
-	 * ログイン情報取得DAO
-	 */
-	public LoginDAO loginDAO = new LoginDAO();
+	 * セッション
+	 * */
+	private Map<String, Object> session = new HashMap<String, Object>();
+
 
 	/**
-	 * ログイン情報格納IDTO
-	 */
-	private LoginDTO loginDTO = new LoginDTO();
+	 * ログイン情報を入れ、セッションに保管するLoginIndoDTO
+	 * */
+	private LoginInfoDTO  lidto = new LoginInfoDTO();
 
-	/**
-	 * アイテム情報を取得
-	 */
-	public BuyItemDAO buyItemDAO = new BuyItemDAO();
 
 	/**
 	 * 実行メソッド
-	 */
-	public String execute() {
+	 * */
+	public String execute(){
 
-		result = ERROR;
+		System.out.println("LoginAction-取得メールアドレス：" + mail_address);
+		System.out.println("LoginAction-取得パスワード：" + password);
 
-		// ログイン実行
-		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
+		String result = ERROR;
 
-		loginUserInfoMap.put("loginUser", loginDTO);
-
-		// ログイン情報を比較
-		if(((LoginDTO) loginUserInfoMap.get("loginUser")).getLoginFlg()) {
-			result = SUCCESS;
-
-			// アイテム情報を取得
-			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
-			loginUserInfoMap.put("login_user_id",	loginDTO.getLoginId());
-			loginUserInfoMap.put("id", buyItemDTO.getId());
-			loginUserInfoMap.put("buyItem_name", buyItemDTO.getItemName());
-			loginUserInfoMap.put("buyItem_price", buyItemDTO.getItemPrice());
-
+		if(session.get("LoginInfo") != null){
+			result = "nowLogin";
 			return result;
 		}
 
+		LoginDAO ldao = new LoginDAO();
+
+		lidto = ldao.login(mail_address, password);
+
+		if(lidto != null){
+			session.put("LoginInfo", lidto);
+			result = SUCCESS;
+		}
+
 		return result;
+
+
 	}
 
-	public String getLoginUserId() {
-		return loginUserId;
+
+
+
+
+	//以下、setter/getter--------------------------
+
+	/**
+	 * ユーザー名取得メソッド
+	 * @return user_name
+	 */
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setLoginUserId(String loginUserId) {
-		this.loginUserId = loginUserId;
+
+	/**
+	 * ユーザー名格納メソッド
+	 * @param user_name セットする user_name
+	 */
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
-	public String getLoginPassword() {
-		return loginPassword;
+
+	/**
+	 * メールアドレス取得メソッド
+	 * @return mail_address
+	 */
+	public String getMail_address() {
+		return mail_address;
 	}
 
-	public void setLoginPassword(String loginPassword) {
-		this.loginPassword = loginPassword;
+
+	/**
+	 * メールアドレス格納メソッド
+	 * @param mail_address セットする mail_address
+	 */
+	public void setMail_address(String mail_address) {
+		this.mail_address = mail_address;
 	}
 
-	@Override
-	public void setSession(Map<String, Object> loginUserInfoMap) {
-		this.loginUserInfoMap = loginUserInfoMap;
+
+	/**
+	 * パスワード取得メソッド
+	 * @return password
+	 */
+	public String getPassword() {
+		return password;
 	}
+
+
+	/**
+	 * パスワード格納メソッド
+	 * @param password セットする password
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+	/**
+	 * ログインフラグ取得メソッド
+	 * @return login_flg
+	 */
+	public boolean isLogin_flg() {
+		return login_flg;
+	}
+
+
+	/**
+	 * ログインフラグ格納メソッド
+	 * @param login_flg セットする login_flg
+	 */
+	public void setLogin_flg(boolean login_flg) {
+		this.login_flg = login_flg;
+	}
+
+
+	/**
+	 * セッション取得メソッド
+	 * @return session
+	 */
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+
+	/**
+	 * セッション格納メソッド
+	 * @param session セットする session
+	 */
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+
+	/**
+	 * loginDTO取得メソッド
+	 * @return lidto
+	 */
+	public LoginInfoDTO getLidto() {
+		return lidto;
+	}
+
+
+	/**
+	 * loginDTO取得メソッド
+	 * @param lidto セットする lidto
+	 */
+	public void setLidto(LoginInfoDTO lidto) {
+		this.lidto = lidto;
+	}
+
+
+
+
 }
