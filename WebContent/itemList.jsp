@@ -45,10 +45,6 @@
 			padding:0px;
 			border:0px;
 		}
-
-		tr, td, th{
-			border:0px;
-		}
 	</style>
 
 </head>
@@ -66,11 +62,11 @@
 <form>
    <table class="item_table">
      <tr>
-       <th colspan="3" style="font-size:16px">オリジナルマグカップ</th>
+       <th colspan="3" style="font-size:16px; border:0px;">オリジナルマグカップ</th>
      </tr>
      <tr>
-       <td style="width:100px; height:100px"><img src="img/sample_1.png"></td>
-       <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top;">
+       <td style="width:100px; height:100px; border:0px;"><img src="img/sample_1.png"></td>
+       <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top; border:0px;">
        <b>価格：1,280円(税込み)</b>
        <br>
        当店のイメージキャラをあしらったマグカップ。<br>
@@ -78,8 +74,8 @@
        </td>
      </tr>
      <tr>
-     	<td></td>
-       <td style="width:240px;text-align:right; padding-right:10px;">
+     	<td style="border:0px"></td>
+       <td style="width:240px;text-align:right; padding-right:10px; border:0px;">
          購入数:
          <select>
          	<option value="1">1</option>
@@ -94,13 +90,12 @@
          	<option value="10">10</option>
          </select>個
        </td>
-       <td>
+       <td style="border:0px;">
          <button class="actbtn">カートに入れる</button>
         </td>
      </tr>
    </table>
 </form>
-   <br>
    <hr>
 
 </div>

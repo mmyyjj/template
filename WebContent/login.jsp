@@ -50,25 +50,25 @@
 ユーザー情報を入力してください<br>
 <small>Please input your user-infomation.</small>
 <br>
-入力に誤りがあります
+(※ここべたうち：入力に誤りがあります）
 <s:property value="errorMsg"/>
 
 
 
 <div class="formBox_login">
-<form action="LoginAction">
+<s:form action="LoginAction" theme="simple">
 	<table>
 		<tr>
-			<td>ユーザーアドレス:</td><td><input type="text" name="userAddress"/></td>
+			<td>ユーザーアドレス:</td><td><input type="text" name="mail_address"/></td>
 		</tr>
 		<tr>
-			<td>パスワード:</td><td><input type="text" name="userPassword"></td>
+			<td>パスワード:</td><td><input type="text" name="password"></td>
 		</tr>
 		<tr>
 			<td colspan="2"><button class="actbtn" style="margin-left:160px">ログイン</button></td>
 		</tr>
 	</table>
-</form>
+</s:form>
 </div>
 <div style="height:85px"></div>
 <footer>
