@@ -26,6 +26,8 @@ public class SelectItemDAO {
 		/*最初の準備*/
 		List<ProductInfoDTO> selectedList = new ArrayList<ProductInfoDTO>();
 
+		System.out.println("SelectItemDAO-selectCategory:" + selectCategory);
+
 		if(selectWord == null){
 			selectWord = "";
 		}

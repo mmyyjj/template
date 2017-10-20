@@ -28,7 +28,6 @@
   <tr>
     <td style="padding:10px; border:0px">
       <s:form theme="simple" action="GoItemListPageAction">
-        <s:hidden name="currentPage" value="1"/>
         <button class="actbtn">商品を見る</button>
       </s:form>
    </td>

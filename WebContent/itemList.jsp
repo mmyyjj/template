@@ -14,7 +14,7 @@
 		/*以下、アイテムリスト画面のみで使用*/
 		.side_menu{
 			margin:32px;
-			margin-top:20px;
+			margin-top:5px;
 			float:left;
 			border:2px solid #7b8d42;
 			width:180px;
@@ -26,7 +26,7 @@
 			padding:20px;
 			float:left;
 			margin:30px;
-			margin-top:20px;
+			margin-top:5px;
 			border:2px solid #7b8d42;
 			width:480px;
 			height:100%;
@@ -55,11 +55,64 @@
 
 
 <div class="contents">
-<div style="height:5px;"></div>
-<h1 style="margin-top:15px;">商品一覧</h1>
-<div class="side_menu"></div>
-<div class="item_list">
+<div style="height:8px;"></div>
+<h1 style="margin-top:5px;">商品一覧</h1>
 
+
+<div class="side_menu">
+<div style="font-size:22px;">SEACH MENU</div>
+<hr>
+商品名検索
+<s:form theme="simple" action="GoItemListPageAction">
+<s:textfield name="selectWord"/>
+<button class="actbtn" style="width:40px; height:20px;">検索</button>
+</s:form>
+<br>
+<hr>
+カテゴリー検索
+<table style="margin:0 auto;">
+<tr>
+ <td style="border:0px">
+    <s:form theme="simple" action="GoItemListPageAction">
+    <s:hidden name="selectCategory" value="キッチン用品"/>
+    <button class="actbtn" style="width:170px">キッチン用品</button>
+  </s:form>
+ </td>
+</tr>
+<tr>
+ <td style="border:0px">
+    <s:form theme="simple" action="GoItemListPageAction">
+    <s:hidden name="selectCategory" value="ステーショナリー"/>
+    <button class="actbtn" style="width:170px">ステーショナリー</button>
+  </s:form>
+ </td>
+</tr>
+<tr>
+ <td style="border:0px">
+    <s:form theme="simple" action="GoItemListPageAction">
+    <s:hidden name="selectCategory" value="インテリア"/>
+    <button class="actbtn" style="width:170px">インテリア</button>
+</s:form>
+ </td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<div class="item_list">
 <!-- ここからiterator処理 -->
 <s:iterator value="paginatedItemList">
 <s:form theme="simple" action="GoEntranceAction">

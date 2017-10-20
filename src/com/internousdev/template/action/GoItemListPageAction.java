@@ -46,7 +46,7 @@ public class GoItemListPageAction extends ActionSupport implements SessionAware 
 	/**
 	 * 現在のページ数
 	 * */
-	private int currentPage;
+	private int currentPage =1;
 
 	/**
 	 * 最大ページ数

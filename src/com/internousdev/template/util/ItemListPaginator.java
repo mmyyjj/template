@@ -19,7 +19,7 @@ public class ItemListPaginator {
 	/**
 	 * 1ページに表示する件数
 	 * */
-	private int maxInPage = 3;//とりあえず3件
+	private int maxInPage = 2;//とりあえず3件
 
 	/**
 	 * 渡された全標品のリストから最大ページ数を取得するメソッド
