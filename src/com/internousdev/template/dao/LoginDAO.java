@@ -31,11 +31,25 @@ public class LoginDAO {
 
 			ResultSet rs = ps.executeQuery();
 
-			while(rs.next()){
-				lidto.setUser_name(rs.getString("user_name"));
-				lidto.setMail_address(rs.getString("mail_address"));
-				lidto.setPassword(rs.getString("password"));
-				lidto.setLogin_flg(true);
+			if(rs.next()){
+				if(rs.getInt("login_flg") == 0){
+					lidto.setUser_name(rs.getString("user_name"));
+					lidto.setMail_address(rs.getString("mail_address"));
+					lidto.setPassword(rs.getString("password"));
+					lidto.setLogin_flg(true);
+					String sql_login = "UPDATE user_info_table SET login_flg = 1 WHERE mail_address = ? AND password = ?";
+					ps = con.prepareStatement(sql_login);
+					ps.setString(1, mail_address);
+					ps.setString(2, password);
+					int updated = ps.executeUpdate();
+					System.out.println("LoginDAO:updated" + updated);
+				}
+			}
+
+			if(con != null){
+				con.close();
+				ps.close();
+				rs.close();
 			}
 
 		} catch(SQLException e){

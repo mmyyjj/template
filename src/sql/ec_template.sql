@@ -39,21 +39,22 @@ CREATE TABLE product_table(
  category VARCHAR(10) NOT NULL,
  unit_price DECIMAL(10,0) NOT NULL,
  current_stock INT NOT NULL,
- number_of_sales INT NOT NULL,
+ number_of_sales INT DEFAULT 0 NOT NULL,
  comment VARCHAR(200) NOT NULL,
  img_path VARCHAR(200) NOT NULL,
- registration_date DATETIME NOT NULL,
+ registration_date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
  update_date TIMESTAMP NOT NULL,
- delete_flg INT(1) NOT NULL,
+ delete_flg INT(1) DEFAULT 0 NOT NULL,
  PRIMARY KEY(product_id),
  UNIQUE INDEX(product_name)
 );
 
 INSERT INTO product_table
- (product_id, product_name,category,unit_price,current_stock,number_of_sales,comment,img_path,registration_date,update_date,delete_flg)VALUES
- (0, 'オリジナルマグカップ', 'キッチン用品', 1280, 50, 0, '当店のイメージキャラをあしらった限定マグカップ。<br>耐熱素材でレンジ加熱もOKです。', 'img/sample_1.png', NOW(), NOW(), 0),
- (0, '止まり木ボールペン', 'ステーショナリー', 980, 50, 0, '止まり木モチーフのボールペンです。5ミリサイズ。' , 'img/sample_1.png', NOW(), NOW(), 0),
- (0, '不苦労ミニだるま', 'ミニインテリア', 980, 50, 0, '幸運を呼ぶフクロウをモチーフにした小さなサイズのだるま。大きさ約5センチ。<br>玄関やリビングでそっとあなたを見守ります。', 'img/sample_1.png', NOW(), NOW(), 0);
+ (product_name,category,unit_price,current_stock,comment,img_path)VALUES
+ ('オリジナルマグカップ', 'キッチン用品', 1280, 50,'当店のイメージキャラをあしらった限定マグカップ。<br>耐熱素材でレンジ加熱もOKです。', 'img/sample_1.png'),
+ ('止まり木ボールペン', 'ステーショナリー', 980, 50, '止まり木モチーフのボールペンです。5ミリサイズ。' , 'img/sample_1.png'),
+ ('不苦労ミニだるま', 'ミニインテリア', 980, 50, '幸運を呼ぶフクロウをモチーフにした小さなサイズのだるま。大きさ約5センチ。<br>玄関やリビングでそっとあなたを見守ります。', 'img/sample_1.png'),
+ ('にわとりさんアラーム', 'ミニインテリア', 1480, 50, 'つぶらな瞳とエネルギッシュなアラーム音で寝起きを応援！音量注意。', 'img/sample_1.png');
 
 
 

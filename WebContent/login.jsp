@@ -50,9 +50,7 @@
 ユーザー情報を入力してください<br>
 <small>Please input your user-infomation.</small>
 <br>
-(※ここべたうち：入力に誤りがあります）
-<s:property value="errorMsg"/>
-
+<font color="red"><s:property value="loginError_message"/></font>
 
 
 <div class="formBox_login">

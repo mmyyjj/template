@@ -55,15 +55,24 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	 * */
 	private LoginInfoDTO  lidto = new LoginInfoDTO();
 
+	/**
+	 * エラーメッセージ
+	 * */
+	private String loginError_message;
+
 
 	/**
 	 * 実行メソッド
 	 * */
 	public String execute(){
 
+		/*初期の状態はエラー*/
 		String result = ERROR;
+		loginError_message = "メールアドレス、パスワードのいずれかに誤りがあります";
 
-		if(lidto.isLogin_flg() != false){
+		if((LoginInfoDTO)session.get("loginInfo") != null){
+			user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
+			loginError_message = "";
 			result = "nowLogin";
 			System.out.println("LoginAction-result:" + result);
 			return result;
@@ -76,6 +85,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(lidto.isLogin_flg() == true){
 			session.put("loginInfo", lidto);
 			user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
+			loginError_message= "";
 			System.out.println("LoginAction-取得セッションのユーザー名：" + user_name);
 			result = SUCCESS;
 		}
@@ -197,6 +207,28 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	 */
 	public void setLidto(LoginInfoDTO lidto) {
 		this.lidto = lidto;
+	}
+
+
+
+
+
+	/**
+	 * @return loginError_message
+	 */
+	public String getLoginError_message() {
+		return loginError_message;
+	}
+
+
+
+
+
+	/**
+	 * @param loginError_message セットする loginError_message
+	 */
+	public void setLoginError_message(String loginError_message) {
+		this.loginError_message = loginError_message;
 	}
 
 
