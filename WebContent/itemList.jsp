@@ -61,18 +61,18 @@
 <div class="item_list">
 
 <!-- ここからiterator処理 -->
+<s:iterator value="paginatedItemList">
 <s:form theme="simple">
    <table class="item_table">
      <tr>
-       <th colspan="3" style="font-size:16px; border:0px;">オリジナルマグカップ</th>
+       <th colspan="3" style="font-size:16px; border:0px;"><s:property value="product_name"/></th>
      </tr>
      <tr>
        <td style="width:100px; height:100px; border:0px;"><img src="img/sample_1.png"></td>
        <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top; border:0px;">
-       <b>価格：1,280円(税込み)</b>
+       <b><s:property value="unit_price"/></b>
        <br>
-       当店のイメージキャラをあしらったマグカップ。<br>
-       耐熱素材でレンジ加熱もOKです。
+         <s:property value="comment"/>
        </td>
      </tr>
      <tr>
@@ -99,6 +99,7 @@
    </table>
 </s:form>
    <hr>
+</s:iterator>
 <!-- ここまでiterator処理 -->
 
 </div>

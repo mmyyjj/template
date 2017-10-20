@@ -27,7 +27,10 @@
 <table style="margin:0 auto;">
   <tr>
     <td style="padding:10px; border:0px">
-      <button class="actbtn" >商品を見る</button>
+      <s:form theme="simple" action="GoItemListPageAction">
+        <s:hidden name="currentPage" value="1"/>
+        <button class="actbtn">商品を見る</button>
+      </s:form>
    </td>
    <td style="padding:10px; border:0px">
      <s:form action="GoLoginPageAction">

@@ -20,6 +20,11 @@
 		<result name="nowLogin">itemList.jsp</result>
 		</action>
 
+		<!-- GoItemListPageAction -->
+		<action name="GoItemListPageAction" class="com.internousdev.template.action.GoItemListPageAction" method="execute">
+		<result name="success">itemList.jsp</result>
+		<result name="error">entranc.jsp</result>
+		</action>
 
 
 
