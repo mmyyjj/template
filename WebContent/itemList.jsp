@@ -13,10 +13,10 @@
 
 		/*以下、アイテムリスト画面のみで使用*/
 		.side_menu{
-			margin:32px;
-			margin-top:5px;
+			margin-left:40px;
+			margin-top:32px;
 			float:left;
-			border:2px solid #7b8d42;
+			//border:2px solid #7b8d42;
 			width:180px;
 			folat:left;
 			height:360px;
@@ -27,7 +27,7 @@
 			float:left;
 			margin:30px;
 			margin-top:5px;
-			border:2px solid #7b8d42;
+			//border:2px solid #7b8d42;
 			width:480px;
 			height:100%;
 			text-align:left;
@@ -96,17 +96,6 @@
  </td>
 </tr>
 </table>
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
 
@@ -157,42 +146,52 @@
 
 </div>
 <div class="clear"></div>
+<!-- ここから商品一覧下の前へ・次へボタン -->
 
-<div style="padding:20px; margin-left:360px;">
-<!-- 前へボタン -->
-<s:if test="(currentPage -1) >= 1 ">
-  <s:form theme="simple" action="GoItemListPageAction">
+<div style="padding:20px; margin-left:350px;">
+<table>
+<tr>
+  <td style="width:80px; border:0px;">
+   <!-- 最初へボタン -->
+    <s:if test="(currentPage -1) >= 1 ">
+    <s:form theme="simple" action="GoItemListPageAction">
+    <s:hidden name="currentPage" value="%{1}"/>
+    <button class="actbtn"style="width:60px;">最初へ</button>
+    </s:form>
+    </s:if>
+  </td>
+  <td style="width:80px; border:0px;">
+    <s:if test="(currentPage -1) >= 1 ">
+    <s:form theme="simple" action="GoItemListPageAction">
     <s:hidden name="currentPage" value="%{currentPage-1}"/>
-  <button class="actbtn">前へ</button>
-  </s:form>
-</s:if>
-<s:else>
-
-</s:else>
-
-<!-- 次へボタン -->
+    <button class="actbtn"style="width:60px;">戻る</button>
+    </s:form>
+    </s:if>
+  </td>
+  <td style="width:80px; border:0px;">
+    <s:if test="currentPage < maxPage ">
+    <s:form theme="simple" action="GoItemListPageAction">
+    <s:hidden name="currentPage" value="%{currentPage+1}"/>
+    <button class="actbtn"style="width:60px;">進む</button>
+    </s:form>
+    </s:if>
+  </td>
+  <td style="width:80px; border:0px;">
+  <!-- 最後へボタン -->
 <s:if test="currentPage < maxPage ">
   <s:form theme="simple" action="GoItemListPageAction">
-    <s:hidden name="currentPage" value="%{currentPage+1}"/>
-  <button class="actbtn">次へ</button>
+    <s:hidden name="currentPage" value="%{maxPage}"/>
+  <button class="actbtn" style="width:60px;">最後へ</button>
   </s:form>
 </s:if>
-<s:else>
-</s:else>
+  </td>
+</tr>
+</table>
 </div>
-
-
 
 
 <div style="height:50px"></div>
 </div>
-
-
-
-
-
-
-
 
 
 <footer>
