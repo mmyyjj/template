@@ -136,6 +136,7 @@
        </td>
        <td style="border:0px;">
        <s:hidden name="item_id" value='<s:property value="product_id"/>' />
+       <s:hidden name="unit_price" value='<s:property value="unit_price"/>' />
          <button class="actbtn">カートに入れる</button>
         </td>
      </tr>

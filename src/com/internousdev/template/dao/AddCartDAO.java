@@ -1,5 +1,11 @@
 package com.internousdev.template.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.internousdev.template.util.DBConnector;
+
 /**
  * DBのカートテーブルに商品を追加するためのクラス。<br>
  * jspからproduct_idをjspを受取り、同じidの商品を商品テーブルから検索、
@@ -10,5 +16,43 @@ package com.internousdev.template.dao;
  * @version 1.0
  * */
 public class AddCartDAO {
+
+
+	/**
+	 * カートに追加するメソッド
+	 * */
+	public int addCart(int user_id, int product_id,int unit_price, int order_number){
+
+		int insert_num = 0;
+
+		try{
+
+			/*接続準備*/
+			DBConnector dbc = new DBConnector();
+			Connection con = dbc.getConnection();
+
+			/*sql文を準備*/
+			String sql = "INSERT INTO cart VALUES(user_id, product_id, unit_price, order_number,subtotal)"
+					+ "( ?, ?, ?, ?, ( unit_price * order_number) )";
+
+			PreparedStatement ps = con.prepareStatement(sql);
+
+			ps.setInt(1, user_id);
+			ps.setInt(2, product_id);
+			ps.setInt(3, unit_price);
+			ps.setInt(4, order_number);
+
+			insert_num = ps.executeUpdate();
+
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		return insert_num;
+
+
+
+
+	}
 
 }
