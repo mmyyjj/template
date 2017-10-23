@@ -38,6 +38,12 @@
 		<result name="success">entrance.jsp</result>
 		</action>
 
+		<!-- AddCartAction -->
+		<action name="AddCartAction" class="com.internousdev.template.action.AddCartAction" method="execute">
+		<result name="success">cart.jsp</result>
+		<result name="error">itemList.jsp</result>
+		</action>
+
 
 
 	<!-- 以下、先生のお手本 -->

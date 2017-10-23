@@ -1,5 +1,6 @@
 package com.internousdev.template.action;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * 単価
 	 * */
-	private int unit_price;
+	private BigDecimal unit_price;
 
 	/**
 	 * セッション
@@ -49,6 +50,10 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 
 		int user_id = lidto.getUser_id();
 		AddCartDAO acdao = new AddCartDAO();
+		System.out.println("user_id:" + user_id);
+		System.out.println("product_id:" + product_id);
+		System.out.println("unit_price:" + unit_price);
+		System.out.println("order_number:" + order_number);
 
 		int success_number = acdao.addCart(user_id, product_id, unit_price,Integer.parseInt(order_number));
 
@@ -96,7 +101,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * @return unit_price
 	 */
-	public int getUnit_price() {
+	public BigDecimal getUnit_price() {
 		return unit_price;
 	}
 
@@ -104,7 +109,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * @param unit_price セットする unit_price
 	 */
-	public void setUnit_price(int unit_price) {
+	public void setUnit_price(BigDecimal unit_price) {
 		this.unit_price = unit_price;
 	}
 
