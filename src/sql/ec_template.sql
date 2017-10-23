@@ -76,7 +76,7 @@ CREATE TABLE cart(
  product_id INT NOT NULL,
  unit_price DECIMAL(10,0) NOT NULL,
  order_number INT NOT NULL,
- number_for_gift INT NOT NULL,
+ number_for_gift INT DEFAULT 0 NOT NULL,
  subtotal DECIMAL(10,0) NOT NULL,
  INDEX(user_id)
 );
