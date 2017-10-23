@@ -34,7 +34,7 @@ public class LoginInfoDTO {
 	/**
 	 * ログイン中ユーザーのログインフラグ
 	 * */
-	private boolean login_flg = false;
+	private int login_flg;
 
 
 	//以下、getter/setter---------------------------------
@@ -107,16 +107,18 @@ public class LoginInfoDTO {
 	 * ログインフラグ取得メソッド
 	 * @return login_flg
 	 */
-	public boolean isLogin_flg() {
+	public int getLogin_flg() {
 		return login_flg;
 	}
 
 	/**
 	 * ログインフラグ格納メソッド
-	 * @param login_flg セットする login_flg boolean
+	 * @param login_flg セットする login_flg
 	 */
-	public void setLogin_flg(boolean login_flg) {
+	public void setLogin_flg(int login_flg) {
 		this.login_flg = login_flg;
 	}
 
+
 }
+

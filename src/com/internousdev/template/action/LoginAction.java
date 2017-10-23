@@ -82,7 +82,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		lidto = ldao.login(mail_address, password);
 
-		if(lidto.isLogin_flg() == true){
+
+
+		if(lidto != null){
 			session.put("loginInfo", lidto);
 			user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
 			loginError_message= "";
