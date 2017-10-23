@@ -70,12 +70,23 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		String result = ERROR;
 		loginError_message = "メールアドレス、パスワードのいずれかに誤りがあります";
 
+
 		if((LoginInfoDTO)session.get("loginInfo") != null){
-			user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
-			loginError_message = "";
-			result = "nowLogin";
-			System.out.println("LoginAction-result:" + result);
-			return result;
+		System.out.println("セッションあり");
+			if(mail_address == ((LoginInfoDTO)session.get("loginInfo")).getMail_address()
+					&& password == ((LoginInfoDTO)session.get("loginInfo")).getPassword()){
+				user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
+				loginError_message = "";
+				result = "nowLogin";
+				System.out.println("LoginAction-result:" + result);
+				return result;
+			} else {
+				session.clear();
+				loginError_message = "ログインエラーです。もう一度情報を入力してください。";
+				return result;
+
+			}
+
 		}
 
 		LoginDAO ldao = new LoginDAO();

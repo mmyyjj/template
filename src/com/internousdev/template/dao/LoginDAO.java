@@ -36,18 +36,21 @@ public class LoginDAO {
 				if(rs.getInt("login_flg") == 0){
 					/*ログインフラグが0＝まだログインされていない状態のとき。
 					 * フラグが1＝すでにログインされている状態のときは、ここが飛ばされからのlidtoが返されます*/
-					String sql_login = "UPDATE user_info_table SET login_flg = 1 WHERE mail_address = ? AND password = ?";
+
+					/* セレクト文で合致したユーザーIDのログインフラグを1＝ログイン中に変更する処理*/
+					String sql_login = "UPDATE user_info_table SET login_flg = 1 WHERE user_id = ?";
 					ps = con.prepareStatement(sql_login);
-					ps.setString(1, mail_address);
-					ps.setString(2, password);
+					ps.setInt(1, rs.getInt("user_id"));
 					int updated = ps.executeUpdate();
 
+					/*DTOにデータを入れる処理*/
 					lidto.setUser_id(rs.getInt("user_id"));
 					lidto.setUser_name(rs.getString("user_name"));
 					lidto.setMail_address(rs.getString("mail_address"));
 					lidto.setPassword(rs.getString("password"));
 					lidto.setLogin_flg(rs.getInt("login_flg"));
 					System.out.println("LoginDAO-updated:" + updated);
+
 				} else {
 					lidto = null;
 				}
