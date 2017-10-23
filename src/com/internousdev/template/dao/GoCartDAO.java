@@ -30,7 +30,8 @@ public class GoCartDAO {
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
-			String sql = "SELECT * FROM cart WHERE user_id = ?";
+			String sql = "SELECT cart.*, product_table.product_name FROM cart, product_table"
+					+ " WHERE user_id = ? AND cart.product_id = product_table.product_id";
 
 			PreparedStatement ps = con.prepareStatement(sql);
 
@@ -42,7 +43,7 @@ public class GoCartDAO {
 				CartItemDTO cidto = new CartItemDTO();
 				cidto.setUser_id(rs.getInt("user_id"));
 				cidto.setProduct_id(rs.getInt("product_id"));
-				cidto.setProduct_name(rs.getString("priduct_name"));
+				cidto.setProduct_name(rs.getString("product_name"));
 				cidto.setUnit_price(rs.getBigDecimal("unit_price"));
 				cidto.setOrder_number(rs.getInt("order_number"));
 				cidto.setNumber_for_gift(rs.getInt("number_for_gift"));

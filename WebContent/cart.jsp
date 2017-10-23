@@ -20,26 +20,31 @@
 <div style="height:5px;"></div>
 <h1>カート画面</h1>
 <br>
+
+<!-- ここからiterator処理 -->
+<s:iterator value="cartItemList">
 <table class="visible_table" style="width:820px">
 <tr>
   <th>商品画像</th><th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th><th>プレゼント包装</th><th style="width:100px">小計</th><th>操作</th>
 </tr>
 <tr>
 <td style="width:100px">商品画像</td>
-<td>商品名</td>
-<td>単価</td>
+<td><s:property value="product_name"/></td>
+<td><s:property value="unit_price"/></td>
 <td><!-- name属性指定で値を渡せるように -->
-	<s:select list="{1,2,3,4,5,6,7,8,9,10}" value="3" theme="simple">
+	<s:select list="{1,2,3,4,5,6,7,8,9,10}" selected='<s:property value="order_number"/>' theme="simple">
 	</s:select>個
 </td>
 <td>
-	<s:select list="{1,2,3,4,5,6,7,8,9,10}" value="3" theme="simple">
+	<s:select list="{1,2,3,4,5,6,7,8,9,10}" selected='<s:property value="number_for_gift"/>' theme="simple">
 	</s:select>個
 </td>
-<td>小計</td>
+<td><s:property value="subtotal"/></td>
 <td style="width:80px;"><button class="actbtn" style="width:80px; margin-left:10px; margin-right:10px;">削除</button></td>
 </tr>
 </table>
+</s:iterator>
+<!-- ここまでiterator処理 -->
 
 <br>
 <div style="text-align:center; font-size:18px">合計金額　1.000円</div>

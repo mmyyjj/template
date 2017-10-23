@@ -50,6 +50,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 			result = SUCCESS;
 		}
 
+		System.out.println("GoCartAcyion-result" + result);
 		return result;
 
 	}
