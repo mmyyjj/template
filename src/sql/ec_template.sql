@@ -39,7 +39,7 @@ CREATE TABLE product_table(
  category VARCHAR(10) NOT NULL,
  unit_price DECIMAL(10,0) NOT NULL,
  current_stock INT NOT NULL,
- number_of_sales INT DEFAULT 0 NOT NULL,
+ orderd_number INT DEFAULT 0 NOT NULL,
  comment VARCHAR(200) NOT NULL,
  img_path VARCHAR(200) NOT NULL,
  registration_date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,

@@ -38,9 +38,9 @@ public class ProductInfoDTO {
 	private int current_stock;
 
 	/**
-	 * 販売総数
+	 * 予約数
 	 * */
-	private int number_of_sales;
+	private int ordered_number;
 
 	/**
 	 * 商品コメント
@@ -152,19 +152,17 @@ public class ProductInfoDTO {
 	}
 
 	/**
-	 * 販売総数取得メソッド
-	 * @return number_of_sales
+	 * @return ordered_number
 	 */
-	public int getNumber_of_sales() {
-		return number_of_sales;
+	public int getOrdered_number() {
+		return ordered_number;
 	}
 
 	/**
-	 * 販売総数格納メソッド
-	 * @param number_of_sales セットする number_of_sales
+	 * @param ordered_number セットする ordered_number
 	 */
-	public void setNumber_of_sales(int number_of_sales) {
-		this.number_of_sales = number_of_sales;
+	public void setOrdered_number(int ordered_number) {
+		this.ordered_number = ordered_number;
 	}
 
 	/**

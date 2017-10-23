@@ -34,6 +34,11 @@ public class LogoutDAO {
 
 			logout_num = ps.executeUpdate();
 
+			if(con != null){
+				con.close();
+				ps.close();
+			}
+
 
 		} catch(SQLException e){
 			e.printStackTrace();
