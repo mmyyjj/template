@@ -27,7 +27,7 @@ public class LogoutDAO {
 			Connection con = dbc.getConnection();
 
 			/*sql文を準備*/
-			String sql_logout = "UPDATE user_info_table SET login_flg = 1 WHERE user_id = ?";
+			String sql_logout = "UPDATE user_info_table SET login_flg = 0 WHERE user_id = ?";
 
 			PreparedStatement ps = con.prepareStatement(sql_logout);
 			ps.setInt(1, user_id);

@@ -16,10 +16,24 @@
 <s:if test="session.get('loginInfo') != null">
 <table style="margin:0 auto; width:640px; color:lightyellow; padding:40px; padding-top:5px;">
 <tr>
-<th style="font-size:20px">TOP</th><th>ようこそ<s:property value="user_name"/>さん</th><th style="width:50px"></th><th>ABOUT</th><th>MY PAGE</th><th>CART</th><th>LOGOUT</th>
+<th style="font-size:20px">TOP</th>
+<th>ようこそ<s:property value="user_name"/>さん</th>
+<th style="width:50px"></th>
+<th>ABOUT</th>
+<th>MY PAGE</th>
+<th>CART</th>
+
+<th>
+  <a href="LogoutAction">LOGOUT</a>
+</th>
 </tr>
 </table>
 </s:if>
+
+
+
+
+
 <!-- ログアウト中（ゲストさん用） -->
 <s:else>
 <table style="margin:0 auto; width:640px; color:lightyellow; padding:40px; padding-top:5px;">

@@ -35,8 +35,10 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 
 		if(logout_num > 0){
 			result = SUCCESS;
+
 		}
 
+		System.out.println("LogoutAction-:result:" + result);
 		return result;
 	}
 
