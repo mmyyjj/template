@@ -119,17 +119,17 @@ public class CartItemDTO {
 
 	/**
 	 * 購入数取得メソッド
-	 * @return purchase_number
+	 * @return order_number
 	 */
-	public int getPurchase_number() {
+	public int getOrder_number() {
 		return order_number;
 	}
 
 	/**
 	 * 購入数格納メソッド
-	 * @param purchase_number セットする purchase_number
+	 * @param order_number セットする purchase_number
 	 */
-	public void setPurchase_number(int order_number) {
+	public void setOrder_number(int order_number) {
 		this.order_number = order_number;
 	}
 
