@@ -8,6 +8,9 @@ import com.internousdev.template.util.DBConnector;
 
 /**
  * DBのユーザー情報を更新し、ログアウトを行うためのDAOクラス。
+ * @author YUKA MATSUMURA
+ * @since 2017/10/23
+ * @aversion 1.0
  * */
 public class LogoutDAO {
 

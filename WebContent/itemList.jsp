@@ -104,7 +104,7 @@
 <div class="item_list">
 <!-- ここからiterator処理 -->
 <s:iterator value="paginatedItemList">
-<s:form theme="simple" action="GoEntranceAction">
+<s:form theme="simple" action="AddCartAction">
    <table class="item_table">
      <tr>
        <th colspan="3" style="font-size:16px; border:0px;"><s:property value="product_name"/></th>
@@ -135,6 +135,7 @@
          </select>個
        </td>
        <td style="border:0px;">
+       <s:hidden name="item_id" value='<s:property value="product_id"/>' />
          <button class="actbtn">カートに入れる</button>
         </td>
      </tr>
