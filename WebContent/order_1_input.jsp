@@ -29,7 +29,6 @@
 <th style="width:80px">お日にち</th>
 <td>この中身イテレーターで
   <select>
-	<option value="2017/10/16">2017/10/16</option>
   </select>
 </td>
 <th style="width:80px">時間帯</th>

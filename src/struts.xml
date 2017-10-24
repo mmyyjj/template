@@ -72,7 +72,11 @@
 
 
 
-
+		<!-- GoOrderInputAction -->
+		<action name="GoOrderInputAction" class="com.internousdev.template.action.GoOrderInputAction" method="execute">
+		<result name="success">order_1_input.jsp</result>
+		<result name="error">cart.jsp</result>
+		</action>
 
 
 

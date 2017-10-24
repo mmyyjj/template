@@ -39,6 +39,7 @@ public class TimeSetDAO {
 				ResultSet rs = ps.executeQuery();
 				if(rs.next()){
 					timeList.add(rs.getString(1));
+					System.out.println("TimeSetDAO-date:"+ timeList.get(i));
 				}
 			}
 

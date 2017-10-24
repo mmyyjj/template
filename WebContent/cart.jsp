@@ -75,7 +75,9 @@
   <s:form action="GoItemListPageAction" theme="simple">
   <td style="border:0px"><button class="actbtn">お買い物を続ける</button></td>
   </s:form>
+  <s:form action="GoOrderInputAction">
   <td style="border:0px"><button class="actbtn">ご注文へ</button></td>
+  </s:form>
 </tr>
 </table>
 
