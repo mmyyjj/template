@@ -19,7 +19,9 @@
 <th style="font-size:20px">TOP</th>
 <th>ようこそ<s:property value="user_name"/>さん</th>
 <th style="width:50px"></th>
-<th>ABOUT</th>
+<th>
+<a href="GoAboutPageAction">ABOUT</a>
+</th>
 <th>MY PAGE</th>
 <th>
 <a href="GoCartAction">CART</a>
@@ -40,7 +42,11 @@
 <s:else>
 <table style="margin:0 auto; width:640px; color:lightyellow; padding:40px; padding-top:5px;">
 <tr>
-<th style="font-size:20px">TOP</th><th style="width:50px"></th><th>ABOUT</th><th>LOGIN</th><th>CREATE ACCOUNT</th>
+<th style="font-size:20px">TOP</th>
+<th style="width:50px"></th>
+<th><a href="GoAboutPageAction">ABOUT</a></th>
+<th>LOGIN</th>
+<th>CREATE ACCOUNT</th>
 </tr>
 </table>
 </s:else>
