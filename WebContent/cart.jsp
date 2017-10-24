@@ -35,15 +35,17 @@
 <!-- ここに更新アクションの自動フォーム処理 -->
 
 <td><s:property value="unit_price"/>円</td>
+<s:form action="UpdateCartAction" theme="simple">
+<s:hidden name="product_id" value="%{product_id}"/>
 <td><!-- name属性指定で値を渡せるように -->
-	<s:select list="{1,2,3,4,5,6,7,8,9,10}" name="order_number" value="%{order_number}" theme="simple">
+	<s:select list="{1,2,3,4,5,6,7,8,9,10}" name="order_number" value="%{order_number}" theme="simple" onChange="this.form.submit()">
 	</s:select>個
 </td>
 <td>
-	<s:select list="{0,1,2,3,4,5,6,7,8,9,10}" name="number_for_gift" value="number_for_gift" theme="simple">
+	<s:select list="{0,1,2,3,4,5,6,7,8,9,10}" name="number_for_gift" value="%{number_for_gift}" theme="simple" onChange="this.form.submit()">
 	</s:select>個
 </td>
-
+</s:form>
 
 
 <td><s:property value="subtotal"/>円</td>
