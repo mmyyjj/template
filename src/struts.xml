@@ -51,6 +51,26 @@
 		</action>
 
 
+		<!-- DeleteCartItemAction -->
+		<action name="DeleteCartItemAction" class="com.internousdev.template.action.DeleteCartItemAction" method="execute">
+		<result name="success" type="chain">GoCartAction</result>
+		<result name="error">cart.jsp</result>
+		</action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<!-- 以下、先生のお手本 -->
 
 		<!-- GoHomeAction -->

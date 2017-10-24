@@ -47,7 +47,12 @@
 
 
 <td><s:property value="subtotal"/>円</td>
-<td style="width:80px;"><button class="actbtn" style="width:80px; margin-left:10px; margin-right:10px;">削除</button></td>
+<td style="width:80px;">
+<s:form action="DeleteCartItemAction" theme="simple">
+<s:hidden name="product_id" value='%{product_id}'/>
+<button class="actbtn" style="width:80px; margin-left:10px; margin-right:10px;">削除</button>
+</s:form>
+</td>
 </tr>
 </s:iterator>
 </table>

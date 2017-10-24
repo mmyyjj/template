@@ -32,9 +32,11 @@ public class DeleteCartItemAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 
+		System.out.println("eteCartItemAction-product_id:" + product_id);
+
 		String result = ERROR;
 		int successed_num = 0;
-		int user_id = ( (LoginInfoDTO)session.get("logininfo") ).getUser_id();
+		int user_id = ( (LoginInfoDTO)session.get("loginInfo") ).getUser_id();
 
 		DeleteCartItemDAO dcidao = new DeleteCartItemDAO();
 
@@ -43,6 +45,8 @@ public class DeleteCartItemAction extends ActionSupport implements SessionAware{
 		if(successed_num > 0){
 			result = SUCCESS;
 		}
+
+		System.out.println("DeleteCartItemAction-result:" + result);
 
 		return result;
 

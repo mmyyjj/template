@@ -21,7 +21,7 @@ public class DeleteCartItemDAO {
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
-			String sql_delete = "DLETE FROM cart WHERE user_id = ? AND product_id = ?";
+			String sql_delete = "DELETE FROM cart WHERE user_id = ? AND product_id = ?";
 
 			PreparedStatement ps = con.prepareStatement(sql_delete);
 
