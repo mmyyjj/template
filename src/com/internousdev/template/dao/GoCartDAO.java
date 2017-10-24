@@ -68,11 +68,11 @@ public class GoCartDAO {
 
 
 	/**
-	 * カート内の合計金額を返すメソッド
+	 * カート内の商品の小計を返すメソッド
 	 * */
-	public BigDecimal returnTotalPrice(int user_id){
+	public BigDecimal returnProductSubtotal(int user_id){
 
-		BigDecimal total_price = BigDecimal.valueOf(0);
+		BigDecimal product_subtotal = BigDecimal.valueOf(0);
 
 		try{
 
@@ -88,7 +88,7 @@ public class GoCartDAO {
 			ResultSet rs = ps.executeQuery();
 
 			if(rs.next()){
-				total_price = rs.getBigDecimal("SUM(subtotal)");
+				product_subtotal = rs.getBigDecimal("SUM(subtotal)");
 			}
 
 			if(con != null){
@@ -101,7 +101,7 @@ public class GoCartDAO {
 		e.printStackTrace();
 		}
 
-		return total_price;
+		return product_subtotal;
 
 	}
 

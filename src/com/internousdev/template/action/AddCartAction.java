@@ -54,7 +54,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		/*同じ商品が複数回カートに入れられたかを確認(重複チェック・カート情報更新を同時に行っています)*/
 		if (acdao.addItemNumber(user_id, product_id, Integer.parseInt(order_number)) > 0) {
 
-			result = SUCCESS;
+			result = "added";
 
 		} else {
 			/*カートに同じ商品がなかった場合は、新しくカートに追加する*/
@@ -65,6 +65,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 			}
 		}
 
+		System.out.println("AddCartAction-result:" + result);
 		return result;
 
 	}

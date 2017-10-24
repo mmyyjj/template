@@ -86,12 +86,16 @@ public class AddCartDAO {
 
 				ps = con.prepareStatement(sql_update);
 
-				if( (rs.getInt("order_number") + order_number) > 10){
+				if( order_number + (rs.getInt("order_number")) > 10){
 					order_number = 10;
+				} else {
+					order_number = order_number + rs.getInt("order_number");
 				}
 
 				ps.setInt(1, order_number);
+
 				ps.setInt(2, order_number);
+
 				ps.setInt(3, product_id);
 				ps.setInt(4, user_id);
 

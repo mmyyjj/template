@@ -62,9 +62,9 @@
 <!-- ここまでiterator処理 -->
 
 <br>
-<div style="text-align:center; font-size:18px">商品小計 <s:property value="total_price"/>円</div>
+<div style="text-align:center; font-size:18px">商品小計 <s:property value="product_subtotal"/>円</div>
 <div style="text-align:center; font-size:18px">プレゼント料金 <s:property value="gift_wrapping_fee"/>円</div>
-<div style="text-align:center; font-size:18px">合計 <s:property value="%{total_price + gift_wrapping_fee}"/>円</div>
+<div style="text-align:center; font-size:18px">合計 <s:property value="total_price"/>円</div>
 <br>
 <br>
 <hr>
