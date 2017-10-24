@@ -24,6 +24,9 @@ public class GoOrderInputAction extends ActionSupport{
 		String result = ERROR;
 
 		//TODO ここに日付リスト取得処理
+		/* sqlで、「今日の日付」＋7日後 から、さらに10日間までの日付を検索してリスト化する。
+		 *
+		 * */
 
 		return result;
 
