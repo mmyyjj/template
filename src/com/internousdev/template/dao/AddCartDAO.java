@@ -81,7 +81,7 @@ public class AddCartDAO {
 
 			/*重複する商品があった場合に、以下の処理*/
 			if(rs.next()){
-				String sql_update = "UPDATE cart set order_number = ?, subtotal = (? * unit_price)"
+				String sql_update = "UPDATE cart set order_number = (order_number + ?), subtotal = (? * unit_price)"
 						+ " WHERE product_id = ? AND user_id = ?";
 
 				ps = con.prepareStatement(sql_update);
