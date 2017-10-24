@@ -71,7 +71,7 @@ public class AddCartDAO {
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
-			String sql_select = "SELECT product_id from cart WHERE product_id = ? AND user_id = ? ";
+			String sql_select = "SELECT product_id, order_number from cart WHERE product_id = ? AND user_id = ? ";
 
 			PreparedStatement ps = con.prepareStatement(sql_select);
 			ps.setInt(1, product_id);
@@ -81,10 +81,15 @@ public class AddCartDAO {
 
 			/*重複する商品があった場合に、以下の処理*/
 			if(rs.next()){
-				String sql_update = "UPDATE cart set order_number = (order_number + ?), subtotal = (? * unit_price)"
+				String sql_update = "UPDATE cart SET order_number = ?, subtotal = (? * unit_price)"
 						+ " WHERE product_id = ? AND user_id = ?";
 
 				ps = con.prepareStatement(sql_update);
+
+				if( (rs.getInt("order_number") + order_number) > 10){
+					order_number = 10;
+				}
+
 				ps.setInt(1, order_number);
 				ps.setInt(2, order_number);
 				ps.setInt(3, product_id);

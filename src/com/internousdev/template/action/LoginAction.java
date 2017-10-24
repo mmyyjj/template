@@ -73,8 +73,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		if((LoginInfoDTO)session.get("loginInfo") != null){
 		System.out.println("セッションあり");
-			if(mail_address == ((LoginInfoDTO)session.get("loginInfo")).getMail_address()
-					&& password == ((LoginInfoDTO)session.get("loginInfo")).getPassword()){
+			if(mail_address.equals( ((LoginInfoDTO)session.get("loginInfo")).getMail_address() )
+					&& password.equals( ((LoginInfoDTO)session.get("loginInfo")).getPassword()) ){
 				user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
 				loginError_message = "";
 				result = "nowLogin";
