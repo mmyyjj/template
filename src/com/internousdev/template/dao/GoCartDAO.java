@@ -103,11 +103,7 @@ public class GoCartDAO {
 
 		return total_price;
 
-
 	}
-
-
-
 
 
 

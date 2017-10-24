@@ -3,6 +3,7 @@ package com.internousdev.template.dao;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.internousdev.template.util.DBConnector;
@@ -52,9 +53,58 @@ public class AddCartDAO {
 
 		return insert_num;
 
+	}
 
 
 
+	/**
+	 * 行を一つにまとめるメソッド<br>
+	 * 同じ商品が複数回カートに入れられたときに使用。
+	 * */
+	public int addItemNumber(int user_id, int product_id, int order_number){
+
+		int updated_num = 0;
+
+		try{
+
+			/*接続の準備*/
+			DBConnector dbc = new DBConnector();
+			Connection con = dbc.getConnection();
+
+			String sql_select = "SELECT product_id from cart WHERE product_id = ? AND user_id = ? ";
+
+			PreparedStatement ps = con.prepareStatement(sql_select);
+			ps.setInt(1, product_id);
+			ps.setInt(2, user_id);
+
+			ResultSet rs = ps.executeQuery();
+
+			/*重複する商品があった場合に、以下の処理*/
+			if(rs.next()){
+				String sql_update = "UPDATE cart set order_number = ?, subtotal = (? * unit_price)"
+						+ " WHERE product_id = ? AND user_id = ?";
+
+				ps = con.prepareStatement(sql_update);
+				ps.setInt(1, order_number);
+				ps.setInt(2, order_number);
+				ps.setInt(3, product_id);
+				ps.setInt(4, user_id);
+
+
+				updated_num = ps.executeUpdate();
+			}
+
+			if(con != null){
+				con.close();
+				ps.close();
+				rs.close();
+			}
+
+		}catch(SQLException e){
+		e.printStackTrace();
+		}
+
+		return updated_num;
 	}
 
 }

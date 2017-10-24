@@ -50,15 +50,19 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 
 		int user_id = lidto.getUser_id();
 		AddCartDAO acdao = new AddCartDAO();
-		System.out.println("user_id:" + user_id);
-		System.out.println("product_id:" + product_id);
-		System.out.println("unit_price:" + unit_price);
-		System.out.println("order_number:" + order_number);
 
-		int success_number = acdao.addCart(user_id, product_id, unit_price,Integer.parseInt(order_number));
+		/*同じ商品が複数回カートに入れられたかを確認(重複チェック・カート情報更新を同時に行っています)*/
+		if (acdao.addItemNumber(user_id, product_id, Integer.parseInt(order_number)) > 0) {
 
-		if(success_number > 0){
 			result = SUCCESS;
+
+		} else {
+			/*カートに同じ商品がなかった場合は、新しくカートに追加する*/
+			int success_number = acdao.addCart(user_id, product_id, unit_price,Integer.parseInt(order_number));
+			if(success_number > 0){
+				result = SUCCESS;
+
+			}
 		}
 
 		return result;
