@@ -1,5 +1,6 @@
 package com.internousdev.template.action;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,7 +29,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * 合計金額
 	 * */
-	private int toral_price;
+	private BigDecimal total_price;
 
 	/**
 	 * セッション
@@ -45,6 +46,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 		int user_id = ((LoginInfoDTO)session.get("loginInfo")).getUser_id();
 
 		cartItemList = gcdao.createCartItemList(user_id);
+		total_price = gcdao.returnTotalPrice(user_id);
 
 		if(cartItemList.size() > 0){
 			result = SUCCESS;
@@ -75,16 +77,16 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * @return toral_price
 	 */
-	public int getToral_price() {
-		return toral_price;
+	public BigDecimal getTotal_price() {
+		return total_price;
 	}
 
 
 	/**
 	 * @param toral_price セットする toral_price
 	 */
-	public void setToral_price(int toral_price) {
-		this.toral_price = toral_price;
+	public void setTotal_price(BigDecimal total_price) {
+		this.total_price = total_price;
 	}
 
 

@@ -1,5 +1,6 @@
 package com.internousdev.template.dao;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -64,4 +65,54 @@ public class GoCartDAO {
 		return cartItemList;
 
 	}
+
+
+	/**
+	 * カート内の合計金額を返すメソッド
+	 * */
+	public BigDecimal returnTotalPrice(int user_id){
+
+		BigDecimal total_price = BigDecimal.valueOf(0);
+
+		try{
+
+			/*接続の準備*/
+			DBConnector dbc = new DBConnector();
+			Connection con = dbc.getConnection();
+
+			String sql = "SELECT SUM(subtotal) from cart WHERE user_id = ?";
+
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, user_id);
+
+			ResultSet rs = ps.executeQuery();
+
+			if(rs.next()){
+				total_price = rs.getBigDecimal("SUM(subtotal)");
+			}
+
+			if(con != null){
+				con.close();
+				ps.close();
+				rs.close();
+			}
+
+		}catch(SQLException e){
+		e.printStackTrace();
+		}
+
+		return total_price;
+
+
+	}
+
+
+
+
+
+
+
+
+
+
 }

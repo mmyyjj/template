@@ -34,7 +34,7 @@
 
 <!-- ここに更新アクションの自動フォーム処理 -->
 
-<td><s:property value="unit_price"/></td>
+<td><s:property value="unit_price"/>円</td>
 <td><!-- name属性指定で値を渡せるように -->
 	<s:select list="{1,2,3,4,5,6,7,8,9,10}" name="order_number" value="%{order_number}" theme="simple">
 	</s:select>個
@@ -46,7 +46,7 @@
 
 
 
-<td><s:property value="subtotal"/></td>
+<td><s:property value="subtotal"/>円</td>
 <td style="width:80px;"><button class="actbtn" style="width:80px; margin-left:10px; margin-right:10px;">削除</button></td>
 </tr>
 </s:iterator>
@@ -55,7 +55,7 @@
 <!-- ここまでiterator処理 -->
 
 <br>
-<div style="text-align:center; font-size:18px">合計金額　1.000円</div>
+<div style="text-align:center; font-size:18px">合計金額 <s:property value="total_price"/>円</div>
 <br>
 <br>
 <hr>
