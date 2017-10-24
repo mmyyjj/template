@@ -7,7 +7,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.AddCartDAO;
-import com.internousdev.template.dto.LoginInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -46,9 +45,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 
 		String result = ERROR;
 
-		LoginInfoDTO lidto = (LoginInfoDTO)session.get("loginInfo");
-
-		int user_id = lidto.getUser_id();
+		int user_id = (int)session.get("user_id");
 		AddCartDAO acdao = new AddCartDAO();
 
 		/*同じ商品が複数回カートに入れられたかを確認(重複チェック・カート情報更新を同時に行っています)*/

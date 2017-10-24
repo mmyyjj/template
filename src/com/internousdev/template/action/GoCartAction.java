@@ -10,7 +10,6 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.GoCartDAO;
 import com.internousdev.template.dto.CartItemDTO;
-import com.internousdev.template.dto.LoginInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**カート画面を表示するためのアクション。ユーザー側で使用。<br>
@@ -53,7 +52,7 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 
 		GoCartDAO gcdao = new GoCartDAO();
 
-		int user_id = ((LoginInfoDTO)session.get("loginInfo")).getUser_id();
+		int user_id = (int)session.get("user_id");
 
 		cartItemList = gcdao.createCartItemList(user_id);
 

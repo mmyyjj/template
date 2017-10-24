@@ -6,7 +6,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.UpdateCartDAO;
-import com.internousdev.template.dto.LoginInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -42,7 +41,7 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 		String result = ERROR;
 
-		int user_id = ( (LoginInfoDTO)session.get("loginInfo")).getUser_id();
+		int user_id = (int)session.get("user_id");
 
 		UpdateCartDAO ucdao = new UpdateCartDAO();
 

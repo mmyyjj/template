@@ -6,7 +6,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.LogoutDAO;
-import com.internousdev.template.dto.LoginInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LogoutAction extends ActionSupport implements SessionAware {
@@ -24,14 +23,14 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 	public String execute(){
 		String result = ERROR;
 
-		/*セッションから、ユーザー情報を保持したdtoを取り出す*/
-		LoginInfoDTO lidto = (LoginInfoDTO)session.get("loginInfo");
+		/*セッションから、ユーザーIDを取り出す*/
+		int user_id = (int)session.get("user_id");
 
 		/*DAOのインスタンス化*/
 		LogoutDAO lodao = new LogoutDAO();
 
 		/*DAOのメソッドを実行し、ログアウトしたユーザーの情報があれば正常に完了したとみなす。*/
-		int logout_num = lodao.logout( lidto.getUser_id() );//このユーザーIDのユーザーを、ログアウトさせよ
+		int logout_num = lodao.logout(user_id);//このユーザーIDのユーザーを、ログアウトさせよ
 
 		if(logout_num > 0){
 			result = SUCCESS;

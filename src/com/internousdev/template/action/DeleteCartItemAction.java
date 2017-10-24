@@ -6,7 +6,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.DeleteCartItemDAO;
-import com.internousdev.template.dto.LoginInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -36,8 +35,7 @@ public class DeleteCartItemAction extends ActionSupport implements SessionAware{
 
 		String result = ERROR;
 		int successed_num = 0;
-		int user_id = ( (LoginInfoDTO)session.get("loginInfo") ).getUser_id();
-
+		int user_id = (int)session.get("user_id");
 		DeleteCartItemDAO dcidao = new DeleteCartItemDAO();
 
 		successed_num = dcidao.deleteCartItem(user_id, product_id);
