@@ -21,7 +21,9 @@
 <th style="width:50px"></th>
 <th>ABOUT</th>
 <th>MY PAGE</th>
-<th>CART</th>
+<th>
+<a href="GoCartAction">CART</a>
+</th>
 
 <th>
   <a href="LogoutAction">LOGOUT</a>
