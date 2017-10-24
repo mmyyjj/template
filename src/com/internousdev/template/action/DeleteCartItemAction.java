@@ -38,7 +38,7 @@ public class DeleteCartItemAction extends ActionSupport implements SessionAware{
 
 		DeleteCartItemDAO dcidao = new DeleteCartItemDAO();
 
-		successed_num = dcidao.deleteCartItem(user_id, successed_num);
+		successed_num = dcidao.deleteCartItem(user_id, product_id);
 
 		if(successed_num > 0){
 			result = SUCCESS;
