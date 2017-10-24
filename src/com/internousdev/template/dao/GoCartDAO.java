@@ -105,7 +105,44 @@ public class GoCartDAO {
 
 	}
 
+	/**
+	 * プレゼント包装料金の合計を出すメソッド
+	 * */
+	public BigDecimal returnGiftWrappingFee(int user_id){
 
+		BigDecimal gift_wrapping_fee = BigDecimal.valueOf(100);
+
+		try{
+
+			/*接続の準備*/
+			DBConnector dbc = new DBConnector();
+			Connection con = dbc.getConnection();
+
+			String sql = "SELECT SUM(number_for_gift) from cart WHERE user_id = ?";
+
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, user_id);
+
+			ResultSet rs = ps.executeQuery();
+
+			if(rs.next()){
+				int total_number = rs.getInt("SUM(number_for_gift)");
+				gift_wrapping_fee = gift_wrapping_fee.multiply(BigDecimal.valueOf(total_number));
+			}
+
+			if(con != null){
+				con.close();
+				ps.close();
+				rs.close();
+			}
+
+		}catch(SQLException e){
+		e.printStackTrace();
+		}
+
+		return gift_wrapping_fee;
+
+	}
 
 
 

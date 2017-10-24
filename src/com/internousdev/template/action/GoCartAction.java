@@ -27,6 +27,11 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	private List<CartItemDTO> cartItemList = new ArrayList<CartItemDTO>();
 
 	/**
+	 * プレゼント包装料
+	 * */
+	private BigDecimal gift_wrapping_fee;
+
+	/**
 	 * 合計金額
 	 * */
 	private BigDecimal total_price;
@@ -46,9 +51,10 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 		int user_id = ((LoginInfoDTO)session.get("loginInfo")).getUser_id();
 
 		cartItemList = gcdao.createCartItemList(user_id);
-		total_price = gcdao.returnTotalPrice(user_id);
 
 		if(cartItemList.size() > 0){
+			total_price = gcdao.returnTotalPrice(user_id);
+			gift_wrapping_fee = gcdao.returnGiftWrappingFee(user_id);
 			result = SUCCESS;
 		}
 
@@ -71,6 +77,22 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 	 */
 	public void setCartItemList(List<CartItemDTO> cartItemList) {
 		this.cartItemList = cartItemList;
+	}
+
+
+	/**
+	 * @return gift_wrapping_fee
+	 */
+	public BigDecimal getGift_wrapping_fee() {
+		return gift_wrapping_fee;
+	}
+
+
+	/**
+	 * @param gift_wrapping_fee セットする gift_wrapping_fee
+	 */
+	public void setGift_wrapping_fee(BigDecimal gift_wrapping_fee) {
+		this.gift_wrapping_fee = gift_wrapping_fee;
 	}
 
 
