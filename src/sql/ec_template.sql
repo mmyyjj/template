@@ -91,20 +91,13 @@ CREATE TABLE history_outline_table(
  user_id INT NOT NULL,
  total_price DECIMAL(10,0) NOT NULL,
  order_date DATETIME NOT NULL,
+ payment_method_id INT(1) NOT NULL,
  delivery_date DATE NOT NULL,
  delivery_time_id INT(1) NOT NULL,
  delete_flg INT(1) NOT NULL,
  PRIMARY KEY(order_id),
  INDEX(user_id)
 );
-
--- 配達時間テーブルの作成
-CREATE TABLE delivery_time_table(
- delivery_time_id INT(1) NOT NULL,
- delivery_time_string VARCHAR(10) NOT NULL,
- PRIMARY KEY(delivery_time_id)
-);
-
 
 -- 注文履歴(詳細)テーブルの作成
 
@@ -115,6 +108,22 @@ CREATE TABLE history_detail_table(
  order_number INT NOT NULL,
  number_for_gift INT NOT NULL,
  subtotal DECIMAL(10,0)
+);
+
+
+-- 配達時間テーブルの作成
+CREATE TABLE delivery_time_table(
+ delivery_time_id INT(1) NOT NULL,
+ delivery_time_string VARCHAR(10) NOT NULL,
+ PRIMARY KEY(delivery_time_id)
+);
+
+
+-- 支払い方法テーブルの作成
+CREATE TABLE payment_method_table(
+ payment_method_id INT(1) NOT NULL,
+ payment_method_string VARCHAR(10) NOT NULL,
+ PRIMARY KEY(payment_method_id)
 );
 
 
