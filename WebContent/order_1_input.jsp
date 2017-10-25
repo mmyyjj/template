@@ -95,12 +95,7 @@
 <tr>
  <th>有効期限</th>
   <td>
-   <select>
-   <option value="2017">2017</option>
-   <option value="2018">2018</option>
-   <option value="2019">2019</option>
-   <option value="2020">2020</option>
-   </select>
+    <s:select name="delivery_date" list="yearList" theme="simple"/>
    年
  </td>
  <td>

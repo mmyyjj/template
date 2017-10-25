@@ -26,6 +26,11 @@ public class GoOrderInputAction extends ActionSupport implements SessionAware{
 	private List<String> timeList = new ArrayList<String>();
 
 	/**
+	 * カード有効期限(年)リスト
+	 * */
+	private List<String> yearList = new ArrayList<String>();
+
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object>();
@@ -40,8 +45,10 @@ public class GoOrderInputAction extends ActionSupport implements SessionAware{
 		TimeSetDAO tsdao = new TimeSetDAO();
 
 		timeList = tsdao.createTimeList();
+		yearList = tsdao.createYearList();
+		System.out.println("GoOrderInputAction-yearList" + yearList.size());
 
-		if(timeList.size() > 0){
+		if(timeList.size() > 0 && yearList.size() > 0){
 			result = SUCCESS;
 		}
 
@@ -61,6 +68,20 @@ public class GoOrderInputAction extends ActionSupport implements SessionAware{
 	 */
 	public void setTimeList(List<String> timeList) {
 		this.timeList = timeList;
+	}
+
+	/**
+	 * @return yearList
+	 */
+	public List<String> getYearList() {
+		return yearList;
+	}
+
+	/**
+	 * @param yearList セットする yearList
+	 */
+	public void setYearList(List<String> yearList) {
+		this.yearList = yearList;
 	}
 
 	/**
