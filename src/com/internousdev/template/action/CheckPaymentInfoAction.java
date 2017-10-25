@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.template.dao.CheckCreditCardDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -28,14 +29,9 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 	private int delivery_time_id;
 
 	/**
-	 * 配達希望時間帯(文字列)
+	 * お支払い方法(ID)
 	 * */
-	private String delivery_time_string;
-
-	/**
-	 * お支払い方法
-	 * */
-	private String payment_method;
+	private int payment_method_id;
 
 	/**
 	 * カードの種類
@@ -68,14 +64,14 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 	private String holder_name;
 
 	/**
-	 * 有効期限(年)
-	 * */
-	private String expiration_year;
-
-	/**
 	 * 有効期限(月)
 	 * */
 	private String expiration_month;
+
+	/**
+	 * 有効期限(年)
+	 * */
+	private String expiration_year;
 
 	/**
 	 * セキュリティコード
@@ -83,29 +79,57 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 	private String security_code;
 
 	/**
+	 * エラーメッセージ<br>
+	 * カード情報の照合でエラーが出たときに使用
+	 * */
+	private String error_message;
+
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object>();
 
+	/**
+	 * 代金引換のID
+	 * */
+	public static final int CASH_ON_DELIVERY = 1;
+
+	/**
+	 * クレジットカードのID
+	 * */
+	public static final int CREDIT_CARD = 2;
 
 	public String execute(){
 
-		String result = SUCCESS;
+		String result = ERROR;
+
+		/*共通の処理*/
+		session.put("delivery_date", delivery_date);
+		session.put("delivery_time_id", delivery_time_id);
+		session.put("payment_method_id", payment_method_id);
+
+		/*代引きとクレジットでif分岐*/
+		if(payment_method_id == CASH_ON_DELIVERY){
+			session.put("delivery_fee", 250);
+			result = SUCCESS;
+			return result;
+
+		} else if(payment_method_id == CREDIT_CARD) {
+
+			String card_number_all = card_number_1 + card_number_2 + card_number_3 + card_number_4;
+
+			//TODO DAOでDBと情報を照合する処理
+			CheckCreditCardDAO cccdao = new CheckCreditCardDAO();
+
+			if(cccdao.sheckCreditInfo(card_type,card_number_all,holder_name,expiration_month, expiration_year,security_code)){
+				result = SUCCESS;
+			}
+		}
 
 		return result;
+
+
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	/**
@@ -115,12 +139,14 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return delivery_date;
 	}
 
+
 	/**
 	 * @param delivery_date セットする delivery_date
 	 */
 	public void setDelivery_date(String delivery_date) {
 		this.delivery_date = delivery_date;
 	}
+
 
 	/**
 	 * @return delivery_time_id
@@ -129,6 +155,7 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return delivery_time_id;
 	}
 
+
 	/**
 	 * @param delivery_time_id セットする delivery_time_id
 	 */
@@ -136,33 +163,22 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		this.delivery_time_id = delivery_time_id;
 	}
 
-	/**
-	 * @return delivery_time_string
-	 */
-	public String getDelivery_time_string() {
-		return delivery_time_string;
-	}
 
 	/**
-	 * @param delivery_time_string セットする delivery_time_string
+	 * @return payment_method_id
 	 */
-	public void setDelivery_time_string(String delivery_time_string) {
-		this.delivery_time_string = delivery_time_string;
+	public int getPayment_method_id() {
+		return payment_method_id;
 	}
 
-	/**
-	 * @return payment_method
-	 */
-	public String getPayment_method() {
-		return payment_method;
-	}
 
 	/**
-	 * @param payment_method セットする payment_method
+	 * @param payment_method_id セットする payment_method_id
 	 */
-	public void setPayment_method(String payment_method) {
-		this.payment_method = payment_method;
+	public void setPayment_method_id(int payment_method_id) {
+		this.payment_method_id = payment_method_id;
 	}
+
 
 	/**
 	 * @return card_type
@@ -171,12 +187,14 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return card_type;
 	}
 
+
 	/**
 	 * @param card_type セットする card_type
 	 */
 	public void setCard_type(String card_type) {
 		this.card_type = card_type;
 	}
+
 
 	/**
 	 * @return card_number_1
@@ -185,12 +203,14 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return card_number_1;
 	}
 
+
 	/**
 	 * @param card_number_1 セットする card_number_1
 	 */
 	public void setCard_number_1(String card_number_1) {
 		this.card_number_1 = card_number_1;
 	}
+
 
 	/**
 	 * @return card_number_2
@@ -199,12 +219,14 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return card_number_2;
 	}
 
+
 	/**
 	 * @param card_number_2 セットする card_number_2
 	 */
 	public void setCard_number_2(String card_number_2) {
 		this.card_number_2 = card_number_2;
 	}
+
 
 	/**
 	 * @return card_number_3
@@ -213,12 +235,14 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return card_number_3;
 	}
 
+
 	/**
 	 * @param card_number_3 セットする card_number_3
 	 */
 	public void setCard_number_3(String card_number_3) {
 		this.card_number_3 = card_number_3;
 	}
+
 
 	/**
 	 * @return card_number_4
@@ -227,12 +251,14 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return card_number_4;
 	}
 
+
 	/**
 	 * @param card_number_4 セットする card_number_4
 	 */
 	public void setCard_number_4(String card_number_4) {
 		this.card_number_4 = card_number_4;
 	}
+
 
 	/**
 	 * @return holder_name
@@ -241,25 +267,12 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return holder_name;
 	}
 
+
 	/**
 	 * @param holder_name セットする holder_name
 	 */
 	public void setHolder_name(String holder_name) {
 		this.holder_name = holder_name;
-	}
-
-	/**
-	 * @return expiration_year
-	 */
-	public String getExpiration_year() {
-		return expiration_year;
-	}
-
-	/**
-	 * @param expiration_year セットする expiration_year
-	 */
-	public void setExpiration_year(String expiration_year) {
-		this.expiration_year = expiration_year;
 	}
 
 	/**
@@ -276,12 +289,30 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		this.expiration_month = expiration_month;
 	}
 
+
+	/**
+	 * @return expiration_year
+	 */
+	public String getExpiration_year() {
+		return expiration_year;
+	}
+
+
+	/**
+	 * @param expiration_year セットする expiration_year
+	 */
+	public void setExpiration_year(String expiration_year) {
+		this.expiration_year = expiration_year;
+	}
+
+
 	/**
 	 * @return security_code
 	 */
 	public String getSecurity_code() {
 		return security_code;
 	}
+
 
 	/**
 	 * @param security_code セットする security_code
@@ -290,6 +321,23 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		this.security_code = security_code;
 	}
 
+
+	/**
+	 * @return error_message
+	 */
+	public String getError_message() {
+		return error_message;
+	}
+
+
+	/**
+	 * @param error_message セットする error_message
+	 */
+	public void setError_message(String error_message) {
+		this.error_message = error_message;
+	}
+
+
 	/**
 	 * @return session
 	 */
@@ -297,12 +345,22 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		return session;
 	}
 
+
 	/**
 	 * @param session セットする session
 	 */
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
+
+
+
+
+
+
+
+
 
 
 

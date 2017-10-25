@@ -56,7 +56,7 @@
 	<tr>
 	<td style="border:0px">
 	<label>
-	<input type="radio" name="payment_method" value="'cash_on_derivery'" onClick="changeDisabled()"  checked/>
+	<input type="radio" name="payment_method_id" value="%{CASH_ON_DELIVERY}" onClick="changeDisabled()"  checked/>
 	  代金引換
 	  </label>
 	  (※手数料<font color="red" >250円</font>がかかります)
@@ -65,7 +65,7 @@
 	<tr>
 	<td style="border:0px">
 	<label>
-	<input type="radio" name="payment_method" value="'credit_card'" onClick="changeDisabled()"/>
+	<input type="radio" name="payment_method_id" value="%{CREDIT_CARD}" onClick="changeDisabled()"/>
 	  クレジットカード決済
 	</label>
 	</td>
