@@ -83,7 +83,7 @@
 	<table class="visible_table" style="width:400px">
 	<tr>
 	 <th style="width:160px;">クレジットカード種類</th>
-	 <td colspan="2"><s:select name="card_type" list='{"testA","testB","testC"}'/></td>
+	 <td colspan="2"><s:select name="card_type" list='{"TEST_A","TEST_B","TEST_C"}'/></td>
 	</tr>
 	<tr>
 	 <th>カード番号(16桁)</th>
