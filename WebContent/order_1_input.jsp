@@ -18,18 +18,23 @@
 <div class="contents" style="height:100％; padding-top:5px;">
 <div style="text-align:right; margin-right:20px;"><b>ご注文情報入力</b>_ご注文情報確認_お手続き完了</div>
 
+<!-- ここからまるっとs:form処理 -->
+<s:form action="payment_input.jsp" theme="simple">
+
 <br>
 <h1>ご注文情報の入力</h1>
 <h3>-----------------【1/2】お届け日の指定------------------</h3>
 <small>お届けはご注文日の3日後からご指定が可能です。<br>
 お日にち、時間帯を以下のフォームからお選びください</small>
 <br>
-<table class="visible_table" style="width:540px">
+<table class="visible_table" style="width:400px">
 <tr>
-<th style="width:80px">お日にち</th>
+<th style="width:80px">配達希望日</th>
 <td>
   <s:select name="delivery_date" list="timeList" theme="simple"/>
 </td>
+</tr>
+<tr>
 <th style="width:80px">時間帯</th>
 <td>
 <label><input name="delivery_time" value="%{1}" type="radio" checked/>朝～お昼</label>
@@ -39,12 +44,11 @@
 </tr>
 </table>
 
+
 <br>
 
 <h3>------------------【2/2】お支払い情報の入力-------------------</h3>
 
-
-<form action="payment_input.jsp">
 <small>お支払い方法を選んでください。</small><br>
 
 <table style="margin:0 auto; text-align:left;">
@@ -68,18 +72,25 @@
 クレジットカードをご利用の方は<br>
 以下のフォームに情報を入力してください。
 </small>
-<table class="visible_table" style="width:540px">
+<table class="visible_table" style="width:400px">
 <tr>
- <th>クレジットカード種類</th>
- <td colspan="2"></td>
+ <th style="width:160px;">クレジットカード種類</th>
+ <td colspan="2"><s:select name="card_type" list='{"testA","testB","testC"}' width="50px"/></td>
 </tr>
 <tr>
- <th>カード番号</th>
- <td colspan="2"></td>
+ <th>カード番号(16桁)</th>
+ <td colspan="2">
+   <input type="text" name="card_number_1" style="width:40px;" pattern="[0-9]{4}" title="数字で4桁ずつ入力してください" required/>-
+   <input type="text" name="card_number_2" style="width:40px;" pattern="[0-9]{4}" title="数字で4桁ずつ入力してください" required/>-
+   <input type="text" name="card_number_3" style="width:40px;" pattern="[0-9]{4}" title="数字で4桁ずつ入力してください" required/>-
+   <input type="text" name="card_number_4" style="width:40px;" pattern="[0-9]{4}" title="数字で4桁ずつ入力してください" required/>
+ </td>
 </tr>
 <tr>
  <th>カード名義</th>
-  <td colspan="2"></td>
+  <td colspan="2">
+   <input type="text" name="holder_name" pattern="[a-z|A-Z| |]{1,}" required/>
+  </td>
 </tr>
 <tr>
  <th>有効期限</th>
@@ -93,26 +104,15 @@
    年
  </td>
  <td>
-   <select>
-     <option value="1">1</option>
-     <option value="2">2</option>
-     <option value="3">3</option>
-     <option value="4">4</option>
-     <option value="5">5</option>
-     <option value="6">6</option>
-     <option value="7">7</option>
-     <option value="8">8</option>
-     <option value="9">9</option>
-     <option value="10">10</option>
-     <option value="11">11</option>
-     <option value="12">12</option>
-   </select>
+   <s:select name="expiration_month" list="{1,2,3,4,5,6,7,8,9,10,11,12}"/>
 	月
  </td>
 </tr>
 <tr>
  <th>セキュリティコード</th>
- <td colspan="2"></td>
+ <td colspan="2">
+   <input type="text" name="security_code" pattern="[0-9]" required/>
+ </td>
 </tr>
 </table>
 <br>
@@ -128,7 +128,7 @@
   <td style="border:0px"><button class="actbtn">お買い物に戻る</button></td>
 </tr>
 </table>
-</form>
+</s:form>
 <div style="height:80px">
 </div>
 </div>
