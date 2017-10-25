@@ -121,18 +121,8 @@
      	<td style="border:0px"></td>
        <td style="width:240px;text-align:right; padding-right:10px; border:0px;">
          購入数:
-         <select name="order_number">
-         	<option value="1">1</option>
-         	<option value="2">2</option>
-         	<option value="3">3</option>
-         	<option value="4">4</option>
-         	<option value="5">5</option>
-         	<option value="6">6</option>
-         	<option value="7">7</option>
-         	<option value="8">8</option>
-         	<option value="9">9</option>
-         	<option value="10">10</option>
-         </select>個
+         <s:select name="order_number" list="{1,2,3,4,5,6,7,8,9,10}"  theme="simple">
+         </s:select>個
        </td>
        <td style="border:0px;">
        <s:hidden name="product_id" value='%{product_id}' />

@@ -26,115 +26,111 @@
 <!-- ここからまるっとs:form処理 -->
 <s:form name="form" action="payment_input.jsp" theme="simple">
 
-<br>
-<h1>ご注文情報の入力</h1>
-<h3>-----------------【1/2】お届け日の指定------------------</h3>
-<small>お届けはご注文日の3日後からご指定が可能です。<br>
-お日にち、時間帯を以下のフォームからお選びください</small>
-<br>
-<table class="visible_table" style="width:400px">
-<tr>
-<th style="width:80px">配達希望日</th>
-<td>
-  <s:select name="delivery_date" list="timeList" theme="simple"/>
-</td>
-</tr>
-<tr>
-<th style="width:80px">時間帯</th>
-<td>
-<label><input name="delivery_time" value="%{1}" type="radio" checked/>朝～お昼</label>
-<label><input name="delivery_time" value="%{2}" type="radio" />お昼～夕方</label>
-<label><input name="delivery_time" value="%{3}" type="radio" />夕方～夜</label>
-</td>
-</tr>
-</table>
+	<br>
+	<h1>ご注文情報の入力</h1>
+	<h3>-----------------【1/2】お届け日の指定------------------</h3>
+	<small>お届けはご注文日の3日後からご指定が可能です。<br>
+	お日にち、時間帯を以下のフォームからお選びください</small>
+	<br>
+	<table class="visible_table" style="width:400px">
+	<tr>
+	<th style="width:80px">配達希望日</th>
+	<td>
+	  <s:select name="delivery_date" list="timeList" theme="simple"/>
+	</td>
+	<th style="width:80px">時間帯</th>
+	<td>
+	<s:select name="delivery_time_id" list='{"朝～昼","昼～夕方","夕方～夜"}' value="{1,2,3}"/>
+	</td>
+	</tr>
+	</table>
 
 
-<br>
+	<br>
 
-<h3>------------------【2/2】お支払い情報の入力-------------------</h3>
+	<h3>------------------【2/2】お支払い情報の入力-------------------</h3>
 
-<small>お支払い方法を選んでください。</small><br>
+	<small>お支払い方法を選んでください。</small><br>
 
-<table style="margin:0 auto; text-align:left;">
-<tr>
-<td style="border:0px">
-<label>
-<input type="radio" name="payment_method" value="'cash_on_derivery'" onClick="changeDisabled()"  checked/>
-  代金引換
-  </label>
-  (※手数料<font color="red" >250円</font>がかかります)
-</td>
-</tr>
-<tr>
-<td style="border:0px">
-<label>
-<input type="radio" name="payment_method" value="'credit_card'" onClick="changeDisabled()"/>
-  クレジットカード決済
-</label>
-</td>
-</tr>
-</table>
-<br>
+	<table style="margin:0 auto; text-align:left;">
+	<tr>
+	<td style="border:0px">
+	<label>
+	<input type="radio" name="payment_method" value="'cash_on_derivery'" onClick="changeDisabled()"  checked/>
+	  代金引換
+	  </label>
+	  (※手数料<font color="red" >250円</font>がかかります)
+	</td>
+	</tr>
+	<tr>
+	<td style="border:0px">
+	<label>
+	<input type="radio" name="payment_method" value="'credit_card'" onClick="changeDisabled()"/>
+	  クレジットカード決済
+	</label>
+	</td>
+	</tr>
+	</table>
+	<br>
 
 
 
 
-<small>
-クレジットカードをご利用の方は<br>
-以下のフォームに情報を入力してください。
-</small>
-<table class="visible_table" style="width:400px">
-<tr>
- <th style="width:160px;">クレジットカード種類</th>
- <td colspan="2"><s:select name="card_type" list='{"testA","testB","testC"}'/></td>
-</tr>
-<tr>
- <th>カード番号(16桁)</th>
- <td colspan="2">
-   <input type="text" name="card_number_1" style="width:40px;" pattern="[0-9]{4}" title="数字で4桁ずつ入力してください" required/>-
-   <input type="text" name="card_number_2" style="width:40px;" pattern="[0-9]{4}" title="数字で4桁ずつ入力してください" required/>-
-   <input type="text" name="card_number_3" style="width:40px;" pattern="[0-9]{4}" title="数字で4桁ずつ入力してください" required/>-
-   <input type="text" name="card_number_4" style="width:40px;" pattern="[0-9]{4}" title="数字で4桁ずつ入力してください" required/>
- </td>
-</tr>
-<tr>
- <th>カード名義</th>
-  <td colspan="2">
-   <input type="text" name="holder_name" pattern="[a-z|A-Z| |]{1,}" required/>
-  </td>
-</tr>
-<tr>
- <th>有効期限</th>
-  <td>
-    <s:select name="expiration_year" list="yearList" theme="simple"/>
-   年
- </td>
- <td>
-   <s:select name="expiration_month" list="{1,2,3,4,5,6,7,8,9,10,11,12}"/>
-	月
- </td>
-</tr>
-<tr>
- <th>セキュリティコード</th>
- <td colspan="2">
-   <input type="text" name="security_code" pattern="[0-9]" required/>
- </td>
-</tr>
-</table>
-<br>
-<hr>
+	<small>
+	クレジットカードをご利用の方は<br>
+	以下のフォームに情報を入力してください。
+	</small>
+	<table class="visible_table" style="width:400px">
+	<tr>
+	 <th style="width:160px;">クレジットカード種類</th>
+	 <td colspan="2"><s:select name="card_type" list='{"testA","testB","testC"}'/></td>
+	</tr>
+	<tr>
+	 <th>カード番号(16桁)</th>
+	 <td colspan="2">
+	   <input type="text" name="card_number_1" style="width:40px;" pattern="[0-9]{4}" required/>-
+	   <input type="text" name="card_number_2" style="width:40px;" pattern="[0-9]{4}" required/>-
+	   <input type="text" name="card_number_3" style="width:40px;" pattern="[0-9]{4}" required/>-
+	   <input type="text" name="card_number_4" style="width:40px;" pattern="[0-9]{4}" required/>
+	 </td>
+	</tr>
+	<tr>
+	 <th>カード名義</th>
+	  <td colspan="2">
+	   <input type="text" name="holder_name" pattern="[a-z|A-Z| |]{1,}" required/>
+	  </td>
+	</tr>
+	<tr>
+	 <th>有効期限</th>
+	  <td>
+	    <s:select name="expiration_year" list="yearList" theme="simple"/>
+	   年
+	 </td>
+	 <td>
+	   <s:select name="expiration_month" list="{1,2,3,4,5,6,7,8,9,10,11,12}"/>
+		月
+	 </td>
+	</tr>
+	<tr>
+	 <th>セキュリティコード</th>
+	 <td colspan="2">
+	   <input type="text" name="security_code" pattern="[0-9]" required/>
+	 </td>
+	</tr>
+	</table>
+	<br>
+	<hr>
 
-<br>
-<!-- 操作ボタンの部分 -->
-<table style="margin:0 auto; height:120px;">
-<tr>
-  <td style="border:0px"><button class="actbtn">確認</button></td>
-</tr>
-<tr>
-  <td style="border:0px"><button class="actbtn">お買い物に戻る</button></td>
-</tr>
-</table>
+	<br>
+	<!-- 操作ボタンの部分 -->
+	<table style="margin:0 auto; height:120px;">
+	<tr>
+	  <td style="border:0px"><button class="actbtn">確認</button></td>
+	</tr>
+	<tr>
+	  <td style="border:0px"><button class="actbtn">お買い物に戻る</button></td>
+	</tr>
+	</table>
 </s:form>
 
 
