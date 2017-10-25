@@ -45,6 +45,13 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 
 		String result = ERROR;
 
+		/*はじめにログイン中か、そうでないかをチェック。
+		 * ユーザーIDがセッションに登録されていなければ、ゲストと判断。ログインページに遷移*/
+		if(session.get("user_id") == null){
+			result = "guest";
+			return result;
+		}
+
 		int user_id = (int)session.get("user_id");
 		AddCartDAO acdao = new AddCartDAO();
 

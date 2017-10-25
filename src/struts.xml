@@ -46,8 +46,9 @@
 		<!-- AddCartAction -->
 		<action name="AddCartAction" class="com.internousdev.template.action.AddCartAction" method="execute">
 		<result name="success" type="chain">GoCartAction</result>
-		<result name="added" type="chain">GoCartAction</result>
 		<result name="error">itemList.jsp</result>
+		<result name="added" type="chain">GoCartAction</result>
+		<result name="guest" type="chain">GoLoginPageAction</result>
 		</action>
 
 		<!-- GoCartAction -->
