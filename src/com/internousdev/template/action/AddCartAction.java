@@ -20,7 +20,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	 * 注文数<br>
 	 * フォームからの入力のためStringで処理
 	 * */
-	private String order_number;
+	private int order_number;
 
 	/**
 	 * 商品ID
@@ -49,13 +49,13 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		AddCartDAO acdao = new AddCartDAO();
 
 		/*同じ商品が複数回カートに入れられたかを確認(重複チェック・カート情報更新を同時に行っています)*/
-		if (acdao.addItemNumber(user_id, product_id, Integer.parseInt(order_number)) > 0) {
+		if (acdao.addItemNumber(user_id, product_id, order_number) > 0) {
 
 			result = "added";
 
 		} else {
 			/*カートに同じ商品がなかった場合は、新しくカートに追加する*/
-			int success_number = acdao.addCart(user_id, product_id, unit_price,Integer.parseInt(order_number));
+			int success_number = acdao.addCart(user_id, product_id, unit_price,order_number);
 			if(success_number > 0){
 				result = SUCCESS;
 
@@ -71,7 +71,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * @return order_number
 	 */
-	public String getOrder_number() {
+	public int getOrder_number() {
 		return order_number;
 	}
 
@@ -79,7 +79,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * @param order_number セットする order_number
 	 */
-	public void setOrder_number(String order_number) {
+	public void setOrder_number(int order_number) {
 		this.order_number = order_number;
 	}
 

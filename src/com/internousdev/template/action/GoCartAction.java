@@ -56,6 +56,8 @@ public class GoCartAction extends ActionSupport implements SessionAware{
 
 		cartItemList = gcdao.createCartItemList(user_id);
 
+		session.put("cartItemList", cartItemList);
+
 		if(cartItemList.size() > 0){
 			product_subtotal = gcdao.returnProductSubtotal(user_id);
 			gift_wrapping_fee = gcdao.returnGiftWrappingFee(user_id);
