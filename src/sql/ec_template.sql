@@ -131,7 +131,7 @@ CREATE TABLE payment_method_table(
 
 -- クレジットカード(架空)テーブルの作成・データ挿入
 
-CREATE TABLE test_creditcard_table(
+CREATE TABLE credit_card_table(
  card_register_id INT NOT NULL AUTO_INCREMENT,
  card_type VARCHAR(20) NOT NULL,
  card_number VARCHAR(16) NOT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE test_creditcard_table(
  UNIQUE INDEX(card_type)
 );
 
-INSERT INTO test_creditcard_table VALUES
+INSERT INTO credit_card_table VALUES
 ( 0, 'TEST_A', '0000111122223333', 'testuser', '10', '2019', '123'),
 ( 0, 'TEST_B', '0000444455556666', 'testuser', '11', '2020', '456'),
 ( 0, 'TEST_C', '0000777788889999', 'testuser', '12', '2021', '789');
