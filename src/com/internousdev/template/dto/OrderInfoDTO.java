@@ -48,17 +48,17 @@ public class OrderInfoDTO {
 	/**
 	 * 有効期限(月)
 	 * */
-	private int expiration_month;
+	private String expiration_month;
 
 	/**
 	 * 有効期限(年)
 	 * */
-	private int expiration_year;
+	private String expiration_year;
 
 	/**
 	 * セキュリティコード
 	 * */
-	private int security_code;
+	private String security_code;
 
 	/**
 	 * 配達希望日取得メソッド
@@ -176,7 +176,7 @@ public class OrderInfoDTO {
 	 * 有効期限(月)取得メソッド
 	 * @return expiration_month
 	 */
-	public int getExpiration_month() {
+	public String getExpiration_month() {
 		return expiration_month;
 	}
 
@@ -184,7 +184,7 @@ public class OrderInfoDTO {
 	 * 有効期限(月)格納メソッド
 	 * @param expiration_month セットする expiration_month
 	 */
-	public void setExpiration_month(int expiration_month) {
+	public void setExpiration_month(String expiration_month) {
 		this.expiration_month = expiration_month;
 	}
 
@@ -192,7 +192,7 @@ public class OrderInfoDTO {
 	 * 有効期限(年)取得メソッド
 	 * @return expiration_year
 	 */
-	public int getExpiration_year() {
+	public String getExpiration_year() {
 		return expiration_year;
 	}
 
@@ -200,7 +200,7 @@ public class OrderInfoDTO {
 	 * 有効期限(年)格納メソッド
 	 * @param expiration_year セットする expiration_year
 	 */
-	public void setExpiration_year(int expiration_year) {
+	public void setExpiration_year(String expiration_year) {
 		this.expiration_year = expiration_year;
 	}
 
@@ -208,7 +208,7 @@ public class OrderInfoDTO {
 	 * セキュリティコード取得メソッド
 	 * @return security_code
 	 */
-	public int getSecurity_code() {
+	public String getSecurity_code() {
 		return security_code;
 	}
 
@@ -216,7 +216,7 @@ public class OrderInfoDTO {
 	 * セキュリティコード格納メソッド
 	 * @param security_code セットする security_code
 	 */
-	public void setSecurity_code(int security_code) {
+	public void setSecurity_code(String security_code) {
 		this.security_code = security_code;
 	}
 
