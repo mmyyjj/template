@@ -134,7 +134,7 @@ CREATE TABLE payment_method_table(
 CREATE TABLE credit_card_table(
  card_register_id INT NOT NULL AUTO_INCREMENT,
  card_type VARCHAR(20) NOT NULL,
- card_number VARCHAR(16) NOT NULL,
+ card_number VARCHAR(20) NOT NULL,
  holder_name VARCHAR(50) NOT NULL,
  expiration_month VARCHAR(2) NOT NULL,
  expiration_year VARCHAR(4) NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE credit_card_table(
 );
 
 INSERT INTO credit_card_table VALUES
-( 0, 'TEST_A', '0000111122223333', 'testuser', '10', '2019', '123'),
-( 0, 'TEST_B', '0000444455556666', 'testuser', '11', '2020', '456'),
-( 0, 'TEST_C', '0000777788889999', 'testuser', '12', '2021', '789');
+( 0, 'TEST_A', '0000-1111-2222-3333', 'testuser', '10', '2019', '123'),
+( 0, 'TEST_B', '0000-4444-5555-6666', 'testuser', '11', '2020', '456'),
+( 0, 'TEST_C', '0000-7777-8888-9999', 'testuser', '12', '2021', '789');
 
