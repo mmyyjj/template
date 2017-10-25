@@ -17,22 +17,29 @@ public class CheckCreditCardDAO {
 
 
 
-	public boolean sheckCreditInfo (String card_type, String card_number, String holder_name,String expiration_month,
+	public int checkCreditInfo (String card_type, String card_number, String holder_name,String expiration_month,
 									String expiration_year, String security_code){
 
-		boolean result = false;
+		int selected_num = 0;
+
+		System.out.println("CCCDAO-1:" + card_type);
+		System.out.println("CCCDAO-2:" + card_number);
+		System.out.println("CCCDAO-3:" + holder_name);
+		System.out.println("CCCDAO-4:" + expiration_month);
+		System.out.println("CCCDAO-5:" + expiration_year);
+		System.out.println("CCCDAO-6:" + security_code);
 
 		try{
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
 			String sql = "SELECT * FROM credit_card_table WHERE"
-					+ "card_type = ?,"//1
-					+ "card_number = ?,"//2
-					+ "holder_name= ?,"//3
-					+ "expiration_month = ?,"//4
-					+ "expiration_year = ?,"//5
-					+ "security_code = ?";//6
+					+ " card_type = ? AND"//1
+					+ " card_number = ? AND"//2
+					+ " holder_name= ? AND"//3
+					+ " expiration_month = ? AND"//4
+					+ " expiration_year = ? AND"//5
+					+ " security_code = ?";//6
 
 			PreparedStatement ps = con.prepareStatement(sql);
 
@@ -45,9 +52,10 @@ public class CheckCreditCardDAO {
 
 			ResultSet rs = ps.executeQuery();
 
-			if(rs.next()){
-				result = true;
+			//System.out.println("CheckCreditCardDAO-rs:" + rs.next());
 
+			while(rs.next()){
+				selected_num = rs.getInt("card_register_id");
 			}
 
 			if(con != null){
@@ -60,7 +68,8 @@ public class CheckCreditCardDAO {
 			e.printStackTrace();
 		}
 
-		return result;
+		System.out.println("CCCDAO-selected_num:" + selected_num);
+		return selected_num;
 
 	}
 

@@ -40,7 +40,11 @@
 	</td>
 	<th style="width:80px">時間帯</th>
 	<td>
-	<s:select name="%{delivery_time_id}" list='{"朝～昼","昼～夕方","夕方～夜"}' value="{%{1},%{2},%{3}}"/>
+	<select name="delivery_time_id">
+	 <option value="1">朝～昼</option>
+	 <option value="2">昼～夕方</option>
+	 <option value="3">夕方～夜</option>
+	</select>
 	</td>
 	</tr>
 	</table>

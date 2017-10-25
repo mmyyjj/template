@@ -27,7 +27,7 @@
 以下の内容でご注文を確定いたします。<br>
 よろしければページ下の「確定」ボタンをクリックしてください
 <h3>--------【1/3】ご注文商品---------</h3>
-<table class="visible_table" style="width:540px">
+<table class="visible_table" style="width:360px">
 <tr>
   <th>商品小計</th><td><s:property value='session.get("product_subtotal")' /> 円</td>
 </tr>
@@ -37,15 +37,18 @@
 <tr>
   <th>代引き手数料</th><td><s:property value='session.get("delivery_fee")' /> 円</td>
 </tr>
+<tr>
+<th style="font-size:18px;">合計金額</th>
+<th style="font-size:18px;"><s:property value='session.get("total_price")'/></th>
+</tr>
 </table>
 <br>
-合計金額：【合計】円
 <br>
 
 
 <h3>--------【2/3】お届け日---------</h3>
 <br>
-<table class="visible_table" style="width:540px">
+<table class="visible_table" style="width:360px">
 <tr>
 <th style="width:80px">お日にち</th>
 <td>
@@ -53,7 +56,9 @@
 </td>
 <th style="width:80px">時間帯</th>
 <td>
-【AA～BB】
+<s:if test="delivery_time_id==1">朝～昼</s:if>
+<s:if test="delivery_time_id==2">昼～夕方</s:if>
+<s:if test="delivery_time_id==3">夕方～夜</s:if>
 </td>
 </tr>
 </table>
@@ -75,28 +80,32 @@
 <table class="visible_table" style="width:540px">
 <tr>
  <th>クレジットカード種類</th>
- <td colspan="2">【種類】</td>
+ <td colspan="2"><s:property value="card_type"/></td>
 </tr>
 <tr>
  <th>カード番号</th>
- <td colspan="2">【1111 1111 1111】</td>
+ <td colspan="2">
+   <s:property value="card_number_1"/>-
+   <s:property value="card_number_2"/>-
+   <s:property value="card_number_3"/>-
+   <s:property value="card_number_4"/></td>
 </tr>
 <tr>
  <th>カード名義</th>
-  <td colspan="2"></td>
+  <td colspan="2"><s:property value="holder_name"/></td>
 </tr>
 <tr>
  <th>有効期限</th>
   <td>
-   【○】年
+   <s:property value="expiration_month"/> 月
  </td>
  <td>
-   【○】月
+   <s:property value="expiration_year"/> 年
  </td>
 </tr>
 <tr>
  <th>セキュリティコード</th>
- <td colspan="2">AAA</td>
+ <td colspan="2"><s:property value="security_code"/></td>
 </tr>
 </table>
 <br>
