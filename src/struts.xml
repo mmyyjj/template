@@ -70,14 +70,21 @@
 		<result name="error" type="chain">GoCartAction</result>
 		</action>
 
-
-
-
 		<!-- GoOrderInputAction -->
 		<action name="GoOrderInputAction" class="com.internousdev.template.action.GoOrderInputAction" method="execute">
 		<result name="success">order_1_input.jsp</result>
 		<result name="error">cart.jsp</result>
 		</action>
+
+		<!-- CheckPaymentInfoAction -->
+		<action name="CheckPaymentInfoAction" class="com.internousdev.template.action.CheckPaymentInfoAction" method="execute">
+		<result name="success">order_2_confirm.jsp</result>
+		<result name="error">order_2_confirm.jsp</result>
+		</action>
+
+
+
+
 
 
 

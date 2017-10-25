@@ -24,7 +24,7 @@
 
 
 <!-- ここからまるっとs:form処理 -->
-<s:form name="form" action="payment_input.jsp" theme="simple">
+<s:form name="form" action="CheckPaymentInfoAction" theme="simple">
 
 	<br>
 	<h1>ご注文情報の入力</h1>
@@ -40,7 +40,7 @@
 	</td>
 	<th style="width:80px">時間帯</th>
 	<td>
-	<s:select name="delivery_time_id" list='{"朝～昼","昼～夕方","夕方～夜"}' value="{1,2,3}"/>
+	<s:select name="%{delivery_time_id}" list='{"朝～昼","昼～夕方","夕方～夜"}' value="{%{1},%{2},%{3}}"/>
 	</td>
 	</tr>
 	</table>
