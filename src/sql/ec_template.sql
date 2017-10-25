@@ -127,15 +127,15 @@ CREATE TABLE test_creditcard_table(
  card_type VARCHAR(20) NOT NULL,
  card_number VARCHAR(16) NOT NULL,
  holder_name VARCHAR(50) NOT NULL,
- expiration_month INT(2) NOT NULL,
- expiration_year INT(4) NOT NULL,
- security_code INT(3) NOT NULL,
+ expiration_month VARCHAR(2) NOT NULL,
+ expiration_year VARCHAR(4) NOT NULL,
+ security_code VARCHAR(3) NOT NULL,
  PRIMARY KEY(card_register_id),
  UNIQUE INDEX(card_type)
 );
 
 INSERT INTO test_creditcard_table VALUES
-( 0, 'TEST_A', '0000111122223333', 'testuser', 9, 2019, 123),
-( 0, 'TEST_B', '0000444455556666', 'testuser', 10, 2020, 456),
-( 0, 'TEST_C', '0000777788889999', 'testuser', 11, 2021, 789);
+( 0, 'TEST_A', '0000111122223333', 'testuser', '10', '2019', '123'),
+( 0, 'TEST_B', '0000444455556666', 'testuser', '11', '2020', '456'),
+( 0, 'TEST_C', '0000777788889999', 'testuser', '12', '2021', '789');
 
