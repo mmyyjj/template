@@ -11,6 +11,12 @@
 <link rel="stylesheet" type="text/css" href="css/user_main_design.css">
 </head>
 <body>
+<script type="text/javascript">
+  history.pushState(null,null,null);
+  window.addEventListener("popstate", function(){
+	  history.pushState(null, null, null);
+  });
+</script>
 <header>
 	<s:include value="header.jsp"/>
 </header>

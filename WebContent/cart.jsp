@@ -13,8 +13,12 @@
 </head>
 
 <body>
-<script>
-history.forward();
+<script type="text/javascript">
+  history.pushState(null,null,null);
+  window.addEventListener("popstate", function(){
+	  history.pushState(null, null, null);
+	  document.write("ブラウザバックは無効です。ページ下の戻るボタンをご利用ください");
+  });
 </script>
 <header>
 	<s:include value="header.jsp"/>

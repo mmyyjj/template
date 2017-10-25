@@ -72,10 +72,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 		/*ログイン後、ブラウザバックして再びログインされた場合の処理*/
-		if((LoginInfoDTO)session.get("loginInfo") != null){
+		if(session.get("user_id") != null){
 		System.out.println("セッションあり");
-			if(mail_address.equals( ((LoginInfoDTO)session.get("loginInfo")).getMail_address() )
-					&& password.equals( ((LoginInfoDTO)session.get("loginInfo")).getPassword()) ){
+		System.out.println("LoginAction-mail_address:" + mail_address);
+		System.out.println("LoginAction-password:" + password);
+		System.out.println("Session-mail_address:" + (String)session.get("mail_address"));
+		System.out.println("Session-password:" +(String)session.get("password"));
+			if( mail_address.equals((String)session.get("mail_address"))
+					&& password.equals((String)session.get("password")) ){
 				//user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
 				loginError_message = "";
 				result = "nowLogin";
@@ -100,6 +104,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			//session.put("loginInfo", lidto);
 			session.put("user_id", lidto.getUser_id());
 			session.put("user_name", lidto.getUser_name());
+			session.put("mail_address", lidto.getMail_address());
+			session.put("password", lidto.getPassword());
 			loginError_message= "";
 			System.out.println("LoginAction-取得セッションのユーザー名：" + user_name);
 			result = SUCCESS;
