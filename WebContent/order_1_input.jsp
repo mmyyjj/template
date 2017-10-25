@@ -56,7 +56,7 @@
 	<tr>
 	<td style="border:0px">
 	<label>
-	<input type="radio" name="%{payment_method_id}" value="%{CASH_ON_DELIVERY}" onClick="changeDisabled()"  checked/>
+	<input type="radio" name="payment_method_id" value="1" onClick="changeDisabled()"  checked/>
 	  代金引換
 	  </label>
 	  (※手数料<font color="red" >250円</font>がかかります)
@@ -65,7 +65,7 @@
 	<tr>
 	<td style="border:0px">
 	<label>
-	<input type="radio" name="%{payment_method_id}" value="%{2}" onClick="changeDisabled()"/>
+	<input type="radio" name="payment_method_id" value="2" onClick="changeDisabled()"/>
 	  クレジットカード決済
 	</label>
 	</td>
@@ -136,7 +136,7 @@
 
 <script>
 function changeDisabled(){
- if(document.form["%{payment_method_id}"][1].checked){
+ if(document.form["payment_method_id"][1].checked){
 
 	document.form["card_type"].disabled = false;
 	document.form["card_number_1"].disabled = false;

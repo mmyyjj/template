@@ -29,16 +29,13 @@
 <h3>--------【1/3】ご注文商品---------</h3>
 <table class="visible_table" style="width:540px">
 <tr>
-  <th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th><th>プレゼント<br>包装</th><th style="width:100px">小計</th>
+  <th>商品小計</th><td><s:property value='session.get("product_subtotal")' /> 円</td>
 </tr>
 <tr>
-<td>商品名</td>
-<td>単価</td>
-<td>
-</td>
-<td>
-</td>
-<td>小計</td>
+  <th>プレゼント包装料</th><td><s:property value='session.get("gift_wrapping_fee")'/> 円</td>
+</tr>
+<tr>
+  <th>代引き手数料</th><td><s:property value='session.get("delivery_fee")' /> 円</td>
 </tr>
 </table>
 <br>
@@ -52,7 +49,7 @@
 <tr>
 <th style="width:80px">お日にち</th>
 <td>
-【○月×日】
+<s:property value='session.get("delivery_date")'/>
 </td>
 <th style="width:80px">時間帯</th>
 <td>
