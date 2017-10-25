@@ -69,11 +69,12 @@ public class TimeSetDAO {
 
 			PreparedStatement ps = con.prepareStatement(sql_select);
 
-			for(int i = 1; i <= 4; i++){
+			for(int i = 1; i <= 6; i++){
 				ps.setInt( 1, (i) );
 				ResultSet rs = ps.executeQuery();
 				if(rs.next()){
-					yearList.add( (rs.getString(1)).substring(0,4) );
+					/*「2017-10-25」の、「2017」の部分だけ切り取ってリストに格納*/
+					yearList.add( (rs.getString(1)).substring(0,6) );
 					System.out.println("TimeSetDAO-year:"+ yearList.get(i -1));
 				}
 			}
