@@ -27,14 +27,21 @@ public class CheckCreditCardDAO {
 			Connection con = dbc.getConnection();
 
 			String sql = "SELECT * FROM credit_card_table WHERE"
-					+ "card_type = ?,"
-					+ "card_number = ?,"
-					+ "holder_name= ?,"
-					+ "expiration_month = ?,"
-					+ "expiration_year = ?,"
-					+ "security_code = ?";
+					+ "card_type = ?,"//1
+					+ "card_number = ?,"//2
+					+ "holder_name= ?,"//3
+					+ "expiration_month = ?,"//4
+					+ "expiration_year = ?,"//5
+					+ "security_code = ?";//6
 
 			PreparedStatement ps = con.prepareStatement(sql);
+
+			ps.setString(1, card_type);
+			ps.setString(2, card_number);
+			ps.setString(3, holder_name);
+			ps.setString(4, expiration_month);
+			ps.setString(5, expiration_year);
+			ps.setString(6, security_code);
 
 			ResultSet rs = ps.executeQuery();
 

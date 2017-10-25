@@ -108,20 +108,27 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		session.put("delivery_time_id", delivery_time_id);
 		session.put("payment_method_id", payment_method_id);
 
+		System.out.println("CheckPaymentInfoAction-payment_method_id:" + payment_method_id);
+
 		/*代引きとクレジットでif分岐*/
 		if(payment_method_id == CASH_ON_DELIVERY){
-			session.put("delivery_fee", 250);
+			int delivery_fee = 250;
+			session.put("delivery_fee", delivery_fee);
 			result = SUCCESS;
 			return result;
 
 		} else if(payment_method_id == CREDIT_CARD) {
+			int delivery_fee = 0;
+			session.put("delivery_fee", delivery_fee);
 
-			String card_number_all = card_number_1 + card_number_2 + card_number_3 + card_number_4;
+			String card_number_all
+			  = card_number_1 + "-" + card_number_2 + "-" + card_number_3 + "-" + card_number_4;
 
 			//TODO DAOでDBと情報を照合する処理
 			CheckCreditCardDAO cccdao = new CheckCreditCardDAO();
 
 			if(cccdao.sheckCreditInfo(card_type,card_number_all,holder_name,expiration_month, expiration_year,security_code)){
+
 				result = SUCCESS;
 			}
 		}
