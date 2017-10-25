@@ -27,15 +27,14 @@
 <table class="visible_table" style="width:540px">
 <tr>
 <th style="width:80px">お日にち</th>
-<td>この中身イテレーターで
-  <select>
-  </select>
+<td>
+  <s:select name="delivery_date" list="timeList" theme="simple"/>
 </td>
 <th style="width:80px">時間帯</th>
 <td>
-<input type="radio" checked/>朝～お昼
-<input type="radio" />お昼～夕方
-<input type="radio" />夕方～夜
+<label><input name="delivery_time" value="%{1}" type="radio" checked/>朝～お昼</label>
+<label><input name="delivery_time" value="%{2}" type="radio" />お昼～夕方</label>
+<label><input name="delivery_time" value="%{3}" type="radio" />夕方～夜</label>
 </td>
 </tr>
 </table>
