@@ -9,9 +9,13 @@
 <!-- cssの設定・読み込み -->
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
 <link rel="stylesheet" type="text/css" href="css/user_main_design.css">
+
 </head>
 
 <body>
+<script>
+history.forward();
+</script>
 <header>
 	<s:include value="header.jsp"/>
 </header>
@@ -75,9 +79,16 @@
   <s:form action="GoItemListPageAction" theme="simple">
   <td style="border:0px"><button class="actbtn">お買い物を続ける</button></td>
   </s:form>
-  <s:form action="GoOrderInputAction">
+
+  <s:if test="cartItemList.size()>0">
+  <s:form action="GoOrderInputAction" theme="simple">
   <td style="border:0px"><button class="actbtn">ご注文へ</button></td>
   </s:form>
+  </s:if>
+  <s:else>
+  <td style="border:0px"><button class="actbtn" style="background-color:#dddddd; color:#999999">ご注文へ</button></td>
+  </s:else>
+
 </tr>
 </table>
 
