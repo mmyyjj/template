@@ -11,6 +11,10 @@
 <link rel="stylesheet" type="text/css" href="css/user_main_design.css">
 </head>
 <body>
+
+
+
+
 <header>
 	<s:include value="header.jsp"/>
 </header>
@@ -18,8 +22,9 @@
 <div class="contents" style="height:100％; padding-top:5px;">
 <div style="text-align:right; margin-right:20px;"><b>ご注文情報入力</b>_ご注文情報確認_お手続き完了</div>
 
+
 <!-- ここからまるっとs:form処理 -->
-<s:form action="payment_input.jsp" theme="simple">
+<s:form name="form" action="payment_input.jsp" theme="simple">
 
 <br>
 <h1>ご注文情報の入力</h1>
@@ -54,12 +59,19 @@
 <table style="margin:0 auto; text-align:left;">
 <tr>
 <td style="border:0px">
-<input type="radio" checked/>代金引換(※手数料<font color="red">250円</font>がかかります)
+<label>
+<input type="radio" name="payment_method" value="'cash_on_derivery'" onClick="changeDisabled()"  checked/>
+  代金引換
+  </label>
+  (※手数料<font color="red" >250円</font>がかかります)
 </td>
 </tr>
 <tr>
 <td style="border:0px">
-<input type="radio"/>クレジットカード決済
+<label>
+<input type="radio" name="payment_method" value="'credit_card'" onClick="changeDisabled()"/>
+  クレジットカード決済
+</label>
 </td>
 </tr>
 </table>
@@ -75,7 +87,7 @@
 <table class="visible_table" style="width:400px">
 <tr>
  <th style="width:160px;">クレジットカード種類</th>
- <td colspan="2"><s:select name="card_type" list='{"testA","testB","testC"}' width="50px"/></td>
+ <td colspan="2"><s:select name="card_type" list='{"testA","testB","testC"}'/></td>
 </tr>
 <tr>
  <th>カード番号(16桁)</th>
@@ -95,7 +107,7 @@
 <tr>
  <th>有効期限</th>
   <td>
-    <s:select name="delivery_date" list="yearList" theme="simple"/>
+    <s:select name="expiration_year" list="yearList" theme="simple"/>
    年
  </td>
  <td>
@@ -124,6 +136,44 @@
 </tr>
 </table>
 </s:form>
+
+
+<script>
+function changeDisabled(){
+ if(document.form["payment_method"][1].checked){
+
+	document.form["card_type"].disabled = false;
+	document.form["card_number_1"].disabled = false;
+	document.form["card_number_2"].disabled = false;
+	document.form["card_number_3"].disabled = false;
+	document.form["card_number_4"].disabled = false;
+	document.form["holder_name"].disabled = false;
+	document.form["expiration_year"].disabled = false;
+	document.form["expiration_month"].disabled = false;
+	document.form["security_code"].disabled = false;
+
+  } else {
+
+	document.form["card_type"].disabled = true;
+	document.form["card_number_1"].disabled = true;
+	document.form["card_number_2"].disabled = true;
+	document.form["card_number_3"].disabled = true;
+	document.form["card_number_4"].disabled = true;
+	document.form["holder_name"].disabled = true;
+	document.form["expiration_year"].disabled = true;
+	document.form["expiration_month"].disabled = true;
+	document.form["security_code"].disabled = true;
+
+  }
+
+}
+
+window.onload = changeDisabled;
+
+</script>
+
+
+
 <div style="height:80px">
 </div>
 </div>

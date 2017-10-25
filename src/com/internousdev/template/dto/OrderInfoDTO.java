@@ -1,7 +1,5 @@
 package com.internousdev.template.dto;
 
-import java.math.BigDecimal;
-
 /**
  * 注文情報を格納するためのクラス。<br>
  * ユーザー画面の注文情報入力～注文確定操作で使用。
@@ -11,11 +9,6 @@ import java.math.BigDecimal;
  * @version 1.0
  * */
 public class OrderInfoDTO {
-
-	/**
-	 * 合計金額
-	 * */
-	private BigDecimal total_price;
 
 	/**
 	 * 配達希望日
@@ -66,24 +59,6 @@ public class OrderInfoDTO {
 	 * セキュリティコード
 	 * */
 	private int security_code;
-
-
-
-	/**
-	 * 合計金額取得メソッド
-	 * @return total_price
-	 */
-	public BigDecimal getTotal_price() {
-		return total_price;
-	}
-
-	/**
-	 * 合計金額格納メソッド
-	 * @param total_price セットする total_price
-	 */
-	public void setTotal_price(BigDecimal total_price) {
-		this.total_price = total_price;
-	}
 
 	/**
 	 * 配達希望日取得メソッド
