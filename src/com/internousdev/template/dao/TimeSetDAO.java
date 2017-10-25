@@ -54,7 +54,7 @@ public class TimeSetDAO {
 
 	/**
 	 * カード有効期限(年)のリストを作成するメソッド。<br>
-	 * DBから今日の日付を取得し、「今年」～「今年＋4年」までの年をリストにして返す。
+	 * DBから今日の日付を取得し、「今年」～「今年＋6年」までの年をリストにして返す。
 	 * */
 	public ArrayList<String> createYearList(){
 
@@ -69,6 +69,7 @@ public class TimeSetDAO {
 
 			PreparedStatement ps = con.prepareStatement(sql_select);
 
+			/*今年～6年後の年数を取得し、リストに格納。*/
 			for(int i = 1; i <= 6; i++){
 				ps.setInt( 1, (i) );
 				ResultSet rs = ps.executeQuery();
