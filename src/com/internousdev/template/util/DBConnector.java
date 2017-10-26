@@ -8,7 +8,7 @@ public class DBConnector {
 	private static String driverName = "com.mysql.jdbc.Driver";
 	private static String url = "jdbc:mysql://localhost/ec_template";
 	private static String user = "root";
-	private static String password = "JavaQuest2015";
+	private static String password = "mysql";
 
 	public Connection getConnection () {
 
