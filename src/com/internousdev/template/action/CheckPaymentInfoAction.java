@@ -1,5 +1,6 @@
 package com.internousdev.template.action;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -114,10 +115,10 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		/*代引きとクレジットでif分岐*/
 		if(payment_method_id == CASH_ON_DELIVERY){
 
-			int total_price = (int)session.get("total_price");
-			int delivery_fee = 250;
+			BigDecimal total_price = (BigDecimal)session.get("total_price");
+			BigDecimal delivery_fee = BigDecimal.valueOf(250);
 			session.put("delivery_fee", delivery_fee);
-			session.put("total_price", total_price + delivery_fee);
+			session.put("total_price", total_price.add(delivery_fee));
 			result = SUCCESS;
 			return result;
 
@@ -125,7 +126,7 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		} else if(payment_method_id == CREDIT_CARD) {
 
 			error_message="入力情報に誤りがあります。お手数ですがもう一度ご入力ください。";
-			int delivery_fee = 0;
+			BigDecimal delivery_fee = BigDecimal.valueOf(0);;
 			session.put("delivery_fee", delivery_fee);
 
 			String card_number_all
