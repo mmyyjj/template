@@ -45,7 +45,7 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 
 		if(transaction == TRANSACTION_COMPLETED){
 			result = SUCCESS;
-		}else if(transaction == "stock_out"){
+		}else if(transaction == "detail_completed" || transaction == "stock_out"){
 			result = "nostock";
 		}
 
