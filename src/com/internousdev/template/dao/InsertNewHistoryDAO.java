@@ -21,27 +21,38 @@ public class InsertNewHistoryDAO {
 	/**
 	 * 2つの処理のうち、片方が完了した状態を表す定数
 	 * */
-	static final int HALF_TRANSACTION = 1;
+	static final String OUTLINE_COMPLETED = "outline_completed";
+
+	/**
+	 *
+	 * */
+	static final String DETAIL_COMPLETED = "detail_completed";
 
 	/**
 	 * 2つの処理の両方が完了した状態を表す定数
 	 * */
-	static final int TRANSACTION_COMPLETED = 2;
+	static final String TRANSACTION_COMPLETED = "transaction_completed";
 
 	/**
 	 * トランザクションに失敗したことを表す定数
 	 * */
-	static final int TRANSACTION_FAILED = 0;
+	static final String TRANSACTION_FAILED = "transaction_failed";
+
+	/**
+	 * 在庫切れがあった状態を表す定数
+	 * */
+	static final String STOCK_OUT = "stock_out";
 
 
 	/**
 	 * DBへのデータ登録メソッド<br>
 	 * トランザクションを用いて2種類の注文履歴にデータの登録を行う。
 	 * */
-	public int insertHistory
+	public String insertHistory
 	  (int user_id, BigDecimal total_price, int payment_method_id, String delivery_date, int delivery_time_id, ArrayList<CartItemDTO>cartItemList ){
 
-		int successed_num = TRANSACTION_FAILED;
+		int successed_num = 0;
+		String condition = null;
 
 
 		try{
@@ -69,7 +80,9 @@ public class InsertNewHistoryDAO {
 			successed_num = ps.executeUpdate();
 
 			/*概要テーブルの更新に成功したら、次の処理*/
-			if(successed_num >= HALF_TRANSACTION){
+			if(successed_num > 0){
+
+				condition = OUTLINE_COMPLETED;
 
 				/*テーブルに登録後、すぐにその注文IDを取得。*/
 				String sql_select = "select MAX(order_id) from history_outline_table WHERE user_id = ?";
@@ -97,32 +110,48 @@ public class InsertNewHistoryDAO {
 						ps.setInt(4, cartItemList.get(i).getOrder_number());
 						ps.setInt(5, cartItemList.get(i).getNumber_for_gift());
 						ps.setBigDecimal(6, cartItemList.get(i).getSubtotal());
-						successed_num = ps.executeUpdate();
+						successed_num = i + ps.executeUpdate();
 					}
 
-					String sql_stock = "UPDATE product_table SET"
-							+ " current_stock = (current_stock -?),"
-							+ " ordered_number = (ordered_number + ?)"
-							+ " WHERE product_id = ?";
+					if(successed_num == cartItemList.size()){
+						condition =DETAIL_COMPLETED;
 
-					ps = con.prepareStatement(sql_stock);
+						/*ここから在庫の処理*/
+						String sql_stock = "UPDATE product_table SET"
+								+ " current_stock = (current_stock -?),"
+								+ " ordered_number = (ordered_number + ?)"
+								+ " WHERE product_id = ?";
 
-					for(int i =0; i < cartItemList.size(); i++){
-						ps.setInt(1, cartItemList.get(i).getOrder_number());
-						ps.setInt(2, cartItemList.get(i).getOrder_number());
-						ps.setInt(3, cartItemList.get(i).getProduct_id());
-						successed_num = ps.executeUpdate();
+						ps = con.prepareStatement(sql_stock);
+
+						for(int i =0; i < cartItemList.size(); i++){
+							ps.setInt(1, cartItemList.get(i).getOrder_number());
+							ps.setInt(2, cartItemList.get(i).getOrder_number());
+							ps.setInt(3, cartItemList.get(i).getProduct_id());
+							successed_num = i + ps.executeUpdate();
+						}
+
+						/*概要・詳細ともに更新に成功したら、カートをきれいにして、コミット。*/
+						if(successed_num == cartItemList.size() ){
+							String sql_delete = "DELETE FROM CART WHERE user_id =?";
+							ps = con.prepareStatement(sql_delete);
+							ps.setInt(1, user_id);
+							ps.executeUpdate();
+							con.commit();
+							condition= TRANSACTION_COMPLETED;
+						}else{
+							con.rollback();
+							condition = STOCK_OUT;
+						}
+
+
+					}else{
+						con.rollback();
+						condition =  TRANSACTION_FAILED;
 					}
 
-					/*概要・詳細ともに更新に成功したら、カートをきれいにして、コミット。*/
-					if(successed_num > 0 ){
-						String sql_delete = "DELETE FROM CART WHERE user_id =?";
-						ps = con.prepareStatement(sql_delete);
-						ps.setInt(1, user_id);
-						ps.executeUpdate();
-						con.commit();
-						successed_num= TRANSACTION_COMPLETED;
-					}
+
+
 
 
 
@@ -131,7 +160,7 @@ public class InsertNewHistoryDAO {
 
 			}else{
 				con.rollback();
-				successed_num =  TRANSACTION_FAILED;
+				condition =  TRANSACTION_FAILED;
 			}
 
 			if(con != null){
@@ -145,7 +174,8 @@ public class InsertNewHistoryDAO {
 			e.printStackTrace();
 		}
 
-		return successed_num;
+		System.out.println("inhDAO:"+ condition);
+		return condition;
 
 
 

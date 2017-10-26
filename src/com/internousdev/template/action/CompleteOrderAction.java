@@ -27,7 +27,7 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 	/**
 	 * トランザクション成功の状態を表す定数
 	 * */
-	static final int TRANSACTION_COMPLETED = 2;
+	static final String TRANSACTION_COMPLETED = "transaction_completed";
 
 
 	public String execute(){
@@ -41,10 +41,12 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 		ArrayList<CartItemDTO>cartItemList = (ArrayList<CartItemDTO>)session.get("cartItemList");
 
 		InsertNewHistoryDAO inhdao = new InsertNewHistoryDAO();
-		int successed_num = inhdao.insertHistory(user_id, total_price, payment_method_id, delivery_date, delivery_time_id, cartItemList);
+		String transaction = inhdao.insertHistory(user_id, total_price, payment_method_id, delivery_date, delivery_time_id, cartItemList);
 
-		if(successed_num == TRANSACTION_COMPLETED){
+		if(transaction == TRANSACTION_COMPLETED){
 			result = SUCCESS;
+		}else if(transaction == "stock_out"){
+			result = "nostock";
 		}
 
 		return result;
