@@ -87,7 +87,7 @@ CREATE TABLE cart(
 -- 注文履歴(概要)テーブルの作成
 
 CREATE TABLE history_outline_table(
- order_id INT NOT NULL,
+ order_id INT NOT NULL AUTO_INCREMENT,
  user_id INT NOT NULL,
  total_price DECIMAL(10,0) NOT NULL,
  order_date DATETIME NOT NULL,
@@ -113,19 +113,30 @@ CREATE TABLE history_detail_table(
 
 -- 配達時間テーブルの作成
 CREATE TABLE delivery_time_table(
- delivery_time_id INT(1) NOT NULL,
+ delivery_time_id INT(1) NOT NULL AUTO_INCREMENT,
  delivery_time_string VARCHAR(10) NOT NULL,
  PRIMARY KEY(delivery_time_id)
 );
 
+-- 配達時間テーブルへのデータ挿入
+INSERT INTO delivery_time_table VALUES
+(0, '朝～昼'),
+(0, '昼～夕方'),
+(0, '夕方～夜');
+
+
 
 -- 支払い方法テーブルの作成
 CREATE TABLE payment_method_table(
- payment_method_id INT(1) NOT NULL,
+ payment_method_id INT(1) NOT NULL AUTO_INCREMENT,
  payment_method_string VARCHAR(10) NOT NULL,
  PRIMARY KEY(payment_method_id)
 );
 
+-- 支払い方法テーブルへのデータ挿入
+INSERT INTO payment_method_table VALUES
+(0,  '代金引換'),
+(0,  'クレジットカード');
 
 -- -----------------------------------------------------------------------------------------------
 
