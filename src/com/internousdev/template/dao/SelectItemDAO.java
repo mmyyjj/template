@@ -59,7 +59,7 @@ public class SelectItemDAO {
 				pidto.setCategory(rs.getString("category"));
 				pidto.setUnit_price(rs.getBigDecimal("unit_price"));
 				pidto.setCurrent_stock(rs.getInt("current_stock"));
-				pidto.setOrdered_number(rs.getInt("orderd_number"));
+				pidto.setOrdered_number(rs.getInt("ordered_number"));
 				pidto.setComment(rs.getString("comment"));
 				pidto.setImg_path(rs.getString("img_path"));
 				selectedList.add(pidto);

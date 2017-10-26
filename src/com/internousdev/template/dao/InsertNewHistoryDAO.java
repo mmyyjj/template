@@ -97,12 +97,25 @@ public class InsertNewHistoryDAO {
 						ps.setInt(4, cartItemList.get(i).getOrder_number());
 						ps.setInt(5, cartItemList.get(i).getNumber_for_gift());
 						ps.setBigDecimal(6, cartItemList.get(i).getSubtotal());
-						ps.executeUpdate();
-						successed_num ++;
+						successed_num = ps.executeUpdate();
+					}
+
+					String sql_stock = "UPDATE product_table SET"
+							+ " current_stock = (current_stock -?),"
+							+ " ordered_number = (ordered_number + ?)"
+							+ " WHERE product_id = ?";
+
+					ps = con.prepareStatement(sql_stock);
+
+					for(int i =0; i < cartItemList.size(); i++){
+						ps.setInt(1, cartItemList.get(i).getOrder_number());
+						ps.setInt(2, cartItemList.get(i).getOrder_number());
+						ps.setInt(3, cartItemList.get(i).getProduct_id());
+						successed_num = ps.executeUpdate();
 					}
 
 					/*概要・詳細ともに更新に成功したら、カートをきれいにして、コミット。*/
-					if(successed_num == (HALF_TRANSACTION + cartItemList.size()) ){
+					if(successed_num > 0 ){
 						String sql_delete = "DELETE FROM CART WHERE user_id =?";
 						ps = con.prepareStatement(sql_delete);
 						ps.setInt(1, user_id);
