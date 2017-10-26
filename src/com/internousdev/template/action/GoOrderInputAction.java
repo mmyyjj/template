@@ -23,7 +23,7 @@ public class GoOrderInputAction extends ActionSupport implements SessionAware{
 	/**
 	 * 配達希望日リスト
 	 * */
-	private List<String> timeList = new ArrayList<String>();
+	private List<String> dateList = new ArrayList<String>();
 
 	/**
 	 * カード有効期限(年)リスト
@@ -44,13 +44,14 @@ public class GoOrderInputAction extends ActionSupport implements SessionAware{
 		// sqlで、「今日の日付」＋7日後 から、さらに10日間までの日付を検索してリスト化する。
 		TimeSetDAO tsdao = new TimeSetDAO();
 
-		timeList = tsdao.createTimeList();
+		dateList = tsdao.createDateList();
 		yearList = tsdao.createYearList();
-		session.put("timeList", timeList);
+
+		session.put("dateList", dateList);
 		session.put("yearList", yearList);
 		System.out.println("GoOrderInputAction-yearList" + yearList.size());
 
-		if(timeList.size() > 0 && yearList.size() > 0){
+		if(dateList.size() > 0 && yearList.size() > 0){
 			result = SUCCESS;
 		}
 
@@ -59,17 +60,17 @@ public class GoOrderInputAction extends ActionSupport implements SessionAware{
 	}
 
 	/**
-	 * @return timeList
+	 * @return dateList
 	 */
-	public List<String> getTimeList() {
-		return timeList;
+	public List<String> getDateList() {
+		return dateList;
 	}
 
 	/**
-	 * @param timeList セットする timeList
+	 * @param dateList セットする dateList
 	 */
-	public void setTimeList(List<String> timeList) {
-		this.timeList = timeList;
+	public void setDateList(List<String> dateList) {
+		this.dateList = dateList;
 	}
 
 	/**

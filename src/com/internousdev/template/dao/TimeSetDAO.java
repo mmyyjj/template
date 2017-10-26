@@ -21,9 +21,9 @@ public class TimeSetDAO {
 	 * 配達希望日のリストを作成するメソッド。<br>
 	 * DBから今日の日付＋1週間後の日にちと、そこからさらに１０日文の日付を取得する。
 	 * */
-	public ArrayList<String> createTimeList(){
+	public ArrayList<String> createDateList(){
 
-		ArrayList<String> timeList = new ArrayList<String>();
+		ArrayList<String> dateList = new ArrayList<String>();
 
 		try{
 
@@ -38,8 +38,8 @@ public class TimeSetDAO {
 				ps.setInt( 1, (i + 7) );
 				ResultSet rs = ps.executeQuery();
 				if(rs.next()){
-					timeList.add(rs.getString(1));
-					System.out.println("TimeSetDAO-date:"+ timeList.get(i));
+					dateList.add(rs.getString(1));
+					System.out.println("TimeSetDAO-date:"+ dateList.get(i));
 				}
 			}
 
@@ -47,7 +47,7 @@ public class TimeSetDAO {
 			e.printStackTrace();
 		}
 
-		return timeList;
+		return dateList;
 
 	}
 

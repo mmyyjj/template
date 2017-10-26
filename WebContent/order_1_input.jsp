@@ -36,15 +36,18 @@
 	<tr>
 	<th style="width:80px">配達希望日</th>
 	<td>
-	  <s:select name="delivery_date" list="%{session.get('timeList')}" theme="simple"/>
+	  <s:select name="delivery_date" list="%{session.get('dateList')}" theme="simple"/>
 	</td>
 	<th style="width:80px">時間帯</th>
 	<td>
+	<s:select name="delivery_time_id" list="#{1:'朝～昼', 2:'昼～夕方', 3:'夕方～夜'}" listKey="key" listValue="value"/>
+	<!--
 	<select name="delivery_time_id">
 	 <option value="1">朝～昼</option>
 	 <option value="2">昼～夕方</option>
 	 <option value="3">夕方～夜</option>
 	</select>
+	-->
 	</td>
 	</tr>
 	</table>
@@ -97,10 +100,10 @@
 	<tr>
 	 <th>カード番号(16桁)</th>
 	 <td colspan="2">
-	   <input type="text" name="card_number_1" style="width:40px;" pattern="[0-9]{4}" required/>-
-	   <input type="text" name="card_number_2" style="width:40px;" pattern="[0-9]{4}" required/>-
-	   <input type="text" name="card_number_3" style="width:40px;" pattern="[0-9]{4}" required/>-
-	   <input type="text" name="card_number_4" style="width:40px;" pattern="[0-9]{4}" required/>
+	   <input type="text" name="card_number_1" style="width:40px;" pattern="[0-9]{4}" maxlength="4" required/>-
+	   <input type="text" name="card_number_2" style="width:40px;" pattern="[0-9]{4}" maxlength="4" required/>-
+	   <input type="text" name="card_number_3" style="width:40px;" pattern="[0-9]{4}" maxlength="4" required/>-
+	   <input type="text" name="card_number_4" style="width:40px;" pattern="[0-9]{4}" maxlength="4" required/>
 	 </td>
 	</tr>
 	<tr>
@@ -123,7 +126,7 @@
 	<tr>
 	 <th>セキュリティコード</th>
 	 <td colspan="2">
-	   <input type="text" name="security_code" pattern="[0-9]{3}" required/>
+	   <input type="text" size="15" name="security_code" pattern="[0-9]{3}" maxlength="3" required/>
 	 </td>
 	</tr>
 	</table>
