@@ -90,11 +90,11 @@ CREATE TABLE history_outline_table(
  order_id INT NOT NULL AUTO_INCREMENT,
  user_id INT NOT NULL,
  total_price DECIMAL(10,0) NOT NULL,
- order_date DATETIME NOT NULL,
+ order_date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
  payment_method_id INT(1) NOT NULL,
  delivery_date DATE NOT NULL,
  delivery_time_id INT(1) NOT NULL,
- delete_flg INT(1) NOT NULL,
+ delete_flg INT(1) DEFAULT 0 NOT NULL,
  PRIMARY KEY(order_id),
  INDEX(user_id)
 );
