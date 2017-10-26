@@ -46,6 +46,8 @@ public class GoOrderInputAction extends ActionSupport implements SessionAware{
 
 		timeList = tsdao.createTimeList();
 		yearList = tsdao.createYearList();
+		session.put("timeList", timeList);
+		session.put("yearList", yearList);
 		System.out.println("GoOrderInputAction-yearList" + yearList.size());
 
 		if(timeList.size() > 0 && yearList.size() > 0){

@@ -51,12 +51,10 @@ public class CheckCreditCardDAO {
 			ps.setString(6, security_code);
 
 			ResultSet rs = ps.executeQuery();
-
-			//System.out.println("CheckCreditCardDAO-rs:" + rs.next());
-
 			while(rs.next()){
 				selected_num = rs.getInt("card_register_id");
 			}
+
 
 			if(con != null){
 				con.close();

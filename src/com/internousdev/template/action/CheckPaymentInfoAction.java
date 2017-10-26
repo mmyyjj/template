@@ -119,13 +119,15 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 			return result;
 
 		} else if(payment_method_id == CREDIT_CARD) {
+
+			error_message="入力情報に誤りがあります。お手数ですがもう一度ご入力ください。";
 			int delivery_fee = 0;
 			session.put("delivery_fee", delivery_fee);
 
 			String card_number_all
 			  = card_number_1 + "-" + card_number_2 + "-" + card_number_3 + "-" + card_number_4;
 
-			//TODO DAOでDBと情報を照合する処理
+			//DAOでDBと情報を照合する処理
 			CheckCreditCardDAO cccdao = new CheckCreditCardDAO();
 
 			if(cccdao.checkCreditInfo(card_type,card_number_all,holder_name,expiration_month, expiration_year,security_code) > 0){
@@ -135,6 +137,8 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 				card_number_3 = "****";
 
 				security_code = "***";
+
+				error_message = "";
 				result = SUCCESS;
 			}
 		}

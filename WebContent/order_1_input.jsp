@@ -36,7 +36,7 @@
 	<tr>
 	<th style="width:80px">配達希望日</th>
 	<td>
-	  <s:select name="delivery_date" list="timeList" theme="simple"/>
+	  <s:select name="delivery_date" list="%{session.get('timeList')}" theme="simple"/>
 	</td>
 	<th style="width:80px">時間帯</th>
 	<td>
@@ -84,6 +84,11 @@
 	クレジットカードをご利用の方は<br>
 	以下のフォームに情報を入力してください。
 	</small>
+	<br>
+	<small>
+	<font color="red"><s:property value="error_message"/>
+	</font>
+	</small>
 	<table class="visible_table" style="width:400px">
 	<tr>
 	 <th style="width:160px;">クレジットカード種類</th>
@@ -107,7 +112,7 @@
 	<tr>
 	 <th>有効期限</th>
 	  <td>
-	    <s:select name="expiration_year" list="yearList" theme="simple"/>
+	    <s:select name="expiration_year" list="%{session.get('yearList')}" theme="simple"/>
 	   年
 	 </td>
 	 <td>
