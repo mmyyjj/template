@@ -67,15 +67,18 @@
 
 <h3>---------【3/3】お支払い情報----------</h3>
 
-<table style="margin:0 auto;:">
+<table style="margin:0 auto;">
 <tr>
 <th style="border:0px">お支払い方法</th>
 <td style="border:0px">
-【代金引換】/【クレジットカード】
+  <s:if test="payment_method_id == 1">代金引換
+  </s:if>
+  <s:if test="payment_method_id == 2">クレジットカード
+  </s:if>
 </td>
 </tr>
 </table>
-
+<s:if test="payment_method_id == 2">
 クレジットカード情報
 <table class="visible_table" style="width:540px">
 <tr>
@@ -111,12 +114,18 @@
 <br>
 <br>
 <hr style="border:1px dashed">
+</s:if>
 
 <br>
 <!-- 操作ボタンの部分 -->
 <table style="margin:0 auto; height:120px;">
 <tr>
-  <td style="border:0px"><button class="actbtn">確定</button></td>
+  <td style="border:0px">
+  <s:form action="CompleteOrderAction">
+    <button class="actbtn" >確定</button>
+  </s:form>
+  </td>
+
 </tr>
 <tr>
   <td style="border:0px"><button class="actbtn">入力画面に戻る</button></td>

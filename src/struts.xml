@@ -82,6 +82,11 @@
 		<result name="error">order_1_input.jsp</result>
 		</action>
 
+		<!-- CompleteOrderAction -->
+		<action name="CompleteOrderAction" class="com.internousdev.template.action.CompleteOrderAction" method="execute">
+		<result name="success">order_3_complete.jsp</result>
+		<result name="error">order_2_confirm.jsp</result>
+		</action>
 
 
 
