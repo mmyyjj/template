@@ -113,10 +113,14 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 
 		/*代引きとクレジットでif分岐*/
 		if(payment_method_id == CASH_ON_DELIVERY){
+
+			int total_price = (int)session.get("total_price");
 			int delivery_fee = 250;
 			session.put("delivery_fee", delivery_fee);
+			session.put("total_price", total_price + delivery_fee);
 			result = SUCCESS;
 			return result;
+
 
 		} else if(payment_method_id == CREDIT_CARD) {
 
