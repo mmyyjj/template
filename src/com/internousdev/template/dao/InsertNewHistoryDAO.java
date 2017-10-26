@@ -104,8 +104,8 @@ public class InsertNewHistoryDAO {
 					/*概要・詳細ともに更新に成功したら、カートをきれいにして、コミット。*/
 					if(successed_num == (HALF_TRANSACTION + cartItemList.size()) ){
 						String sql_delete = "DELETE FROM CART WHERE user_id =?";
-						ps.setInt(1, user_id);
 						ps = con.prepareStatement(sql_delete);
+						ps.setInt(1, user_id);
 						ps.executeUpdate();
 						con.commit();
 						successed_num= TRANSACTION_COMPLETED;

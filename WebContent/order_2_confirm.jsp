@@ -39,7 +39,7 @@
 </tr>
 <tr>
 <th style="font-size:18px;">合計金額</th>
-<th style="font-size:18px;"><s:property value='session.get("total_price")'/></th>
+<th style="font-size:18px;"><s:property value='session.get("total_price")'/> 円</th>
 </tr>
 </table>
 <br>
