@@ -30,7 +30,7 @@ public class SelectHistoryOutlineDAO {
 			Connection con = dbc.getConnection();
 
 			String sql_select = "SELECT" +
-					 " A.order_id, A.total_price, A.order_date, B.payment_method_string," +
+					 " A.order_id, A.total_price, A.order_date, B.payment_method_string, A.delivery_fee," +
 					 " A.delivery_date, C.delivery_time_string" +
 					 " FROM" +
 					 " history_outline_table A, payment_method_table B, delivery_time_table C" +
@@ -53,6 +53,7 @@ public class SelectHistoryOutlineDAO {
 				/*秒数の後に「.0」がついてしまうので、ここで取り除いておきます*/
 				hodto.setOrder_date( (rs.getString("order_date")).replace(".0", "") );
 				hodto.setPayment_method_string(rs.getString("payment_method_string"));
+				hodto.setDelivery_fee(rs.getBigDecimal("delivery_fee"));
 				hodto.setDelivery_date(rs.getString("delivery_date"));
 				hodto.setDelivery_time_string(rs.getString("delivery_time_string"));
 				outlineList.add(hodto);

@@ -24,6 +24,7 @@
   <th>合計金額</th>
   <th>注文日</th>
   <th>お支払い方法</th>
+  <th>代引き手数料</th>
   <th>配達希望日</th>
   <th>配達希望時間帯</th>
   <th>詳細</th>
@@ -36,6 +37,7 @@
   <td><s:property value="total_price"/> 円</td>
     <td><s:property value="order_date"/></td>
   <td><s:property value="payment_method_string"/></td>
+  <td><s:property value="delivery_fee"/></td>
   <td><s:property value="delivery_date"/></td>
   <td><s:property value="delivery_time_string"/></td>
   <td style="width:80px"><button class="actbtn" style="width:60px; margin-left:10px; margin-right:10px;">詳細</button></td>
