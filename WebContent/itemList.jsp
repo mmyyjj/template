@@ -148,6 +148,7 @@
     <s:if test="(currentPage -1) >= 1 ">
     <s:form theme="simple" action="GoItemListPageAction">
     <s:hidden name="currentPage" value="%{1}"/>
+     <s:hidden name="selectCategory" value="%{selectCategory}"/>
     <button class="actbtn"style="width:60px;">最初へ</button>
     </s:form>
     </s:if>
@@ -156,6 +157,7 @@
     <s:if test="(currentPage -1) >= 1 ">
     <s:form theme="simple" action="GoItemListPageAction">
     <s:hidden name="currentPage" value="%{currentPage-1}"/>
+    <s:hidden name="selectCategory" value="%{selectCategory}"/>
     <button class="actbtn"style="width:60px;">戻る</button>
     </s:form>
     </s:if>
@@ -164,6 +166,7 @@
     <s:if test="currentPage < maxPage ">
     <s:form theme="simple" action="GoItemListPageAction">
     <s:hidden name="currentPage" value="%{currentPage+1}"/>
+    <s:hidden name="selectCategory" value="%{selectCategory}"/>
     <button class="actbtn"style="width:60px;">進む</button>
     </s:form>
     </s:if>
@@ -173,6 +176,7 @@
 <s:if test="currentPage < maxPage ">
   <s:form theme="simple" action="GoItemListPageAction">
     <s:hidden name="currentPage" value="%{maxPage}"/>
+    <s:hidden name="selectCategory" value="%{selectCategory}"/>
   <button class="actbtn" style="width:60px;">最後へ</button>
   </s:form>
 </s:if>
