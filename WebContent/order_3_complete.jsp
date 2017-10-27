@@ -16,10 +16,6 @@
 			padding:0px;
 			border:0px;
 		}
-
-		tr, td, th{
-			border:0px;
-		}
 </style>
 
 
@@ -49,10 +45,10 @@
 <div style="height:50px;"></div>
 <table>
 <tr>
-<td>
+<td style="border:0px;">
 <button class="actbtn">お買い物を続ける</button>
-<td>
-<td>
+</td>
+<td style="border:0px;">
 <button class="actbtn">ログアウト</button>
 </td>
 </tr>

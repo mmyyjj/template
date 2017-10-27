@@ -70,7 +70,7 @@
 </div>
 <table>
  <tr>
- <td>
+ <td style="border:0px;">
   <s:form action="GoEntranceAction">
 	<button class="actbtn">入り口へ戻る</button>
   </s:form>

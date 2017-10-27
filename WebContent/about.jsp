@@ -47,7 +47,7 @@
 
 <table>
 <tr>
-<td>
+<td style="border:0px;">
 <s:form action="GoItemListPageAction">
 <button class="actbtn">トップに戻る</button>
 </s:form>
