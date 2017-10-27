@@ -30,13 +30,14 @@ public class GoUserHistoryOutlineAction extends ActionSupport implements Session
 
 		int user_id = (int)session.get("user_id");
 
-		ArrayList<HistoryOutlineDTO> outlineList = new ArrayList<HistoryOutlineDTO>();
+		ArrayList<HistoryOutlineDTO> u_historyOutlineList = new ArrayList<HistoryOutlineDTO>();
 		SelectHistoryOutlineDAO shodao = new SelectHistoryOutlineDAO();
 
-		outlineList = shodao.selectUserHistoryOutline(user_id);
+		u_historyOutlineList = shodao.selectUserHistoryOutline(user_id);
 
-		if(outlineList.size() > 0){
+		if(u_historyOutlineList.size() > 0){
 			result = SUCCESS;
+			session.put("u_historyOutlineList", u_historyOutlineList);
 		}
 
 		return result;
