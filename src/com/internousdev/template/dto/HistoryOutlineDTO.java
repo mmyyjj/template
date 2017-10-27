@@ -38,6 +38,11 @@ public class HistoryOutlineDTO {
 	private String payment_method_string;
 
 	/**
+	 * 代引き手数料
+	 * */
+	private BigDecimal delivery_fee;
+
+	/**
 	 * 配達希望日
 	 * */
 	private String delivery_date;
@@ -104,6 +109,20 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
+	 * @return delivery_fee
+	 */
+	public BigDecimal getDelivery_fee() {
+		return delivery_fee;
+	}
+
+	/**
+	 * @param delivery_fee セットする delivery_fee
+	 */
+	public void setDelivery_fee(BigDecimal delivery_fee) {
+		this.delivery_fee = delivery_fee;
+	}
+
+	/**
 	 * @return delivery_date
 	 */
 	public String getDelivery_date() {
@@ -130,9 +149,6 @@ public class HistoryOutlineDTO {
 	public void setDelivery_time_string(String delivery_time_string) {
 		this.delivery_time_string = delivery_time_string;
 	}
-
-
-	//以下、setter/getter--------------------------------
 
 
 

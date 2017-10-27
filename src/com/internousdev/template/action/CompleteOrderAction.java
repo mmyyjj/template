@@ -51,13 +51,15 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 		int user_id = (int)session.get("user_id");
 		BigDecimal total_price = (BigDecimal)session.get("total_price");
 		int payment_method_id = (int)session.get("payment_method_id");
+		BigDecimal delivery_fee = (BigDecimal)session.get("delivery_fee");
 		String delivery_date = (String)session.get("delivery_date");
 		int delivery_time_id = (int)session.get("delivery_time_id");
 		ArrayList<CartItemDTO>cartItemList = (ArrayList<CartItemDTO>)session.get("cartItemList");
 
 		/*購入履歴に新しくデータを登録するためのDAOと、そのメソッド*/
 		InsertNewHistoryDAO inhdao = new InsertNewHistoryDAO();
-		String transaction = inhdao.insertHistory(user_id, total_price, payment_method_id, delivery_date, delivery_time_id, cartItemList);
+		String transaction = inhdao.insertHistory(user_id, total_price, payment_method_id,delivery_fee,
+				delivery_date, delivery_time_id, cartItemList);
 
 		if(transaction == TRANSACTION_COMPLETED){
 			/*画面更新対策。セッションのカートリストの中身を別のものに変えておきます*/

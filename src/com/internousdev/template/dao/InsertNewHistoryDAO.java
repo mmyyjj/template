@@ -48,8 +48,8 @@ public class InsertNewHistoryDAO {
 	 * DBへのデータ登録メソッド<br>
 	 * トランザクションを用いて2種類の注文履歴にデータの登録を行う。
 	 * */
-	public String insertHistory
-	  (int user_id, BigDecimal total_price, int payment_method_id, String delivery_date, int delivery_time_id, ArrayList<CartItemDTO>cartItemList ){
+	public String insertHistory(int user_id, BigDecimal total_price, int payment_method_id,BigDecimal delivery_fee,
+			  String delivery_date, int delivery_time_id, ArrayList<CartItemDTO>cartItemList ){
 
 		int successed_num = 0;
 		String condition = null;
@@ -66,16 +66,17 @@ public class InsertNewHistoryDAO {
 
 			/*はじめに、「概要」テーブルへのデータ登録*/
 			String sql_outline = "INSERT INTO history_outline_table"
-					+ " (user_id, total_price, payment_method_id, delivery_date, delivery_time_id)"
+					+ " (user_id, total_price, payment_method_id,delivery_fee, delivery_date, delivery_time_id)"
 					+ "VALUES"
-					+ " (?, ?, ?, ?, ?)";
+					+ " (?, ?, ?, ?, ?,?)";
 
 			PreparedStatement ps = con.prepareStatement(sql_outline);
 			ps.setInt(1, user_id);
 			ps.setBigDecimal(2, total_price);
 			ps.setInt(3, payment_method_id);
-			ps.setString(4, delivery_date);
-			ps.setInt(5, delivery_time_id);
+			ps.setBigDecimal(4, delivery_fee);
+			ps.setString(5, delivery_date);
+			ps.setInt(6, delivery_time_id);
 
 			successed_num = ps.executeUpdate();
 
