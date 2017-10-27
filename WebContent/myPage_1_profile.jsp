@@ -32,11 +32,32 @@
 <br>
 <h1>お客様マイページ</h1>
 <br>
-お名前：<s:property value='session.get("user_name")'/>様<br>
-メールアドレス：<s:property value='session.get("mail_address")'/>
-ご住所：<s:property value='session.get("postal_code")'/><br>
-<s:property value='session.get("street_address")'/>
-ご連絡先：<s:property value='session.get("phone_number")'/>
+
+<table>
+<tr>
+<th>
+  お名前
+</th>
+<td>
+  <s:property value='session.get("user_name")'/>様
+</td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<td><s:property value='session.get("mail_address")'/></td>
+</tr>
+<tr>
+<th>ご住所</th>
+<td><s:property value='session.get("postal_code")'/><br>
+<s:property value='session.get("postal_code")'/></td>
+</tr>
+<tr>
+<th>ご連絡先</th>
+<td><s:property value='session.get("postal_code")'/><s:property value='session.get("phone_number")'/></td>
+</tr>
+</table>
+
+
 
 <table>
 <tr>
