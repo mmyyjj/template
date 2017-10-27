@@ -68,7 +68,16 @@
 	</table>
 </s:form>
 </div>
-<div style="height:85px"></div>
+<table>
+ <tr>
+ <td>
+  <s:form action="GoEntranceAction">
+	<button class="actbtn">入り口へ戻る</button>
+  </s:form>
+ </td>
+ </tr>
+</table>
+<div style="height:50px"></div>
 <footer>
 </footer>
 </body>
