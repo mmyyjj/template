@@ -11,10 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/user_main_design.css">
 <style type="text/css">
 		table{
-			height:120px;
 			margin:0 auto;
-			margin-top:50px;
-			margin-bottom:50px;
 			border:collapse:collapse;
 			padding:0px;
 			border:0px;
@@ -31,7 +28,8 @@
 	<s:include value="header.jsp"/>
 </header>
 
-<div class="contents" style="height:540px; padding-top:50px;">
+<div class="contents">
+<br>
 <h1>お客様マイページ</h1>
 <br>
 お名前：<s:property value='session.get("user_name")'/>様<br>
@@ -52,6 +50,7 @@
 </td>
 </tr>
 </table>
+<div style="height:50px;"></div>
 </div>
 
 

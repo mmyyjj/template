@@ -11,10 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/user_main_design.css">
 <style type="text/css">
 		table{
-			height:120px;
 			margin:0 auto;
-			margin-top:50px;
-			margin-bottom:50px;
 			border:collapse:collapse;
 			padding:0px;
 			border:0px;
@@ -22,6 +19,7 @@
 
 		tr, td, th{
 			border:0px;
+		}
 </style>
 </head>
 <body>
@@ -54,6 +52,7 @@
 <td>
 </tr>
 </table>
+<div style="height:50px;"></div>
 </div>
 
 
