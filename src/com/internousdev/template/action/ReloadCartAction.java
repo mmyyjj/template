@@ -1,10 +1,13 @@
 package com.internousdev.template.action;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.template.dao.UpdateCartDAO;
+import com.internousdev.template.dto.CartItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -25,10 +28,15 @@ public class ReloadCartAction extends ActionSupport implements SessionAware{
 	public String execute(){
 		String result = ERROR;
 
+		int user_id = (int)session.get("user_id");
+		ArrayList<CartItemDTO> cartItemList = (ArrayList<CartItemDTO>)session.get("cartItemList");
 
+		UpdateCartDAO ucdao = new UpdateCartDAO();
+		String condition = ucdao.updateCart(user_id, cartItemList);
 
-
-
+		if(condition == "update_successed"){
+			result = SUCCESS;
+		}
 
 		return result;
 	}

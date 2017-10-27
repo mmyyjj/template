@@ -2,8 +2,11 @@ package com.internousdev.template.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import com.internousdev.template.dto.CartItemDTO;
 import com.internousdev.template.util.DBConnector;
 
 /**
@@ -14,6 +17,9 @@ import com.internousdev.template.util.DBConnector;
  * */
 public class UpdateCartDAO {
 
+	/**
+	 * カート情報のうち、注文数とプレゼント包装指定数の更新を行うメソッド
+	 * */
 	public int updateCart(int user_id, int product_id, int order_number, int number_for_gift){
 
 		int updated_num = 0;
@@ -51,8 +57,90 @@ public class UpdateCartDAO {
 
 		return updated_num;
 
+	}
 
+
+	/**
+	 * カート情報のうち、在庫切れになった商品を削除するメソッド
+	 * */
+	public String updateCart(int user_id, ArrayList<CartItemDTO>cartItemList){
+		String condition = "update_failed";
+		int updated_num = 0;
+
+		try{
+			DBConnector dbc = new DBConnector();
+			Connection con = dbc.getConnection();
+
+			String sql_select = "SELECT product_id FROM product_table WHERE current_stock = 0";
+
+			PreparedStatement ps = con.prepareStatement(sql_select);
+
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()){
+
+				String sql_update = "DELETE FROM cart WHERE product_id = ? AND user_id = ?";
+				ps = con.prepareStatement(sql_update);
+
+				for(int i = 0; i < cartItemList.size(); i++){
+					if(rs.getInt("product_id") == cartItemList.get(i).getProduct_id()){
+						ps.setInt(1, cartItemList.get(i).getProduct_id());
+						ps.setInt(2, user_id);
+						updated_num = i + ps.executeUpdate();
+					}
+				}
+
+			}
+
+			if(con != null){
+				con.close();
+				ps.close();
+				rs.close();
+			}
+
+			if(updated_num == cartItemList.size()){
+				condition = "update_successed";
+
+			}
+
+
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		return condition;
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
