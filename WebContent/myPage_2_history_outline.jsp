@@ -18,10 +18,11 @@
 <div class="contents" style="padding-top:40px;">
 <h1>ご購入履歴</h1>
 
-<table class="visible_table" style="width:680px; padding:0px 0px;">
+<table class="visible_table" style="width:820px; padding:0px 0px;">
 <tr>
   <th>注文番号</th>
   <th>合計金額</th>
+  <th>注文日</th>
   <th>お支払い方法</th>
   <th>配達希望日</th>
   <th>配達希望時間帯</th>
@@ -33,11 +34,12 @@
 <tr>
   <td><s:property value="order_id"/></td>
   <td><s:property value="total_price"/> 円</td>
+    <td><s:property value="order_date"/></td>
   <td><s:property value="payment_method_string"/></td>
   <td><s:property value="delivery_date"/></td>
   <td><s:property value="delivery_time_string"/></td>
-  <td style="width:80px"><button class="actbtn" style="width:80px; margin-left:10px; margin-right:10px;">詳細</button></td>
-  <td style="width:80px"><button class="actbtn" style="width:80px; margin-left:10px; margin-right:10px;">削除</button></td>
+  <td style="width:80px"><button class="actbtn" style="width:60px; margin-left:10px; margin-right:10px;">詳細</button></td>
+  <td style="width:80px"><button class="actbtn" style="width:60px; margin-left:10px; margin-right:10px;">削除</button></td>
 </tr>
 </s:iterator>
 </table>
