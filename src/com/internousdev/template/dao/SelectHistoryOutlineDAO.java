@@ -50,7 +50,8 @@ public class SelectHistoryOutlineDAO {
 				HistoryOutlineDTO hodto = new HistoryOutlineDTO();
 				hodto.setOrder_id(rs.getInt("order_id"));
 				hodto.setTotal_price(rs.getBigDecimal("total_price"));
-				hodto.setOrder_date(rs.getString("order_date"));
+				/*秒数の後に「.0」がついてしまうので、ここで取り除いておきます*/
+				hodto.setOrder_date( (rs.getString("order_date")).replace(".0", "") );
 				hodto.setPayment_method_string(rs.getString("payment_method_string"));
 				hodto.setDelivery_date(rs.getString("delivery_date"));
 				hodto.setDelivery_time_string(rs.getString("delivery_time_string"));
