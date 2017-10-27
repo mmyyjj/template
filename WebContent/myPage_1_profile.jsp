@@ -34,7 +34,12 @@
 <div class="contents" style="height:540px; padding-top:50px;">
 <h1>お客様マイページ</h1>
 <br>
-お名前：【user_name】様
+お名前：<s:property value='session.get("user_name")'/>様<br>
+メールアドレス：<s:property value='session.get("mail_address")'/>
+ご住所：<s:property value='session.get("postal_code")'/><br>
+<s:property value='session.get("street_address")'/>
+ご連絡先：<s:property value='session.get("phone_number")'/>
+
 <table>
 <tr>
 <td>
