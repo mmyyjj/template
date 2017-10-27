@@ -94,6 +94,7 @@ CREATE TABLE history_outline_table(
  total_price DECIMAL(10,0) NOT NULL,
  order_date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
  payment_method_id INT(1) NOT NULL,
+ delivery_fee DECIMAL(10,0) NOT NULL,
  delivery_date DATE NOT NULL,
  delivery_time_id INT(1) NOT NULL,
  delete_flg INT(1) DEFAULT 0 NOT NULL,
