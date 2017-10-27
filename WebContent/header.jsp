@@ -16,7 +16,9 @@
 <s:if test="session.get('user_id') != null">
 <table style="margin:0 auto; width:640px; color:lightyellow; padding:40px; padding-top:5px;">
 <tr>
-<th style="font-size:20px">TOP</th>
+<th style="font-size:20px">
+<a href="GoItemListPageAction">TOP</a>
+</th>
 <th>ようこそ<s:property value='session.get("user_name")'/>さん</th>
 <th style="width:50px"></th>
 <th>
