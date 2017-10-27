@@ -48,6 +48,10 @@ public class LoginDAO {
 					lidto.setUser_name(rs.getString("user_name"));
 					lidto.setMail_address(rs.getString("mail_address"));
 					lidto.setPassword(rs.getString("password"));
+					lidto.setPostal_code(rs.getString("postal_code"));
+					lidto.setStreet_address(rs.getString("street_address"));
+					lidto.setPhone_number(rs.getString("phone_number"));
+					lidto.setUser_flg(rs.getInt("user_flg"));
 					lidto.setLogin_flg(rs.getInt("login_flg"));
 					System.out.println("LoginDAO-updated:" + updated);
 

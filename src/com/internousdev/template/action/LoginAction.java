@@ -23,11 +23,6 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware{
 
 	/**
-	 * ログイン中ユーザーのユーザー名
-	 * */
-	private String user_name;
-
-	/**
 	 * ログイン中ユーザーのメールアドレス
 	 * */
 	/*ログイン時認証に使用 1/2*/
@@ -106,8 +101,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("user_name", lidto.getUser_name());
 			session.put("mail_address", lidto.getMail_address());
 			session.put("password", lidto.getPassword());
+			session.put("postal_code", lidto.getPostal_code());
+			session.put("street_address", lidto.getStreet_address());
+			session.put("phone_number", lidto.getPhone_number());
+			session.put("user_flg", lidto.getUser_flg());
 			loginError_message= "";
-			System.out.println("LoginAction-取得セッションのユーザー名：" + user_name);
 			result = SUCCESS;
 		}
 
@@ -122,24 +120,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 	//以下、setter/getter--------------------------
-
-	/**
-	 * ユーザー名取得メソッド
-	 * @return user_name
-	 */
-	public String getUser_name() {
-		return user_name;
-	}
-
-
-	/**
-	 * ユーザー名格納メソッド
-	 * @param user_name セットする user_name
-	 */
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
-	}
-
 
 	/**
 	 * メールアドレス取得メソッド
