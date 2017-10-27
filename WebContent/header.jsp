@@ -46,7 +46,9 @@
 <s:else>
 <table style="margin:0 auto; width:640px; color:lightyellow; padding:40px; padding-top:5px;">
 <tr>
-<th style="font-size:20px">TOP</th>
+<th style="font-size:20px">
+<a href="GoItemListPageAction">TOP</a>
+</th>
 <th style="width:50px"></th>
 <th><a href="GoAboutPageAction">ABOUT</a></th>
 <th>LOGIN</th>

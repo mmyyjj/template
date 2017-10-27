@@ -48,7 +48,9 @@
 <table>
 <tr>
 <td>
+<s:form action="GoItemListPageAction">
 <button class="actbtn">トップに戻る</button>
+</s:form>
 <td>
 </tr>
 </table>
