@@ -46,7 +46,8 @@ CREATE TABLE product_table(
  update_date TIMESTAMP NOT NULL,
  delete_flg INT(1) DEFAULT 0 NOT NULL,
  PRIMARY KEY(product_id),
- UNIQUE INDEX(product_name)
+ UNIQUE INDEX(product_name),
+ INDEX(current_stock)
 );
 
 INSERT INTO product_table
@@ -78,7 +79,8 @@ CREATE TABLE cart(
  order_number INT NOT NULL,
  number_for_gift INT DEFAULT 0 NOT NULL,
  subtotal DECIMAL(10,0) NOT NULL,
- INDEX(user_id)
+ INDEX(user_id),
+ INDEX(product_id)
 );
 
 
