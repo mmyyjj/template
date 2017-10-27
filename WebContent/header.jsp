@@ -8,13 +8,19 @@
 <!-- cssの設定・読み込み -->
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
 <link rel="stylesheet" type="text/css" href="css/user_main_design.css">
+<style type="text/css">
+		a{
+			color:lightyellow;
+		}
+</style>
+
 </head>
 
 <body>
 <header>
 <!-- ログイン中 -->
 <s:if test="session.get('user_id') != null">
-<table style="margin:0 auto; width:640px; color:lightyellow; padding:40px; padding-top:5px;">
+<table style="margin:0 auto; width:640px; height:24px; color:lightyellow; padding:40px; padding-top:5px;">
 <tr>
 <th style="font-size:20px">
 <a href="GoItemListPageAction">TOP</a>
