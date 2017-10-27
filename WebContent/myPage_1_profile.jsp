@@ -41,7 +41,9 @@
 <table>
 <tr>
 <td>
+<s:form action = "GoUserHistoryOutlineAction">
 <button class="actbtn">購入履歴を見る</button>
+</s:form>
 </td>
 </tr>
 <tr>
