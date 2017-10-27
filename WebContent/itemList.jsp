@@ -60,7 +60,7 @@
 
 
 <div class="side_menu">
-<div style="font-size:22px;">SEACH MENU</div>
+<div style="font-size:22px;">SEARCH MENU</div>
 <hr>
 商品名検索
 <s:form theme="simple" action="GoItemListPageAction">
