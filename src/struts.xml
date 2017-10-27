@@ -84,10 +84,18 @@
 
 		<!-- CompleteOrderAction -->
 		<action name="CompleteOrderAction" class="com.internousdev.template.action.CompleteOrderAction" method="execute">
-		<result name="success">order_3_complete.jsp</result>
+		<result name="success" type="chain">GoOrderCompletePageAction</result>
 		<result name="error">order_2_confirm.jsp</result>
 		<result name="nostock" type="chain">ReloadCartAction</result>
 		</action>
+
+		<!-- GoOrderCompletePageAction -->
+		<action name="GoOrderCompletePageAction" class="com.internousdev.template.action.GoOrderCompletePageAction" method="execute">
+		<result name="success">order_3_complete.jsp</result>
+		<result name="error">order_3_complete.jsp</result>
+		</action>
+
+
 
 		<!-- ReloadCartAction -->
 		<action name="ReloadCartAction" class="com.internousdev.template.action.ReloadCartAction" method="execute">
