@@ -22,7 +22,9 @@
 <th>
 <a href="GoAboutPageAction">ABOUT</a>
 </th>
-<th>MY PAGE</th>
+<th>
+<a href="GoMyPageAction">MY PAGE</a>
+</th>
 <th>
 <a href="GoCartAction">CART</a>
 </th>

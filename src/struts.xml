@@ -96,13 +96,20 @@
 		<result name="error">order_3_complete.jsp</result>
 		</action>
 
-
-
 		<!-- ReloadCartAction -->
 		<action name="ReloadCartAction" class="com.internousdev.template.action.ReloadCartAction" method="execute">
 		<result name="success">out_of_stock.jsp</result>
 		<result name="error">out_of_stock.jsp</result>
 		</action>
+
+		<!-- GoMyPageAction -->
+		<action name="GoMyPageAction" class="com.internousdev.template.action.GoMyPageAction" method="execute">
+		<result name="success">myPage_1_profile.jsp</result>
+		<result name="error">itemList.jsp</result>
+		</action>
+
+
+
 
 
 
