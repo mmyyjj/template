@@ -23,16 +23,6 @@ public class HistoryOutlineDTO {
 	private int order_id;
 
 	/**
-	 * ユーザーID
-	 * */
-	private int user_id;
-
-	/**
-	 * ユーザー名
-	 * */
-	private String user_name;
-
-	/**
 	 * 合計金額
 	 */
 	private BigDecimal total_price;
@@ -41,6 +31,11 @@ public class HistoryOutlineDTO {
 	 * 注文日
 	 * */
 	private String order_date;
+
+	/**
+	 * 支払い方法
+	 * */
+	private String payment_method_string;
 
 	/**
 	 * 配達希望日
@@ -52,13 +47,7 @@ public class HistoryOutlineDTO {
 	 * */
 	private String delivery_time_string;
 
-
-	//以下、setter/getter--------------------------------
-
-
-
 	/**
-	 * 注文ID取得メソッド
 	 * @return order_id
 	 */
 	public int getOrder_id() {
@@ -66,7 +55,6 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * 注文ID格納メソッド
 	 * @param order_id セットする order_id
 	 */
 	public void setOrder_id(int order_id) {
@@ -74,39 +62,6 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * ユーザーID取得メソッド
-	 * @return user_id
-	 */
-	public int getUser_id() {
-		return user_id;
-	}
-
-	/**
-	 * ユーザーID格納メソッド
-	 * @param user_id セットする user_id
-	 */
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
-
-	/**
-	 * ユーザー名取得メソッド
-	 * @return user_name
-	 */
-	public String getUser_name() {
-		return user_name;
-	}
-
-	/**
-	 * ユーザー名格納メソッド
-	 * @param user_name セットする user_name
-	 */
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
-	}
-
-	/**
-	 * 合計金額取得メソッド
 	 * @return total_price
 	 */
 	public BigDecimal getTotal_price() {
@@ -114,7 +69,6 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * 合計金額格納メソッド
 	 * @param total_price セットする total_price
 	 */
 	public void setTotal_price(BigDecimal total_price) {
@@ -122,7 +76,6 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * 注文日取得メソッド
 	 * @return order_date
 	 */
 	public String getOrder_date() {
@@ -130,7 +83,6 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * 注文日格納メソッド
 	 * @param order_date セットする order_date
 	 */
 	public void setOrder_date(String order_date) {
@@ -138,7 +90,20 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * 配達希望日取得メソッド
+	 * @return payment_method_string
+	 */
+	public String getPayment_method_string() {
+		return payment_method_string;
+	}
+
+	/**
+	 * @param payment_method_string セットする payment_method_string
+	 */
+	public void setPayment_method_string(String payment_method_string) {
+		this.payment_method_string = payment_method_string;
+	}
+
+	/**
 	 * @return delivery_date
 	 */
 	public String getDelivery_date() {
@@ -146,7 +111,6 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * 配達希望日格納メソッド
 	 * @param delivery_date セットする delivery_date
 	 */
 	public void setDelivery_date(String delivery_date) {
@@ -154,7 +118,6 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * 配達希望時間帯取得メソッド
 	 * @return delivery_time_string
 	 */
 	public String getDelivery_time_string() {
@@ -162,12 +125,18 @@ public class HistoryOutlineDTO {
 	}
 
 	/**
-	 * 配達希望時間帯格納メソッド
 	 * @param delivery_time_string セットする delivery_time_string
 	 */
 	public void setDelivery_time_string(String delivery_time_string) {
 		this.delivery_time_string = delivery_time_string;
 	}
+
+
+	//以下、setter/getter--------------------------------
+
+
+
+
 
 
 
