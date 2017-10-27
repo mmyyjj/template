@@ -19,15 +19,14 @@
 <h1>ご購入履歴</h1>
 
 <table class="visible_table" style="width:820px; padding:0px 0px;">
-<tr>
+<tr style="font-size:12px;">
   <th>注文番号</th>
   <th>合計金額</th>
   <th>注文日</th>
   <th>お支払い方法</th>
   <th>代引き手数料</th>
   <th>配達希望日</th>
-  <th>配達希望時間帯</th>
-  <th>詳細</th>
+  <th>購入商品</th>
   <th>削除</th>
 </tr>
 
@@ -37,11 +36,10 @@
   <td><s:property value="total_price"/> 円</td>
     <td><s:property value="order_date"/></td>
   <td><s:property value="payment_method_string"/></td>
-  <td><s:property value="delivery_fee"/></td>
-  <td><s:property value="delivery_date"/></td>
-  <td><s:property value="delivery_time_string"/></td>
-  <td style="width:80px"><button class="actbtn" style="width:60px; margin-left:10px; margin-right:10px;">詳細</button></td>
-  <td style="width:80px"><button class="actbtn" style="width:60px; margin-left:10px; margin-right:10px;">削除</button></td>
+  <td><s:property value="delivery_fee"/> 円</td>
+  <td><s:property value="delivery_date"/>  <s:property value="delivery_time_string"/></td>
+  <td style="width:80px"><button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">購入商品</button></td>
+  <td style="width:80px"><button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">削除</button></td>
 </tr>
 </s:iterator>
 </table>
@@ -49,7 +47,9 @@
 
 <table style="margin:0 auto; height:120px;">
 <tr>
+<s:form action="GoMyPageAction">
   <td style="border:0px"><button class="actbtn">戻る</button></td>
+</s:form>
 </tr>
 </table>
 
