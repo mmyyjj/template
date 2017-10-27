@@ -33,6 +33,20 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 	public String execute(){
 		String result = ERROR;
 
+
+		/*完了画面で画面更新されたとき用。
+		 * 一つ前のCmpleteOrderActionでSUCCESSが出たとき、一緒にセッションのカート情報をカラにしています。
+		 * 同じくカラの状態でアクションが動いたら、画面更新がされたものとして別のページに飛ぶようにします。*/
+		if(session.get("cartItemList") == null){
+			result = "reloaded";
+			return result;
+		}
+
+		/*ここから実際の処理*/
+
+		/*メソッドの引数に使用する変数をセッションから呼び戻す
+		 * セッションから取り出してキャストしながら引数に渡すこともできそうですが、
+		 * 自分で書いててわからなくなるので一旦移し替える手法を取りました。*/
 		int user_id = (int)session.get("user_id");
 		BigDecimal total_price = (BigDecimal)session.get("total_price");
 		int payment_method_id = (int)session.get("payment_method_id");
@@ -40,10 +54,13 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 		int delivery_time_id = (int)session.get("delivery_time_id");
 		ArrayList<CartItemDTO>cartItemList = (ArrayList<CartItemDTO>)session.get("cartItemList");
 
+		/*購入履歴に新しくデータを登録するためのDAOと、そのメソッド*/
 		InsertNewHistoryDAO inhdao = new InsertNewHistoryDAO();
 		String transaction = inhdao.insertHistory(user_id, total_price, payment_method_id, delivery_date, delivery_time_id, cartItemList);
 
 		if(transaction == TRANSACTION_COMPLETED){
+			/*画面更新対策。セッションのカートリストの中身を別のものに変えておきます*/
+			session.put("cartItemList", null);
 			result = SUCCESS;
 		}else if(transaction == "detail_completed" || transaction == "stock_out"){
 			result = "nostock";

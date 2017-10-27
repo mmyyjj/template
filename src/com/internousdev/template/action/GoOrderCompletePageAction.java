@@ -27,6 +27,8 @@ public class GoOrderCompletePageAction extends ActionSupport implements SessionA
 	 * */
 	public String execute(){
 		String result = SUCCESS;
+
+
 		return result;
 	}
 

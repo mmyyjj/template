@@ -87,6 +87,7 @@
 		<result name="success" type="chain">GoOrderCompletePageAction</result>
 		<result name="error">order_2_confirm.jsp</result>
 		<result name="nostock" type="chain">ReloadCartAction</result>
+				<result name="reloaded">order_3_complete.jsp</result>
 		</action>
 
 		<!-- GoOrderCompletePageAction -->
