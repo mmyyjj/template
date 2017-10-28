@@ -10,9 +10,12 @@ import com.internousdev.template.dto.HistoryOutlineDTO;
 import com.internousdev.template.util.DBConnector;
 
 /**
- * 購入履歴を検索するためのDAOクラス。<br>
+ * 購入履歴(概要)を検索するためのDAOクラス。<br>
  * ユーザー側でselectUserHistoryOutlineメソッド、<br>
  * 管理側ではselectManagerHistoryOutlineメソッドを使用。
+ * @author YUKA MATUMURA
+ * @since 2017/10/28
+ * @version 1.0
  *
  * */
 public class SelectHistoryOutlineDAO {
