@@ -120,7 +120,11 @@
 		<result name="error">myPage_2_history_outline.jsp</result>
 		</action>
 
-
+		<!-- DeleteHistoryAction -->
+		<action name="DeleteHistoryAction" class="com.internousdev.template.action.DeleteHistoryAction" method="execute">
+		<result name="success">GoUserHistoryOutlineAction</result>
+		<result name="error">GoUserHistoryOutlineAction</result>
+		</action>
 
 
 
