@@ -107,13 +107,14 @@
 <s:form theme="simple" action="AddCartAction">
    <table class="item_table">
      <tr>
-       <th colspan="3" style="font-size:16px; border:0px;"><s:property value="product_name"/></th>
+       <th colspan="3" style="font-size:16px; text-align:left; border:0px;"><s:property value="product_name"/></th>
      </tr>
      <tr>
        <td style="width:100px; height:100px; border:0px;"><img src="img/sample_1.png"></td>
-       <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top; border:0px; font-size:16px;">
-       <b><s:property value="unit_price"/> 円</b>
+       <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top; border:0px;">
+       <b>価格： <font size="3px"><s:property value="unit_price"/></font> 円（税込み）</b>
        <br>
+         <div style="height:5px"></div>
          <s:property value="comment"/>
        </td>
      </tr>
