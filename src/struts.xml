@@ -114,7 +114,11 @@
 		<result name="error">myPage_1_profile</result>
 		</action>
 
-
+		<!-- GoUserHistoryDetailAction -->
+		<action name="GoUserHistoryDetailAction" class="com.internousdev.template.action.GoUserHistoryDetailAction" method="execute">
+		<result name="success">myPage_3_history_detail.jsp</result>
+		<result name="error">myPage_2_history_outline.jsp</result>
+		</action>
 
 
 
