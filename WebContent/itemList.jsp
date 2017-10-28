@@ -111,8 +111,8 @@
      </tr>
      <tr>
        <td style="width:100px; height:100px; border:0px;"><img src="img/sample_1.png"></td>
-       <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top; border:0px;">
-       <b><s:property value="unit_price"/></b>
+       <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top; border:0px; font-size:16px;">
+       <b><s:property value="unit_price"/> 円</b>
        <br>
          <s:property value="comment"/>
        </td>
