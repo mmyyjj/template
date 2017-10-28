@@ -20,30 +20,31 @@
 <br>
 <h1>購入履歴詳細</h1>
 
-<h3>2017/10/16 ご購入分</h3>
+<h3>注文番号：<s:property value="order_id"/></h3>
 <table class="visible_table" style="width:640px">
+
 <tr>
-  <th>商品画像</th><th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th><th style="width:100px">小計</th>
+  <th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th><th>小計</th>
 </tr>
+<s:iterator value="u_historyDetailList">
 <tr>
-<td style="width:100px">商品画像</td>
-<td>商品名</td>
-<td>単価</td>
-<td>購入数</td>
-<td>小計</td>
+<td><s:property value="product_name"/></td>
+<td><s:property value="unit_price"/> 円</td>
+<td><s:property value="order_number"/>個(うちラッピング包装：<s:property value="number_for_gift"/>個</td>
+<td><s:property value="subtotal"/> 円</td>
 </tr>
+</s:iterator>
 </table>
 
-<br>
-<div style="text-align:center; font-size:18px">合計金額　1.000円</div>
-<br>
-<br>
+<div style="height:50px"></div>
 <hr style="border:1px dashed">
 
 
 <table style="margin:0 auto; height:120px;">
 <tr>
-  <td style="border:0px"><button class="actbtn">お買い物に戻る</button></td>
+<s:form action="GoUserHistoryOutlineAction">
+  <td style="border:0px"><button class="actbtn">戻る</button></td>
+</s:form>
 </tr>
 </table>
 
