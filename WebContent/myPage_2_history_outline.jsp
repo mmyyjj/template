@@ -38,8 +38,19 @@
   <td><s:property value="payment_method_string"/></td>
   <td><s:property value="delivery_fee"/> 円</td>
   <td><s:property value="delivery_date"/>  <s:property value="delivery_time_string"/></td>
-  <td style="width:80px"><button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">購入商品</button></td>
-  <td style="width:80px"><button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">削除</button></td>
+
+  <td style="width:80px">
+    <s:form action="" theme="simple">
+    <s:hidden name="order_id" value="%{order_id}"/>
+    <button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">購入商品</button>
+    </s:form>
+  </td>
+  <td style="width:80px">
+    <s:form action="" theme="simple">
+    <s:hidden name="order_id" value="%{order_id}"/>
+    <button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">削除</button>
+    </s:form>
+  </td>
 </tr>
 </s:iterator>
 </table>
@@ -47,7 +58,7 @@
 
 <table style="margin:0 auto; height:120px;">
 <tr>
-<s:form action="GoMyPageAction">
+<s:form action="GoMyPageAction" theme="simple">
   <td style="border:0px"><button class="actbtn">戻る</button></td>
 </s:form>
 </tr>
