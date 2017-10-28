@@ -110,7 +110,8 @@ CREATE TABLE history_detail_table(
  unit_price DECIMAL(10,0) NOT NULL,
  order_number INT NOT NULL,
  number_for_gift INT NOT NULL,
- subtotal DECIMAL(10,0)
+ subtotal DECIMAL(10,0),
+ INDEX(order_id)
 );
 
 
