@@ -40,13 +40,13 @@
   <td><s:property value="delivery_date"/>  <s:property value="delivery_time_string"/></td>
 
   <td style="width:80px">
-    <s:form action="" theme="simple">
+    <s:form action="GoUserHistoryDetailAction" theme="simple">
     <s:hidden name="order_id" value="%{order_id}"/>
     <button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">購入商品</button>
     </s:form>
   </td>
   <td style="width:80px">
-    <s:form action="" theme="simple">
+    <s:form theme="simple">
     <s:hidden name="order_id" value="%{order_id}"/>
     <button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">削除</button>
     </s:form>

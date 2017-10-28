@@ -32,7 +32,10 @@ public class SelectHistoryDetailDAO {
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
-			String sql_select = "SELECT hitory_detail_table WHERE order_id = ?";
+			String sql_select = "SELECT A.*, B.product_name FROM"
+					+ " history_detail_table A, product_table B"
+					+ " WHERE order_id = ?"
+					+ " AND A.product_id = B.product_id";
 
 			PreparedStatement ps = con.prepareStatement(sql_select);
 			ps.setInt(1, order_id);
