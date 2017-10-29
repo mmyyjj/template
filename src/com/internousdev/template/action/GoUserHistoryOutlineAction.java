@@ -8,6 +8,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.SelectHistoryOutlineDAO;
 import com.internousdev.template.dto.HistoryOutlineDTO;
+import com.internousdev.template.util.HistoryOutlinePaginator;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -26,6 +27,21 @@ public class GoUserHistoryOutlineAction extends ActionSupport implements Session
 	private ArrayList<HistoryOutlineDTO> u_historyOutlineList = new ArrayList<HistoryOutlineDTO>();
 
 	/**
+	 * ページネートされたリスト
+	 * */
+	private ArrayList<HistoryOutlineDTO> paginatedList = new ArrayList<HistoryOutlineDTO>();
+
+	/**
+	 * 現在のページ数
+	 * */
+	private int current_page =1;
+
+	/**
+	 * 最大ページ数
+	 * */
+	private int max_page;
+
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object> ();
@@ -37,8 +53,12 @@ public class GoUserHistoryOutlineAction extends ActionSupport implements Session
 		int user_id = (int)session.get("user_id");
 
 		SelectHistoryOutlineDAO shodao = new SelectHistoryOutlineDAO();
+		HistoryOutlinePaginator hop = new HistoryOutlinePaginator();
 
 		u_historyOutlineList = shodao.selectUserHistoryOutline(user_id);
+
+		max_page = hop.returnMaxPage(u_historyOutlineList);
+		paginatedList = hop.paginateList(u_historyOutlineList, current_page);
 
 		if(u_historyOutlineList.size() > 0){
 			result = SUCCESS;
@@ -61,6 +81,48 @@ public class GoUserHistoryOutlineAction extends ActionSupport implements Session
 	 */
 	public void setU_historyOutlineList(ArrayList<HistoryOutlineDTO> u_historyOutlineList) {
 		this.u_historyOutlineList = u_historyOutlineList;
+	}
+
+	/**
+	 * @return paginatedList
+	 */
+	public ArrayList<HistoryOutlineDTO> getPaginatedList() {
+		return paginatedList;
+	}
+
+	/**
+	 * @param paginatedList セットする paginatedList
+	 */
+	public void setPaginatedList(ArrayList<HistoryOutlineDTO> paginatedList) {
+		this.paginatedList = paginatedList;
+	}
+
+	/**
+	 * @return current_page
+	 */
+	public int getCurrent_page() {
+		return current_page;
+	}
+
+	/**
+	 * @param current_page セットする current_page
+	 */
+	public void setCurrent_page(int current_page) {
+		this.current_page = current_page;
+	}
+
+	/**
+	 * @return max_page
+	 */
+	public int getMax_page() {
+		return max_page;
+	}
+
+	/**
+	 * @param max_page セットする max_page
+	 */
+	public void setMax_page(int max_page) {
+		this.max_page = max_page;
 	}
 
 	/**

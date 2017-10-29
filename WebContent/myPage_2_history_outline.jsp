@@ -9,6 +9,14 @@
 <!-- cssの設定・読み込み -->
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
 <link rel="stylesheet" type="text/css" href="css/user_main_design.css">
+<style type="text/css">
+		table{
+			margin:0 auto;
+			border:collapse:collapse;
+			padding:0px;
+			border:0px;
+		}
+</style>
 </head>
 <body>
 <header>
@@ -31,7 +39,7 @@
   <th>削除</th>
 </tr>
 
-<s:iterator value='u_historyOutlineList' >
+<s:iterator value='paginatedList' >
 <tr>
   <td><s:property value="order_id"/></td>
   <td><s:property value="total_price"/> 円</td>
@@ -62,6 +70,61 @@
  現在、ご注文履歴はありません
  <div style="height:30px;"></div>
 </s:else>
+
+
+<table style="margin-right:0 auto; margin-left:0 auto;">
+<tr>
+  <td style="width:80px; border:0px;">
+   <!-- 最初へボタン -->
+    <s:if test="(current_page -1) >= 1 ">
+      <s:form theme="simple" action="GoUserHistoryOutlineAction">
+       <s:hidden name="current_page" value="%{1}"/>
+       <button class="actbtn"style="width:60px;">最初へ</button>
+      </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最初へ</button>
+    </s:else>
+  </td>
+  <!-- 戻るボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="(current_page -1) >= 1 ">
+      <s:form theme="simple" action="GoUserHistoryOutlineAction">
+      <s:hidden name="current_page" value="%{current_page-1}"/>
+      <button class="actbtn"style="width:60px;">戻る</button>
+    </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">戻る</button>
+    </s:else>
+  </td>
+  <!-- 進むボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="current_page < max_page ">
+    <s:form theme="simple" action="GoUserHistoryOutlineAction">
+    <s:hidden name="current_page" value="%{current_page+1}"/>
+    <button class="actbtn"style="width:60px;">進む</button>
+    </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">進む</button>
+    </s:else>
+  </td>
+  <!-- 最後へボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="current_page < max_page ">
+    <s:form theme="simple" action="GoUserHistoryOutlineAction">
+    <s:hidden name="current_page" value="%{max_page}"/>
+    <button class="actbtn" style="width:60px;">最後へ</button>
+    </s:form>
+  </s:if>
+  <s:else>
+     <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最後へ</button>
+  </s:else>
+</td>
+</tr>
+</table>
+
 <table style="margin:0 auto; height:120px;">
 <tr>
 <s:form action="GoMyPageAction" theme="simple">

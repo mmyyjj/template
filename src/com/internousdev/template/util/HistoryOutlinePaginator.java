@@ -18,7 +18,7 @@ public class HistoryOutlinePaginator {
 	/**
 	 * 1ページに表示する件数
 	 * */
-	private int maxInPage = 10;
+	private int maxInPage = 3;
 
 	/**
 	 * 渡された全履歴のリストから最大ページ数を取得するメソッド
@@ -45,9 +45,9 @@ public class HistoryOutlinePaginator {
 	 * 全商品のリスト、最大ページ数、現在のページ数、最大表示件数を元に、
 	 * 次のページで表示する1ページ分のリストを作成するメソッド
 	 * */
-	public List<Object> paginateList(List<HistoryOutlineDTO> allHistoryList,int currentPage){
+	public ArrayList<HistoryOutlineDTO> paginateList(ArrayList<HistoryOutlineDTO> allHistoryList,int currentPage){
 
-		List<Object> paginatedHistoryList = new ArrayList<Object>();
+		ArrayList<HistoryOutlineDTO> paginatedHistoryList = new ArrayList<HistoryOutlineDTO>();
 		/*どこから*/
 		int firstIndex = 0;
 		firstIndex = firstIndex + ((currentPage - 1) * maxInPage);
