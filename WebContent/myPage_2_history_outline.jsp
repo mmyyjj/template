@@ -30,7 +30,7 @@
   <th>削除</th>
 </tr>
 
-<s:iterator value='session.get("u_historyOutlineList")' >
+<s:iterator value='u_historyOutlineList' >
 <tr>
   <td><s:property value="order_id"/></td>
   <td><s:property value="total_price"/> 円</td>
@@ -46,7 +46,7 @@
     </s:form>
   </td>
   <td style="width:80px">
-    <s:form theme="simple">
+    <s:form action="DeleteHistoryAction" theme="simple">
     <s:hidden name="order_id" value="%{order_id}"/>
     <button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">削除</button>
     </s:form>

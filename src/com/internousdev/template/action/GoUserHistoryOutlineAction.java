@@ -19,6 +19,12 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class GoUserHistoryOutlineAction extends ActionSupport implements SessionAware{
 
+
+	/**
+	 * 注文履歴概要(ユーザー側)リスト
+	 * */
+	private ArrayList<HistoryOutlineDTO> u_historyOutlineList = new ArrayList<HistoryOutlineDTO>();
+
 	/**
 	 * セッション
 	 * */
@@ -30,7 +36,6 @@ public class GoUserHistoryOutlineAction extends ActionSupport implements Session
 
 		int user_id = (int)session.get("user_id");
 
-		ArrayList<HistoryOutlineDTO> u_historyOutlineList = new ArrayList<HistoryOutlineDTO>();
 		SelectHistoryOutlineDAO shodao = new SelectHistoryOutlineDAO();
 
 		u_historyOutlineList = shodao.selectUserHistoryOutline(user_id);
@@ -42,6 +47,20 @@ public class GoUserHistoryOutlineAction extends ActionSupport implements Session
 
 		return result;
 
+	}
+
+	/**
+	 * @return u_historyOutlineList
+	 */
+	public ArrayList<HistoryOutlineDTO> getU_historyOutlineList() {
+		return u_historyOutlineList;
+	}
+
+	/**
+	 * @param u_historyOutlineList セットする u_historyOutlineList
+	 */
+	public void setU_historyOutlineList(ArrayList<HistoryOutlineDTO> u_historyOutlineList) {
+		this.u_historyOutlineList = u_historyOutlineList;
 	}
 
 	/**

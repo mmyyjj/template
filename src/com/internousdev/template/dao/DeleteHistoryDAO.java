@@ -27,7 +27,7 @@ public class DeleteHistoryDAO {
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
-			String sql_update = "UPDATE history_outline_table SET delete_flg = 0"
+			String sql_update = "UPDATE history_outline_table SET delete_flg = 1"
 					+ " WHERE order_id = ?";
 
 			PreparedStatement ps = con.prepareStatement(sql_update);
