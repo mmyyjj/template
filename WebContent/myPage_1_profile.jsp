@@ -14,11 +14,6 @@
 			margin:0 auto;
 			border:collapse:collapse;
 			padding:0px;
-			border:0px;
-		}
-
-		tr, td, th{
-			border:0px;
 		}
 </style>
 
@@ -32,8 +27,8 @@
 <br>
 <h1>お客様マイページ</h1>
 <br>
-
-<table>
+<h3>ご登録情報</h3>
+<table style="border-collapse:collapse;">
 <tr>
 <th>
   お名前
@@ -57,23 +52,23 @@
 </tr>
 </table>
 
-
+<div style="height:50px"></div>
 
 <table>
 <tr>
-<td>
+<td style="border:0px;">
 <s:form action = "GoUserHistoryOutlineAction">
 <button class="actbtn">購入履歴を見る</button>
 </s:form>
 </td>
 </tr>
 <tr>
-<td>
+<td style="border:0px;">
 <button class="actbtn">トップに戻る</button>
 </td>
 </tr>
 </table>
-<div style="height:50px;"></div>
+<div style="height:80px;"></div>
 </div>
 
 
