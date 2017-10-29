@@ -24,14 +24,13 @@
 <table class="visible_table" style="width:580px">
 
 <tr>
-  <th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th><th style="width:120px">小計</th>
+  <th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th>
 </tr>
 <s:iterator value="u_historyDetailList">
 <tr>
 <td><s:property value="product_name"/></td>
 <td><s:property value="unit_price"/> 円</td>
 <td><s:property value="order_number"/>個 (うちラッピング包装：<s:property value="number_for_gift"/>個)</td>
-<td><s:property value="subtotal"/> 円</td>
 </tr>
 </s:iterator>
 </table>
