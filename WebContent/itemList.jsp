@@ -141,28 +141,36 @@
 <div class="clear"></div>
 <!-- ここから商品一覧下の前へ・次へボタン -->
 
-<div style="padding:20px; margin-left:350px;">
+<div style="padding:20px; margin-left:330px;">
 <table>
 <tr>
   <td style="width:80px; border:0px;">
    <!-- 最初へボタン -->
     <s:if test="(currentPage -1) >= 1 ">
-    <s:form theme="simple" action="GoItemListPageAction">
-    <s:hidden name="currentPage" value="%{1}"/>
-     <s:hidden name="selectCategory" value="%{selectCategory}"/>
-    <button class="actbtn"style="width:60px;">最初へ</button>
-    </s:form>
+      <s:form theme="simple" action="GoItemListPageAction">
+       <s:hidden name="currentPage" value="%{1}"/>
+       <s:hidden name="selectCategory" value="%{selectCategory}"/>
+       <button class="actbtn"style="width:60px;">最初へ</button>
+      </s:form>
     </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最初へ</button>
+    </s:else>
   </td>
+  <!-- 戻るボタン -->
   <td style="width:80px; border:0px;">
     <s:if test="(currentPage -1) >= 1 ">
-    <s:form theme="simple" action="GoItemListPageAction">
-    <s:hidden name="currentPage" value="%{currentPage-1}"/>
-    <s:hidden name="selectCategory" value="%{selectCategory}"/>
-    <button class="actbtn"style="width:60px;">戻る</button>
+      <s:form theme="simple" action="GoItemListPageAction">
+      <s:hidden name="currentPage" value="%{currentPage-1}"/>
+      <s:hidden name="selectCategory" value="%{selectCategory}"/>
+      <button class="actbtn"style="width:60px;">戻る</button>
     </s:form>
     </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">戻る</button>
+    </s:else>
   </td>
+  <!-- 進むボタン -->
   <td style="width:80px; border:0px;">
     <s:if test="currentPage < maxPage ">
     <s:form theme="simple" action="GoItemListPageAction">
@@ -171,16 +179,22 @@
     <button class="actbtn"style="width:60px;">進む</button>
     </s:form>
     </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">進む</button>
+    </s:else>
   </td>
-  <td style="width:80px; border:0px;">
   <!-- 最後へボタン -->
-<s:if test="currentPage < maxPage ">
-  <s:form theme="simple" action="GoItemListPageAction">
+  <td style="width:80px; border:0px;">
+    <s:if test="currentPage < maxPage ">
+    <s:form theme="simple" action="GoItemListPageAction">
     <s:hidden name="currentPage" value="%{maxPage}"/>
     <s:hidden name="selectCategory" value="%{selectCategory}"/>
-  <button class="actbtn" style="width:60px;">最後へ</button>
-  </s:form>
-</s:if>
+    <button class="actbtn" style="width:60px;">最後へ</button>
+    </s:form>
+  </s:if>
+  <s:else>
+     <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最後へ</button>
+  </s:else>
   </td>
 </tr>
 </table>
