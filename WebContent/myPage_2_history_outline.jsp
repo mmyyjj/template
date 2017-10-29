@@ -18,6 +18,7 @@
 <div class="contents" style="padding-top:40px;">
 <h1>ご購入履歴</h1>
 
+<s:if test="u_historyOutlineList.size() > 0">
 <table class="visible_table" style="width:820px; padding:0px 0px;">
 <tr style="font-size:12px;">
   <th>注文番号</th>
@@ -54,8 +55,13 @@
 </tr>
 </s:iterator>
 </table>
+</s:if>
 
-
+<s:else>
+<div style="height:30px;"></div>
+ 現在、ご注文履歴はありません
+ <div style="height:30px;"></div>
+</s:else>
 <table style="margin:0 auto; height:120px;">
 <tr>
 <s:form action="GoMyPageAction" theme="simple">
@@ -63,7 +69,7 @@
 </s:form>
 </tr>
 </table>
-
+<div style="height:100px;"></div>
 </div>
 
 
