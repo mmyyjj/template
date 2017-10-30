@@ -41,7 +41,7 @@ public class LoginDAO {
 					String sql_login = "UPDATE user_info_table SET login_flg = 1 WHERE user_id = ?";
 					ps = con.prepareStatement(sql_login);
 					ps.setInt(1, rs.getInt("user_id"));
-					int updated = ps.executeUpdate();
+					ps.executeUpdate();
 
 					/*DTOにデータを入れる処理*/
 					lidto.setUser_id(rs.getInt("user_id"));
@@ -53,7 +53,6 @@ public class LoginDAO {
 					lidto.setPhone_number(rs.getString("phone_number"));
 					lidto.setUser_flg(rs.getInt("user_flg"));
 					lidto.setLogin_flg(rs.getInt("login_flg"));
-					System.out.println("LoginDAO-updated:" + updated);
 
 				} else {
 					lidto = null;

@@ -39,7 +39,6 @@ public class TimeSetDAO {
 				ResultSet rs = ps.executeQuery();
 				if(rs.next()){
 					dateList.add(rs.getString(1));
-					System.out.println("TimeSetDAO-date:"+ dateList.get(i));
 				}
 			}
 
@@ -76,7 +75,6 @@ public class TimeSetDAO {
 				if(rs.next()){
 					/*「2017-10-25」の、「2017」の部分だけ切り取ってリストに格納*/
 					yearList.add( (rs.getString(1)).substring(0,4) );
-					System.out.println("TimeSetDAO-year:"+ yearList.get(i -1));
 				}
 			}
 

@@ -26,8 +26,6 @@ public class SelectItemDAO {
 		/*最初の準備*/
 		List<ProductInfoDTO> selectedList = new ArrayList<ProductInfoDTO>();
 
-		System.out.println("SelectItemDAO-selectCategory:" + selectCategory);
-
 		if(selectWord == null){
 			selectWord = "";
 		}
@@ -66,8 +64,6 @@ public class SelectItemDAO {
 				selectedList.add(pidto);
 			}
 
-			System.out.println("SelectItemDAO-取得データ数：" + selectedList.size());
-
 			if(con != null){
 				con.close();
 				ps.close();
@@ -81,10 +77,6 @@ public class SelectItemDAO {
 		return selectedList;
 
 	}
-
-
-
-
 
 
 
