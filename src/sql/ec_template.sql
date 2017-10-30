@@ -174,6 +174,7 @@ CREATE TABLE image_table(
 );
 
 INSERT INTO image_table VALUES
+ ('img/sample_1.png'),
  ('img/[01]オリジナルマグカップ.png'),
  ('img/[02]止まり木ボールペン.png'),
  ('img/[03]不苦労ミニだるま.png'),

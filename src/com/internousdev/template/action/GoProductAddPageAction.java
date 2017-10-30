@@ -41,6 +41,7 @@ public class GoProductAddPageAction extends ActionSupport implements SessionAwar
 		session.put("new_unit_price", BigDecimal.valueOf(500));
 		session.put("new_current_stock", 50);
 		session.put("new_comment", "商品の説明です。");
+		session.put("new_img_path", "sample_1.png");
 
 		result = SUCCESS;
 
