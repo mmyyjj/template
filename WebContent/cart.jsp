@@ -29,13 +29,13 @@
 <h1>カート画面</h1>
 <br>
 
-<!-- ここからiterator処理 -->
+<s:if test="cartItemList.size() >0">
 
 <table class="visible_table" style="width:820px">
-
 <tr>
   <th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th><th>プレゼント包装</th><th style="width:100px">小計</th><th>操作</th>
 </tr>
+<!-- ここからiterator処理 -->
 <s:iterator value="cartItemList">
 <tr>
 <td><s:property value="product_name"/></td>
@@ -76,7 +76,11 @@
 <br>
 <br>
 <hr>
-
+</s:if>
+<s:else>
+  カートに商品がありません
+  <div style="height:0px"></div>
+</s:else>
 
 <table style="margin:0 auto; height:120px;">
 <tr>
