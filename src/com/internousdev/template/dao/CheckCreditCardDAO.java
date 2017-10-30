@@ -22,13 +22,6 @@ public class CheckCreditCardDAO {
 
 		int selected_num = 0;
 
-		System.out.println("CCCDAO-1:" + card_type);
-		System.out.println("CCCDAO-2:" + card_number);
-		System.out.println("CCCDAO-3:" + holder_name);
-		System.out.println("CCCDAO-4:" + expiration_month);
-		System.out.println("CCCDAO-5:" + expiration_year);
-		System.out.println("CCCDAO-6:" + security_code);
-
 		try{
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
@@ -66,7 +59,6 @@ public class CheckCreditCardDAO {
 			e.printStackTrace();
 		}
 
-		System.out.println("CCCDAO-selected_num:" + selected_num);
 		return selected_num;
 
 	}

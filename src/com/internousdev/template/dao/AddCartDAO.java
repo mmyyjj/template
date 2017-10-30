@@ -107,9 +107,7 @@ public class AddCartDAO {
 				}
 
 				ps.setInt(1, order_number);
-
 				ps.setInt(2, order_number);
-
 				ps.setInt(3, product_id);
 				ps.setInt(4, user_id);
 

@@ -175,7 +175,6 @@ public class InsertNewHistoryDAO {
 			e.printStackTrace();
 		}
 
-		System.out.println("inhDAO:"+ condition);
 		return condition;
 
 
