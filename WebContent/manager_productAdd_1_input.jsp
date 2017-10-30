@@ -20,11 +20,11 @@
 <small>商品情報を入力してください(商品IDは自動で入ります)</small>
 <br>
 <br>
-<form>
+<form >
 <table style="width:480px;">
 <tr>
 <th>商品名</th>
-<td><input type="text" size="30"required /></td>
+<td><input type="text" size="30"required /><s:property value='session.get("new_product_name")'/></td>
 </tr>
 <tr>
 <th>分類</th>
@@ -41,7 +41,7 @@
 <td><input type="text" size="10" pattern="[0-9]{1,20}" required />円</td>
 </tr>
 <tr>
-<th>初期在庫</th>
+<th>在庫</th>
 <td><input type="text" size="10" pattern="[0-9]{1,20}" required />個</td>
 </tr>
 <tr>
@@ -51,10 +51,10 @@
 </td>
 </tr>
 <tr>
-<th rowspan="2">選択中の画像：</th><td><s:select name="image_path" list="imagePathList" theme="simple"/></td>
+<th rowspan="2">選択中の画像：</th><td><s:select name="image_path" list="imagePathList" value='session.put("new_image_path")' theme="simple"/></td>
 </tr>
 <tr>
-<th style="height:100px;">画像プレビュー</th><td></td>
+<th style="height:100px;">画像プレビュー</th><td>画像</td>
 </tr>
 </table>
 <br>

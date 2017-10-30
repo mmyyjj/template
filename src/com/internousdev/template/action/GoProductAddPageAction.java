@@ -1,5 +1,6 @@
 package com.internousdev.template.action;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +35,12 @@ public class GoProductAddPageAction extends ActionSupport implements SessionAwar
 		SelectImagePathDAO sipdao = new SelectImagePathDAO();
 
 		setImagePathList(sipdao.selectImagePath());
+
+		session.put("new_product_name", "商品名を入力してください");
+		session.put("new_category", "");
+		session.put("new_unit_price", BigDecimal.valueOf(500));
+		session.put("new_current_stock", 50);
+		session.put("new_comment", "商品の説明です。");
 
 		result = SUCCESS;
 
