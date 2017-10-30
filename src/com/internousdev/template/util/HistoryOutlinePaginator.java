@@ -6,7 +6,8 @@ import java.util.List;
 import com.internousdev.template.dto.HistoryOutlineDTO;
 
 /**
- * 購入履歴(概要)のページネートを行うためのクラス。
+ * 購入履歴(概要)のページネートを行うためのクラス。<br>
+ * ユーザー側、管理者側双方で使用する。
  * @author YUKA MATSUMURA
  * @since 2017/10/29
  * @version 1.0
@@ -26,14 +27,14 @@ public class HistoryOutlinePaginator {
 	public int returnMaxPage(List<HistoryOutlineDTO> allHistoryList){
 
 		int maxPage = 0;
-		int allItem = allHistoryList.size();
+		int allHistory = allHistoryList.size();
 
-		System.out.println("ListPagination-allItem:" +  allItem);
+		System.out.println("ListPagination-allItem:" +  allHistory);
 
-		if(allItem % maxInPage == 0){
-			maxPage = (allItem / maxInPage);
-		}else if(allItem / maxInPage != 0){
-			maxPage = (allItem / maxInPage) + 1;
+		if(allHistory % maxInPage == 0){
+			maxPage = (allHistory / maxInPage);
+		}else if(allHistory / maxInPage != 0){
+			maxPage = (allHistory / maxInPage) + 1;
 		}
 
 		System.out.println("ListPagination-maxPage:" + maxPage);

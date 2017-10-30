@@ -79,4 +79,60 @@ public class SelectHistoryOutlineDAO {
 
 	}
 
+
+
+	/**
+	 * 購入履歴(概要)検索メソッド、管理者側
+	 * */
+	public ArrayList<HistoryOutlineDTO> selectManagerHistoryOutline(){
+
+		ArrayList<HistoryOutlineDTO> outlineList = new ArrayList<HistoryOutlineDTO>();
+
+		try{
+			DBConnector dbc = new DBConnector();
+			Connection con = dbc.getConnection();
+
+			String sql_select = "SELECT" +
+					 " A.order_id, A.total_price, A.order_date, B.payment_method_string, A.delivery_fee," +
+					 " A.delivery_date, C.delivery_time_string" +
+					 " FROM" +
+					 " history_outline_table A, payment_method_table B, delivery_time_table C" +
+					 " WHERE" +
+					 " A.payment_method_id = B.payment_method_id" +
+					 " AND A.delivery_time_id = C.delivery_time_id";
+
+			PreparedStatement ps = con.prepareStatement(sql_select);
+
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()){
+				HistoryOutlineDTO hodto = new HistoryOutlineDTO();
+				hodto.setOrder_id(rs.getInt("order_id"));
+				hodto.setTotal_price(rs.getBigDecimal("total_price"));
+				/*秒数の後に「.0」がついてしまうので、ここで取り除いておきます*/
+				hodto.setOrder_date( (rs.getString("order_date")).replace(".0", "") );
+				hodto.setPayment_method_string(rs.getString("payment_method_string"));
+				hodto.setDelivery_fee(rs.getBigDecimal("delivery_fee"));
+				hodto.setDelivery_date(rs.getString("delivery_date"));
+				hodto.setDelivery_time_string(rs.getString("delivery_time_string"));
+				outlineList.add(hodto);
+			}
+
+			if(con != null){
+				con.close();
+				ps.close();
+				rs.close();
+			}
+
+
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		return outlineList;
+
+
+
+	}
+
 }
