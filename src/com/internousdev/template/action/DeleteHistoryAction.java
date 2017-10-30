@@ -17,6 +17,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class DeleteHistoryAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -487741447800675194L;
+
+	/**
 	 * 検索注文ID
 	 * */
 	private int order_id;

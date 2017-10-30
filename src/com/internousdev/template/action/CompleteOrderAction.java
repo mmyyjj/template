@@ -20,6 +20,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CompleteOrderAction extends ActionSupport implements SessionAware {
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 3564860241457500324L;
+
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object>();

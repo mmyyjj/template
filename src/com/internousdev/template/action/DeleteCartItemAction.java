@@ -18,6 +18,11 @@ public class DeleteCartItemAction extends ActionSupport implements SessionAware{
 
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -2765238396143973969L;
+
+	/**
 	 * 商品ID
 	 * */
 	private int product_id;

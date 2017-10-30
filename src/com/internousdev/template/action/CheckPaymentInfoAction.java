@@ -20,6 +20,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CheckPaymentInfoAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -5691863049265149922L;
+
+	/**
 	 * 配達希望日
 	 * */
 	private String delivery_date;

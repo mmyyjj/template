@@ -20,6 +20,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AddCartAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -3038961841047020656L;
+
+	/**
 	 * 注文数<br>
 	 * */
 	private int order_number;

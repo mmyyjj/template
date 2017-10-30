@@ -18,6 +18,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CompleteProductAddAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 1618423615871273368L;
+
+	/**
 	 * 新規商品名
 	 * */
 	private String new_product_name;
