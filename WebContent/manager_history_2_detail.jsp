@@ -5,35 +5,49 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>顧客情報</title>
+<title>ご注文履歴詳細</title>
+<!-- cssの設定・読み込み -->
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
 <link rel="stylesheet" type="text/css" href="css/manager_main_design.css">
 </head>
 <body>
-<header>
-</header>
+
 
 <div class="contents">
-<h1>注文履歴詳細</h1>
-<h2>表示中の履歴：【注文ID】</h2>
 
+<br>
+<h1>購入履歴詳細</h1>
 
-<table style="width:640px;">
+<h3>注文番号：<s:property value="order_id"/></h3>
+<table class="visible_table" style="width:580px">
+
 <tr>
-<th>注文履歴ID</th>
-<th>受注日時</th>
-<th style="width:180px;">ユーザーID</th>
-<th>合計金額</th>
-<th>操作</th>
+  <th style="width:180px">商品名</th><th style="width:100px">単価</th><th>購入数</th>
 </tr>
+<s:iterator value="m_historyDetailList">
 <tr>
-<td>01</td><td>2017/10/17</td><td>01</td><td>10.000円</td><td><button class="oprbtn">詳細</button></td>
+<td><s:property value="product_name"/></td>
+<td><s:property value="unit_price"/> 円</td>
+<td><s:property value="order_number"/>個 (うちラッピング包装：<s:property value="number_for_gift"/>個)</td>
+</tr>
+</s:iterator>
+</table>
+
+<div style="height:50px"></div>
+<hr style="border:1px dashed">
+
+
+<table style="margin:0 auto; height:120px;">
+<tr>
+<s:form action="GoManagerHistoryOutlineAction" theme="simple">
+  <td style="border:0px"><button class="actbtn">戻る</button></td>
+</s:form>
 </tr>
 </table>
+
+<div style="height:120px;"></div>
 </div>
-
-
-<footer>
+<footer style="margin-top:0px;">
 </footer>
 </body>
 </html>

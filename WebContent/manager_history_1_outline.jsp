@@ -24,7 +24,7 @@
 <h1>ご購入履歴</h1>
 
 <s:if test="m_historyOutlineList.size() > 0">
-<table class="visible_table" style="width:820px; padding:0px 0px;">
+<table class="visible_table" style="width:860px; padding:0px 0px;">
 <tr style="font-size:12px;">
   <th>注文番号</th>
   <th>注文者ID</th>
@@ -33,8 +33,8 @@
   <th>お支払い方法</th>
   <th>代引き手数料</th>
   <th>配達希望日</th>
-  <th>購入商品</th>
-  <th>削除</th>
+  <th style="width:80px">購入商品</th>
+  <th style="width:80px">削除</th>
 </tr>
 
 <s:iterator value='paginatedList' >
@@ -48,7 +48,7 @@
   <td><s:property value="delivery_date"/>  <s:property value="delivery_time_string"/></td>
 
   <td style="width:80px">
-    <s:form action="GoUserHistoryDetailAction" theme="simple">
+    <s:form action="GoManagerHistoryDetailAction" theme="simple">
     <s:hidden name="order_id" value="%{order_id}"/>
     <button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">購入商品</button>
     </s:form>
@@ -70,7 +70,7 @@
  <div style="height:30px;"></div>
 </s:else>
 
-
+<div style="height:50px"></div>
 <table style="margin-right:0 auto; margin-left:0 auto;">
 <tr>
   <td style="width:80px; border:0px;">

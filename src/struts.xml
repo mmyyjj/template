@@ -139,6 +139,17 @@
 		<result name="error">manager_top.jsp</result>
 		</action>
 
+		<!-- GoManagerHistoryDetailAction -->
+		<action name="GoManagerHistoryDetailAction" class="com.internousdev.template.action.GoManagerHistoryDetailAction" method="execute">
+		<result name="success">manager_history_2_detail.jsp</result>
+		<result name="error">manager_history_1_outline.jsp</result>
+		</action>
+
+
+
+
+
+
 
 
 
