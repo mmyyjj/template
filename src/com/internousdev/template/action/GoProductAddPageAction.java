@@ -12,6 +12,10 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 新規商品の追加ページに遷移するアクション
+ * @author YUKA MATSUMURA
+ * @since 2017/10/30
+ * @version 1.0
+ *
  * */
 public class GoProductAddPageAction extends ActionSupport implements SessionAware{
 
@@ -37,11 +41,9 @@ public class GoProductAddPageAction extends ActionSupport implements SessionAwar
 		setImagePathList(sipdao.selectImagePath());
 
 		session.put("new_product_name", "商品名を入力してください");
-		session.put("new_category", "");
 		session.put("new_unit_price", BigDecimal.valueOf(500));
 		session.put("new_current_stock", 50);
 		session.put("new_comment", "商品の説明です。");
-		session.put("new_img_path", "sample_1.png");
 
 		result = SUCCESS;
 
