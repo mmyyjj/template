@@ -46,10 +46,14 @@
 <table>
 <tr>
 <td style="border:0px;">
+<s:form action="GoItemListPageAction">
 <button class="actbtn">お買い物を続ける</button>
+</s:form>
 </td>
 <td style="border:0px;">
+<s:form action="LogotAction">
 <button class="actbtn">ログアウト</button>
+</s:form>
 </td>
 </tr>
 </table>
