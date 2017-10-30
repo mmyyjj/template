@@ -24,7 +24,7 @@
 <table style="width:480px;">
 <tr>
 <th>商品名</th>
-<td><input type="text" size="30"required /><s:property value='session.get("new_product_name")'/></td>
+<td><input type="text" size="30"required value="<s:property value='session.get("new_product_name")'/>"></td>
 </tr>
 <tr>
 <th>分類</th>
@@ -38,23 +38,25 @@
 </tr>
 <tr>
 <th>単価</th>
-<td><input type="text" size="10" pattern="[0-9]{1,20}" required />円</td>
+<td>
+<input type="text" size="10" pattern="[0-9]{1,20}" required  value="<s:property value='session.get("new_unit_price")'/>"/>
+円</td>
 </tr>
 <tr>
 <th>在庫</th>
-<td><input type="text" size="10" pattern="[0-9]{1,20}" required />個</td>
+<td><input type="text" size="10" pattern="[0-9]{1,20}" required value="<s:property value='session.get("new_current_stock")'/>"/>個</td>
 </tr>
 <tr>
 <th>説明<br>(300字以内)</th>
 <td>
-<textarea rows="10" cols="30" maxlength="300" required></textarea>
+<textarea rows="10" cols="30" maxlength="300" required><s:property value='session.get("new_comment")'/></textarea>
 </td>
 </tr>
 <tr>
 <th rowspan="2">選択中の画像：</th><td><s:select name="image_path" list="imagePathList" value='session.put("new_image_path")' theme="simple"/></td>
 </tr>
 <tr>
-<th style="height:100px;">画像プレビュー</th><td>画像</td>
+<td>画像</td>
 </tr>
 </table>
 <br>
