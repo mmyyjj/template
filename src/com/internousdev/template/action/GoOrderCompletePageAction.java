@@ -17,6 +17,10 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoOrderCompletePageAction extends ActionSupport implements SessionAware {
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -972606443916166947L;
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object>();

@@ -21,6 +21,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoOrderInputAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 8525792602202290L;
+
+	/**
 	 * 配達希望日リスト
 	 * */
 	private List<String> dateList = new ArrayList<String>();

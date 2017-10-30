@@ -16,6 +16,10 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoManagerTopAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 5425825947579047599L;
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object>();
