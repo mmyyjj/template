@@ -25,7 +25,7 @@ public class InsertImagePathDAO {
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
-			String sql_insert = "INSERT INTO image_table VALUES(?)";
+			String sql_insert = "INSERT INTO image_table (image_path) VALUES(?)";
 
 			PreparedStatement ps = con.prepareStatement(sql_insert);
 

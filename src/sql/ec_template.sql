@@ -169,11 +169,13 @@ INSERT INTO credit_card_table VALUES
 -- 画像保管テーブルの作成、データ挿入
 
 CREATE TABLE image_table(
+ image_id INT NOT NULL AUTO_INCREMENT,
  image_path VARCHAR(200) NOT NULL,
+ PRIMARY KEY(image_id),
  UNIQUE INDEX(image_path)
 );
 
-INSERT INTO image_table VALUES
+INSERT INTO image_table (image_path)VALUES
  ('img/sample_1.png'),
  ('img/[01]オリジナルマグカップ.png'),
  ('img/[02]止まり木ボールペン.png'),
