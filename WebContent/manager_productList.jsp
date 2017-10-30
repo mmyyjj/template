@@ -49,6 +49,61 @@
 
 <div style="height:100px"></div>
 
+<table style="margin-right:0 auto; margin-left:0 auto;">
+<tr>
+  <td style="width:80px; border:0px;">
+   <!-- 最初へボタン -->
+    <s:if test="(current_page -1) >= 1 ">
+      <s:form theme="simple" action="GoManagerProductListAction">
+       <s:hidden name="current_page" value="%{1}"/>
+       <button class="actbtn"style="width:60px;">最初へ</button>
+      </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最初へ</button>
+    </s:else>
+  </td>
+  <!-- 戻るボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="(current_page -1) >= 1 ">
+      <s:form theme="simple" action="GoManagerProductListAction">
+      <s:hidden name="current_page" value="%{current_page-1}"/>
+      <button class="actbtn"style="width:60px;">戻る</button>
+    </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">戻る</button>
+    </s:else>
+  </td>
+  <!-- 進むボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="current_page < max_page ">
+    <s:form theme="simple" action="GoManagerProductListAction">
+    <s:hidden name="current_page" value="%{current_page+1}"/>
+    <button class="actbtn"style="width:60px;">進む</button>
+    </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">進む</button>
+    </s:else>
+  </td>
+  <!-- 最後へボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="current_page < max_page ">
+    <s:form theme="simple" action="GoManagerProductListAction">
+    <s:hidden name="current_page" value="%{max_page}"/>
+    <button class="actbtn" style="width:60px;">最後へ</button>
+    </s:form>
+  </s:if>
+  <s:else>
+     <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最後へ</button>
+  </s:else>
+</td>
+</tr>
+</table>
+
+<div style="height:100px"></div>
+
 <table>
   <tr>
     <td>
@@ -74,8 +129,10 @@
   </s:form>
 </td>
 </tr>
-<tr style="border:0px">
+<tr>
+<s:form action="GoManagerTopAction">
 <td style="border:0px; padding-top:5px; padding-bottom:5px;"><button class="oprbtn_large">トップに戻る</button></td>
+</s:form>
 </tr>
 </table>
 <footer>
