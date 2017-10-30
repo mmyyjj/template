@@ -28,7 +28,7 @@ public class GoCustomerListAction extends ActionSupport implements SessionAware{
 	/**
 	 * ページネートされた顧客情報のリスト
 	 * */
-	private ArrayList<UserInfoDTO> paginatedList = new ArrayList<UserInfoDTO>();
+	private ArrayList<UserInfoDTO> paginatedCustomerList = new ArrayList<UserInfoDTO>();
 
 	/**
 	 * 現在のページ
@@ -59,7 +59,7 @@ public class GoCustomerListAction extends ActionSupport implements SessionAware{
 		allCustomerList = scldao.selectCustomerList();
 		max_page = clp.returnMaxPage(allCustomerList);
 
-		paginatedList = clp.paginateList(allCustomerList, current_page);
+		paginatedCustomerList = clp.paginateList(allCustomerList, current_page);
 
 		result = SUCCESS;
 		return result;
@@ -84,18 +84,26 @@ public class GoCustomerListAction extends ActionSupport implements SessionAware{
 
 
 	/**
-	 * @return paginatedList
+	 * @return paginatedCustomerList
 	 */
-	public List<UserInfoDTO> getPaginatedList() {
-		return paginatedList;
+	public ArrayList<UserInfoDTO> getPaginatedCustomerList() {
+		return paginatedCustomerList;
 	}
 
 
 	/**
-	 * @param paginatedList セットする paginatedList
+	 * @param paginatedCustomerList セットする paginatedCustomerList
 	 */
-	public void setPaginatedList(List<UserInfoDTO> paginatedList) {
-		this.paginatedList = (ArrayList<UserInfoDTO>) paginatedList;
+	public void setPaginatedCustomerList(ArrayList<UserInfoDTO> paginatedCustomerList) {
+		this.paginatedCustomerList = paginatedCustomerList;
+	}
+
+
+	/**
+	 * @param allCustomerList セットする allCustomerList
+	 */
+	public void setAllCustomerList(ArrayList<UserInfoDTO> allCustomerList) {
+		this.allCustomerList = allCustomerList;
 	}
 
 
