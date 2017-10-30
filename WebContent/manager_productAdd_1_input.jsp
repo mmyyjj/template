@@ -35,12 +35,12 @@
 <tr>
 <th>単価</th>
 <td>
-<input type="text" name="new_unit_price" size="10" pattern="[0-9]{1,20}" required  value="<s:property value='session.get("new_unit_price")'/>"/>
+<input type="number" name="new_unit_price" size="10" pattern="[0-9]{1,20}"min="1" required  value="<s:property value='session.get("new_unit_price")'/>"/>
 円</td>
 </tr>
 <tr>
 <th>在庫</th>
-<td><input type="text" name="new_current_stock" size="10" pattern="[0-9]{1,20}" required value="<s:property value='session.get("new_current_stock")'/>"/>個</td>
+<td><input type="number" name="new_current_stock" size="10" pattern="[0-9]{1,20}" min="1" required value="<s:property value='session.get("new_current_stock")'/>"/>個</td>
 </tr>
 <tr>
 <th>説明<br>(300字以内)</th>
