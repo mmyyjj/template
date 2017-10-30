@@ -52,7 +52,11 @@
 
 <table style="border:0px;">
 <tr style="border:0px;">
-<td style="border:0px; padding-top:5px; padding-bottom:5px;"><button class="oprbtn_large">商品の追加</button></td>
+<td style="border:0px; padding-top:5px; padding-bottom:5px;">
+  <s:form action="GoProductAddPageAction">
+    <button class="oprbtn_large">商品の追加</button>
+  </s:form>
+</td>
 </tr>
 <tr style="border:0px">
 <td style="border:0px; padding-top:5px; padding-bottom:5px;"><button class="oprbtn_large">トップに戻る</button></td>

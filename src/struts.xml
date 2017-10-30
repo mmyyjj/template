@@ -157,6 +157,17 @@
 		<result name="error">manager_productList.jsp</result>
 		</action>
 
+		<!-- GoProductAddPageAction -->
+		<action name="GoProductAddPageAction" class="com.internousdev.template.action.GoProductAddPageAction" method="execute">
+		<result name="success">manager_productAdd_1_input.jsp</result>
+		<result name="error">manager_productAdd_1_input.jsp</result>
+		</action>
+
+
+
+
+
+
 
 
 
