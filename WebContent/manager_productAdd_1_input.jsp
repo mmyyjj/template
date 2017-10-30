@@ -20,7 +20,7 @@
 <small>商品情報を入力してください(商品IDは自動で入ります)</small>
 <br>
 <br>
-<form >
+<form action="CompleteProductAddAction">
 <table style="width:480px;">
 <tr>
 <th>商品名</th>
