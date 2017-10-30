@@ -33,11 +33,25 @@ public class AddCartDAO {
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
-			/*sql文を準備*/
-			String sql = "INSERT INTO cart (user_id, product_id, unit_price, order_number,subtotal) VALUES"
+			/*在庫確認のsql文*/
+			/*注文数が在庫より多い場合は、在庫の数に合わせて更新するようにする*/
+			String sql_stock = "SELECT current_stock FROM product_table WHERE product_id = ?";
+			PreparedStatement ps = con.prepareStatement(sql_stock);
+			ps.setInt(1, product_id);
+
+			ResultSet rs = ps.executeQuery();
+
+			if(rs.next()){
+				if(order_number > rs.getInt("current_stock")){
+					order_number = rs.getInt("current_stock");
+				}
+			}
+
+			/*カート更新のsql文を準備*/
+			String sql_insert = "INSERT INTO cart (user_id, product_id, unit_price, order_number,subtotal) VALUES"
 					+ "( ?, ?, ?, ?, ?)";
 
-			PreparedStatement ps = con.prepareStatement(sql);
+			ps = con.prepareStatement(sql_insert);
 
 			ps.setInt(1, user_id);
 			ps.setInt(2, product_id);

@@ -49,6 +49,7 @@
 		<result name="error">itemList.jsp</result>
 		<result name="added" type="chain">GoCartAction</result>
 		<result name="guest" type="chain">GoLoginPageAction</result>
+		<result name="cart_full" type="chain">GoCartAction</result>
 		</action>
 
 		<!-- GoCartAction -->

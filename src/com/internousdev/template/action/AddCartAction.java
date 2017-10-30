@@ -1,12 +1,15 @@
 package com.internousdev.template.action;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.AddCartDAO;
+import com.internousdev.template.dto.CartItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -18,7 +21,6 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 
 	/**
 	 * 注文数<br>
-	 * フォームからの入力のためStringで処理
 	 * */
 	private int order_number;
 
@@ -33,6 +35,16 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	private BigDecimal unit_price;
 
 	/**
+	 * 次の画面で表示するカート情報リスト
+	 * */
+	private List<CartItemDTO> cartItemList = new ArrayList<CartItemDTO>();
+
+	/**
+	 * カート満杯時のメッセージ
+	 * */
+	private String cart_full_message;
+
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object>();
@@ -41,6 +53,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	/**
 	 * 実行メソッド
 	 * */
+	@SuppressWarnings({ "unchecked" })
 	public String execute(){
 
 		String result = ERROR;
@@ -61,6 +74,14 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 			result = "added";
 
 		} else {
+			/*カートの中身が満タン(10個)だったら、その旨を返す*/
+			cartItemList = (ArrayList<CartItemDTO>)session.get("cartItemList");
+			if(cartItemList != null && cartItemList.size() == 10){
+				cart_full_message = "一度にお求めいただける商品は10種類までとなっております";
+				result = "cart_full";
+				return result;
+			}
+
 			/*カートに同じ商品がなかった場合は、新しくカートに追加する*/
 			int success_number = acdao.addCart(user_id, product_id, unit_price,order_number);
 			if(success_number > 0){
@@ -120,6 +141,38 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	 */
 	public void setUnit_price(BigDecimal unit_price) {
 		this.unit_price = unit_price;
+	}
+
+
+	/**
+	 * @return cartItemList
+	 */
+	public List<CartItemDTO> getCartItemList() {
+		return cartItemList;
+	}
+
+
+	/**
+	 * @param cartItemList セットする cartItemList
+	 */
+	public void setCartItemList(List<CartItemDTO> cartItemList) {
+		this.cartItemList = cartItemList;
+	}
+
+
+	/**
+	 * @return cart_full_message
+	 */
+	public String getCart_full_message() {
+		return cart_full_message;
+	}
+
+
+	/**
+	 * @param cart_full_message セットする cart_full_message
+	 */
+	public void setCart_full_message(String cart_full_message) {
+		this.cart_full_message = cart_full_message;
 	}
 
 

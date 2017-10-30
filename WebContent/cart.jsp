@@ -30,6 +30,8 @@
 <br>
 
 <s:if test="cartItemList.size() >0">
+<!-- カートが満杯になったときのメッセージ -->
+<font color="red"><s:property value="cart_full_message"/></font>
 
 <table class="visible_table" style="width:820px">
 <tr>
