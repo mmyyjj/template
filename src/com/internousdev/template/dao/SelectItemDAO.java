@@ -13,7 +13,7 @@ import com.internousdev.template.util.DBConnector;
 /**
  * DBから商品情報を取得するためのクラス。
  *<br>
- * ユーザー側の商品一覧ページの表示に使用する。
+ * 商品一覧ページの表示に使用する。ユーザー、管理側ともに使用。
  * @autohr YUKA MATSUMURA
  * @since 2017/10/20
  * @version 1.0
@@ -43,7 +43,7 @@ public class SelectItemDAO {
 			Connection con = dbc.getConnection();
 
 			/*sql文を準備*/
-			String sql = "SELECT * FROM product_table WHERE product_name LIKE ? AND category LIKE ?";
+			String sql = "SELECT * FROM product_table WHERE product_name LIKE ? AND category LIKE ? AND delete_flg = 0";
 
 			PreparedStatement ps = con.prepareStatement(sql);
 
@@ -62,6 +62,7 @@ public class SelectItemDAO {
 				pidto.setOrdered_number(rs.getInt("ordered_number"));
 				pidto.setComment(rs.getString("comment"));
 				pidto.setImg_path(rs.getString("img_path"));
+				pidto.setDelete_flg(rs.getInt("delete_flg"));
 				selectedList.add(pidto);
 			}
 
