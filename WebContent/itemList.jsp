@@ -110,7 +110,7 @@
        <th colspan="3" style="font-size:16px; text-align:left; border:0px;"><s:property value="product_name"/></th>
      </tr>
      <tr>
-       <td style="width:100px; height:100px; border:0px;"><img src='<s:property value="img_path"/>'></td>
+       <td style="width:100px; height:100px; border:0px;"><img src='<s:property value="img_path"/>' width="100px" height="100px"></td>
        <td colspan="2" style="padding-left:10px;padding-top:10px; vertical-align:top; border:0px;">
        <b>価格： <font size="3px"><s:property value="unit_price"/></font> 円（税込み）</b>
        <br>
