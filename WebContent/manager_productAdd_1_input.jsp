@@ -38,16 +38,16 @@
 </tr>
 <tr>
 <th>単価</th>
-<td><input type="text" size="10" pattern="[0-9]{20}" required />円</td>
+<td><input type="text" size="10" pattern="[0-9]{1,20}" required />円</td>
 </tr>
 <tr>
 <th>初期在庫</th>
-<td><input type="text" size="10" pattern="[0-9]{20}" required />個</td>
+<td><input type="text" size="10" pattern="[0-9]{1,20}" required />個</td>
 </tr>
 <tr>
 <th>説明<br>(300字以内)</th>
 <td>
-<textarea rows="10" cols="30"></textarea>
+<textarea rows="10" cols="30" maxlength="300" required></textarea>
 </td>
 </tr>
 <tr>

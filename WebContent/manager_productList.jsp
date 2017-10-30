@@ -35,7 +35,12 @@
   <td><s:property value="category"/></td>
   <td><s:property value="unit_price"/></td>
   <td><s:property value="current_stock"/></td>
-  <td><button class="oprbtn">編集</button></td>
+  <td>
+    <s:form>
+    <s:hidden name="product_id" value="%{product_id}"/>
+    <button class="oprbtn">編集</button>
+    </s:form>
+  </td>
   <td><button class="oprbtn">削除</button></td>
   </tr>
 </s:iterator>
