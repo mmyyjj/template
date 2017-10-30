@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>商品情報編集-入力</title>
+<title>商品情報編集画面</title>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18/build/cssreset/cssreset-min.css">
 <link rel="stylesheet" type="text/css" href="css/manager_main_design.css">
 </head>
@@ -14,61 +14,47 @@
 </header>
 
 <div class="contents">
-<h1>商品情報入力</h1>
+<h1>新規商品情報入力</h1>
 
-<h3>編集中の商品ID：【商品ID】</h3>
-<small>商品情報を入力してください</small>
+
+<small>商品情報を入力してください(商品IDは変更されません)</small>
 <br>
 <br>
-<form>
+<form action="CompleteProductAddAction">
 <table style="width:480px;">
 <tr>
 <th>商品名</th>
-<td><input type="text" size="30"required /></td>
+<td><input type="text" name="edit_product_name" size="30"required value="<s:property value='session.get("edit_product_name")'/>"></td>
 </tr>
 <tr>
 <th>分類</th>
 <td>
-<select>
-<option value="キッチン用品">キッチン用品</option>
-<option value="ステーショナリー">ステーショナリー</option>
-<option value="ミニインテリア">ミニインテリア</option>
-</select>
+<s:select name="edit_category" list='{"キッチン用品","ステーショナリー","インテリア"}' theme="simple"/>
 </td>
 </tr>
 <tr>
 <th>単価</th>
-<td><input type="text" size="10" pattern="[0-9]{1,20}" required />円</td>
+<td>
+<input type="number" name="edit_unit_price" size="10" pattern="[0-9]{1,20}"min="1" required  value="<s:property value='session.get("edit_unit_price")'/>"/>
+円</td>
 </tr>
 <tr>
-<th>初期在庫</th>
-<td><input type="text" size="10" pattern="[0-9]{1,20}" required />個</td>
+<th>在庫</th>
+<td><input type="number" name="edit_current_stock" size="10" pattern="[0-9]{1,20}" min="1" required value="<s:property value='session.get("edit_current_stock")'/>"/>個</td>
 </tr>
 <tr>
 <th>説明<br>(300字以内)</th>
 <td>
-<textarea rows="10" cols="30" maxlength="300" required></textarea>
+<textarea rows="10" cols="30" maxlength="300" name="edit_comment" required><s:property value='session.get("edit_comment")'/></textarea>
 </td>
 </tr>
 <tr>
-<th rowspan="2">選択中の画像：</th><td>【画像名】</td>
-</tr>
-<tr>
-<td>画像更新：<input type="file"></td>
-</tr>
-<tr>
-<th style="height:100px;">画像プレビュー</th><td></td>
+<th rowspan="2">選択中の画像：</th><td><s:select name="edit_img_path" list="imagePathList" theme="simple"/></td>
+
 </tr>
 </table>
 <br>
-<div style="margin-top:20px; margin-bottom:60px; font-size:16px; color:red;">
-<label>
-<input type="checkbox">この商品を削除する
-</label>
-</div>
-
-
-<button class="oprbtn_large">確認</button>
+<button class="oprbtn_large">追加</button>
 
 </form>
 
@@ -76,7 +62,7 @@
 <hr>
 <div style="height:50px"></div>
 <table style="border:0px;">
-<tr style="border:0px;">
+<tr style="border:0px">
 <td style="border:0px; padding-top:5px; padding-bottom:5px;"><button class="oprbtn_large">一覧に戻る</button></td>
 </tr>
 </table>
