@@ -24,7 +24,7 @@ public class SelectImagePathDAO {
 			DBConnector dbc = new DBConnector();
 			Connection con = dbc.getConnection();
 
-			String sql_select = "SELECT * FROM image_table";
+			String sql_select = "SELECT * FROM image_table ORDER BY image_id ASC";
 
 			PreparedStatement ps = con.prepareStatement(sql_select);
 

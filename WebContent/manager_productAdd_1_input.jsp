@@ -49,7 +49,7 @@
 </td>
 </tr>
 <tr>
-<th rowspan="2">選択中の画像：</th><td><s:select name="new_img_path" list="imagePathList" headerValue="img/sample_1.png" theme="simple"/></td>
+<th rowspan="2">選択中の画像：</th><td><s:select name="new_img_path" list="imagePathList" theme="simple"/></td>
 
 </tr>
 </table>
