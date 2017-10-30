@@ -17,7 +17,7 @@
 <div class="contents">
 <h1>Manager's Pape TOP</h1>
 
-・商品管理・<br>
+<a href="GoManagerProductListAction">・顧客情報・</a><br>
 <a href="GoManagerHistoryOutlineAction">・注文履歴・</a><br>
 <a href="GoCustomerListAction">・顧客情報・</a><br>
 
