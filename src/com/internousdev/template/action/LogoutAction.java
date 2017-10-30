@@ -37,7 +37,6 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 
 		}
 
-		System.out.println("LogoutAction-:result:" + result);
 		return result;
 	}
 

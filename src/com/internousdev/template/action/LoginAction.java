@@ -68,14 +68,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		/*ログイン後、ブラウザバックして再びログインされた場合の処理*/
 		if(session.get("user_id") != null){
-		System.out.println("セッションあり");
-		System.out.println("LoginAction-mail_address:" + mail_address);
-		System.out.println("LoginAction-password:" + password);
-		System.out.println("Session-mail_address:" + (String)session.get("mail_address"));
-		System.out.println("Session-password:" +(String)session.get("password"));
 			if( mail_address.equals((String)session.get("mail_address"))
 					&& password.equals((String)session.get("password")) ){
-				//user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
 				loginError_message = "";
 				if((int)session.get("user_flg") == 0){
 					result = SUCCESS;
@@ -83,8 +77,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 					result="manager";
 				}
 
-				System.out.println("LoginAction-result:" + result);
 				return result;
+			/*ログインする→ログイン画面にブラウザバック→別のアカウントでログインしようとする、と、エラーになる処理*/
 			} else {
 				session.clear();
 				loginError_message = "ログインエラーです。もう一度情報を入力してください。";

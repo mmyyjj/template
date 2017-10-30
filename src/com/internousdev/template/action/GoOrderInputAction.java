@@ -49,7 +49,6 @@ public class GoOrderInputAction extends ActionSupport implements SessionAware{
 
 		session.put("dateList", dateList);
 		session.put("yearList", yearList);
-		System.out.println("GoOrderInputAction-yearList" + yearList.size());
 
 		if(dateList.size() > 0 && yearList.size() > 0){
 			result = SUCCESS;

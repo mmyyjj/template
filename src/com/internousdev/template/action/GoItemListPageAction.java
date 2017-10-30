@@ -71,9 +71,6 @@ public class GoItemListPageAction extends ActionSupport implements SessionAware 
 	 * */
 	public String execute(){
 
-		System.out.println("GoItemListPageAction-currentPage" + currentPage);
-		System.out.println("GoItemListPageAction-maxPage" + maxPage);
-
 		String result = ERROR;
 
 		SelectItemDAO sidao = new SelectItemDAO();
@@ -90,7 +87,6 @@ public class GoItemListPageAction extends ActionSupport implements SessionAware 
 			result = SUCCESS;
 		}
 
-		System.out.println("GoItemListAction-result:" + result);
 		return result;
 
 	}
