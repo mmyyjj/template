@@ -13,16 +13,13 @@
 </head>
 
 <body>
-<header>
- <s:include value="header.jsp"/>
-</header>
 
 <div class="contents">
 <h1>Manager's Pape TOP</h1>
 
 ・商品管理・<br>
 <a href="GoManagerHistoryOutlineAction">・注文履歴・</a><br>
-・顧客情報・<br>
+<a href="GoCustomerListAction">・顧客情報・</a><br>
 
 </div>
 

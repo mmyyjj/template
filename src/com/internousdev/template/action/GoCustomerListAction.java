@@ -33,7 +33,7 @@ public class GoCustomerListAction extends ActionSupport implements SessionAware{
 	/**
 	 * 現在のページ
 	 * */
-	private int current_page;
+	private int current_page = 1;
 
 	/**
 	 * 最大ページ数

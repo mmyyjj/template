@@ -24,15 +24,73 @@
 <th style="width:240px;">住所</th>
 <th>連絡先</th>
 </tr>
+<s:iterator value="paginatedCustomerList">
 <tr>
-<td>01</td><td>abc</td><td>aaaaaaa@bbbbcccccc</td><td>000-0000</td><td>東京都○○区○○00-000-000</td><td>000-0000-0000</td>
+<td><s:property value="user_id"/></td>
+<td><s:property value="user_name"/></td>
+<td><s:property value="mail_address"/></td>
+<td><s:property value="postal_code"/></td>
+<td><s:property value="street_address"/></td>
+<td><s:property value="phone_number"/></td>
 </tr>
+</s:iterator>
 </table>
 
 
 
 
-
+<table style="margin-right:0 auto; margin-left:0 auto;">
+<tr>
+  <td style="width:80px; border:0px;">
+   <!-- 最初へボタン -->
+    <s:if test="(current_page -1) >= 1 ">
+      <s:form theme="simple" action="GoUserHistoryOutlineAction">
+       <s:hidden name="current_page" value="%{1}"/>
+       <button class="actbtn"style="width:60px;">最初へ</button>
+      </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最初へ</button>
+    </s:else>
+  </td>
+  <!-- 戻るボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="(current_page -1) >= 1 ">
+      <s:form theme="simple" action="GoUserHistoryOutlineAction">
+      <s:hidden name="current_page" value="%{current_page-1}"/>
+      <button class="actbtn"style="width:60px;">戻る</button>
+    </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">戻る</button>
+    </s:else>
+  </td>
+  <!-- 進むボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="current_page < max_page ">
+    <s:form theme="simple" action="GoUserHistoryOutlineAction">
+    <s:hidden name="current_page" value="%{current_page+1}"/>
+    <button class="actbtn"style="width:60px;">進む</button>
+    </s:form>
+    </s:if>
+    <s:else>
+       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">進む</button>
+    </s:else>
+  </td>
+  <!-- 最後へボタン -->
+  <td style="width:80px; border:0px;">
+    <s:if test="current_page < max_page ">
+    <s:form theme="simple" action="GoUserHistoryOutlineAction">
+    <s:hidden name="current_page" value="%{max_page}"/>
+    <button class="actbtn" style="width:60px;">最後へ</button>
+    </s:form>
+  </s:if>
+  <s:else>
+     <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最後へ</button>
+  </s:else>
+</td>
+</tr>
+</table>
 </div>
 
 
