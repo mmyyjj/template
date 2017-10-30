@@ -163,3 +163,12 @@ INSERT INTO credit_card_table VALUES
 ( 0, 'TEST_B', '0000-4444-5555-6666', 'testuser', '11', '2020', '456'),
 ( 0, 'TEST_C', '0000-7777-8888-9999', 'testuser', '12', '2021', '789');
 
+
+-- -----------------------------------------------------------------------------------------------
+
+-- 画像保管テーブルの作成、データ挿入
+
+CREATE TABLE image_table(
+ image_path VARCHAR(200) NOT NULL,
+ UNIQUE INDEX(image_path)
+);
