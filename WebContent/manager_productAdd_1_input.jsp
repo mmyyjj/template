@@ -29,9 +29,7 @@
 <tr>
 <th>分類</th>
 <td>
-<select>
-<s:select name="new_category" list="imagePathList" value='session.put("vategory")' theme="simple"/>
-</select>
+<s:select name="new_category" list='{"キッチン用品","ステーショナリー","インテリア"}' theme="simple"/>
 </td>
 </tr>
 <tr>
@@ -51,7 +49,7 @@
 </td>
 </tr>
 <tr>
-<th rowspan="2">選択中の画像：</th><td><s:select name="new_image_path" list="imagePathList" value='session.put("new_image_path")' theme="simple"/></td>
+<th rowspan="2">選択中の画像：</th><td><s:select name="new_img_path" list="imagePathList" value="img/sample_1.png" theme="simple"/></td>
 
 </tr>
 </table>
