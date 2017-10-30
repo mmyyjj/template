@@ -172,3 +172,17 @@ CREATE TABLE image_table(
  image_path VARCHAR(200) NOT NULL,
  UNIQUE INDEX(image_path)
 );
+
+INSERT INTO image_table VALUES
+ ('img/[01]オリジナルマグカップ.png'),
+ ('img/[02]止まり木ボールペン.png'),
+ ('img/[03]不苦労ミニだるま.png'),
+ ('img/[04]にわとりさんアラーム.png'),
+ ('img/[05]かもめハンガー.png'),
+ ('img/[06]小鳥たちのマドラーセット.png'),
+ ('img/[07]オリジナルブックカバー.png'),
+ ('img/[08]ペンギン携帯クリーナー.png'),
+ ('img/[09]すわん.png'),
+ ('img/[10]すやすや鳥の巣オルゴール.png'),
+ ('img/[11]ハシビロコウキーケース.png'),
+ ('img/[12]ペリカンお砂糖ケース.png');

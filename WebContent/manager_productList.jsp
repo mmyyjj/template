@@ -44,9 +44,28 @@
   <td><button class="oprbtn">削除</button></td>
   </tr>
 </s:iterator>
-
 </table>
 </div>
+
+<div style="height:100px"></div>
+
+<table>
+  <tr>
+    <td>
+      <s:form action="UploadImageAction"  method="post" enctype="multipart/form-data">
+        <input type="file"></input>
+            <button class="oprbtn">画像追加</button>
+      </s:form>
+    </td>
+  </tr>
+
+</table>
+
+
+
+
+
+
 
 <div style="height:100px"></div>
 
