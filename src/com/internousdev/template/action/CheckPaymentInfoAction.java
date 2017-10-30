@@ -109,9 +109,6 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		session.put("delivery_time_id", delivery_time_id);
 		session.put("payment_method_id", payment_method_id);
 
-		System.out.println("CheckPaymentInfoAction-payment_method_id:" + payment_method_id);
-		System.out.println("CheckPaymentInfoAction-delivery_time_id:" + delivery_time_id);
-
 		/*代引きとクレジットでif分岐*/
 		if(payment_method_id == CASH_ON_DELIVERY){
 
@@ -126,7 +123,7 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 		} else if(payment_method_id == CREDIT_CARD) {
 
 			error_message="入力情報に誤りがあります。お手数ですがもう一度ご入力ください。";
-			BigDecimal delivery_fee = BigDecimal.valueOf(0);;
+			BigDecimal delivery_fee = BigDecimal.valueOf(0);
 			session.put("delivery_fee", delivery_fee);
 
 			String card_number_all
@@ -148,7 +145,6 @@ public class CheckPaymentInfoAction extends ActionSupport implements SessionAwar
 			}
 		}
 
-		System.out.println("CheckPaymentInfoAction-payment_result:" + result);
 		return result;
 
 

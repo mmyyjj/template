@@ -34,7 +34,6 @@ public class DeleteHistoryAction extends ActionSupport implements SessionAware{
 	public String execute(){
 		String result= ERROR;
 		int successed_num = 0;
-		System.out.println("dhAction-order_id:"+ order_id);
 
 		DeleteHistoryDAO dhdao = new DeleteHistoryDAO();
 

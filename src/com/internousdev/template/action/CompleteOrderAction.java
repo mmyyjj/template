@@ -30,6 +30,7 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 	static final String TRANSACTION_COMPLETED = "transaction_completed";
 
 
+	@SuppressWarnings("unchecked")
 	public String execute(){
 		String result = ERROR;
 

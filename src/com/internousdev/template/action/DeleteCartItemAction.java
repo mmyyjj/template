@@ -44,8 +44,6 @@ public class DeleteCartItemAction extends ActionSupport implements SessionAware{
 			result = SUCCESS;
 		}
 
-		System.out.println("DeleteCartItemAction-result:" + result);
-
 		return result;
 
 
