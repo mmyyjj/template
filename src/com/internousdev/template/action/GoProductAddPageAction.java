@@ -33,11 +33,33 @@ public class GoProductAddPageAction extends ActionSupport implements SessionAwar
 
 		SelectImagePathDAO sipdao = new SelectImagePathDAO();
 
-		imagePathList = sipdao.selectImagePath();
+		setImagePathList(sipdao.selectImagePath());
 
 		result = SUCCESS;
 
 		return result;
+	}
+
+
+
+
+
+	/**
+	 * @return imagePathList
+	 */
+	public ArrayList<String> getImagePathList() {
+		return imagePathList;
+	}
+
+
+
+
+
+	/**
+	 * @param imagePathList セットする imagePathList
+	 */
+	public void setImagePathList(ArrayList<String> imagePathList) {
+		this.imagePathList = imagePathList;
 	}
 
 
