@@ -9,7 +9,7 @@ import com.internousdev.template.dto.HistoryOutlineDTO;
  * 購入履歴(概要)のページネートを行うためのクラス。<br>
  * ユーザー側、管理者側双方で使用する。
  * @author YUKA MATSUMURA
- * @since 2017/10/29
+ * @since 2017/10/30
  * @version 1.0
  * */
 public class HistoryOutlinePaginator {

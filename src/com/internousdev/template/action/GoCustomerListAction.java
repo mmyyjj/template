@@ -7,7 +7,9 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.template.dao.SelectCustomerListDAO;
 import com.internousdev.template.dto.UserInfoDTO;
+import com.internousdev.template.util.CustomerListPaginator;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -21,12 +23,22 @@ public class GoCustomerListAction extends ActionSupport implements SessionAware{
 	/**
 	 * 顧客情報の全リスト
 	 * */
-	private List<UserInfoDTO> allCustomerList = new ArrayList<UserInfoDTO>();
+	private ArrayList<UserInfoDTO> allCustomerList = new ArrayList<UserInfoDTO>();
 
 	/**
 	 * ページネートされた顧客情報のリスト
 	 * */
-	private List<UserInfoDTO> paginatedList = new ArrayList<UserInfoDTO>();
+	private ArrayList<UserInfoDTO> paginatedList = new ArrayList<UserInfoDTO>();
+
+	/**
+	 * 現在のページ
+	 * */
+	private int current_page;
+
+	/**
+	 * 最大ページ数
+	 * */
+	private int max_page;
 
 	/**
 	 * セッション
@@ -38,6 +50,19 @@ public class GoCustomerListAction extends ActionSupport implements SessionAware{
 	 * 実行メソッド
 	 * */
 	public String execute(){
+
+		String result = ERROR;
+
+		SelectCustomerListDAO scldao = new SelectCustomerListDAO();
+		CustomerListPaginator clp = new CustomerListPaginator();
+
+		allCustomerList = scldao.selectCustomerList();
+		max_page = clp.returnMaxPage(allCustomerList);
+
+		paginatedList = clp.paginateList(allCustomerList, current_page);
+
+		result = SUCCESS;
+		return result;
 
 	}
 
@@ -54,7 +79,7 @@ public class GoCustomerListAction extends ActionSupport implements SessionAware{
 	 * @param allCustomerList セットする allCustomerList
 	 */
 	public void setAllCustomerList(List<UserInfoDTO> allCustomerList) {
-		this.allCustomerList = allCustomerList;
+		this.allCustomerList = (ArrayList<UserInfoDTO>) allCustomerList;
 	}
 
 
@@ -70,7 +95,39 @@ public class GoCustomerListAction extends ActionSupport implements SessionAware{
 	 * @param paginatedList セットする paginatedList
 	 */
 	public void setPaginatedList(List<UserInfoDTO> paginatedList) {
-		this.paginatedList = paginatedList;
+		this.paginatedList = (ArrayList<UserInfoDTO>) paginatedList;
+	}
+
+
+	/**
+	 * @return current_page
+	 */
+	public int getCurrent_page() {
+		return current_page;
+	}
+
+
+	/**
+	 * @param current_page セットする current_page
+	 */
+	public void setCurrent_page(int current_page) {
+		this.current_page = current_page;
+	}
+
+
+	/**
+	 * @return max_page
+	 */
+	public int getMax_page() {
+		return max_page;
+	}
+
+
+	/**
+	 * @param max_page セットする max_page
+	 */
+	public void setMax_page(int max_page) {
+		this.max_page = max_page;
 	}
 
 
