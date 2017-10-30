@@ -75,6 +75,7 @@ public class GoManagerProductListAction extends ActionSupport implements Session
 
 		allProductList = sidao.selectItem(select_word, select_category);
 		max_page = ilp.returnMaxPage(allProductList, max_in_page);
+		session.put("allProductList", allProductList);
 
 		paginatedProductList = ilp.paginateItemList(allProductList, current_page, max_in_page);
 
