@@ -91,6 +91,16 @@
 </td>
 </tr>
 </table>
+
+<table style="margin:0 auto; height:120px;">
+<tr>
+<s:form action="GoManagerTopAction" theme="simple">
+  <td style="border:0px"><button class="actbtn">戻る</button></td>
+</s:form>
+</tr>
+</table>
+<div style="height:100px;"></div>
+
 </div>
 
 

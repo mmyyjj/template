@@ -126,7 +126,7 @@
 
 <table style="margin:0 auto; height:120px;">
 <tr>
-<s:form action="GoMyPageAction" theme="simple">
+<s:form action="GoManagerTopAction" theme="simple">
   <td style="border:0px"><button class="actbtn">戻る</button></td>
 </s:form>
 </tr>
