@@ -151,7 +151,11 @@
 		<result name="error">manager_customerList.jsp</result>
 		</action>
 
-
+		<!-- GoManagerProductListAction -->
+		<action name="GoManagerProductListAction" class="com.internousdev.template.action.GoManagerProductListAction" method="execute">
+		<result name="success">manager_productList.jsp</result>
+		<result name="error">manager_productList.jsp</result>
+		</action>
 
 
 

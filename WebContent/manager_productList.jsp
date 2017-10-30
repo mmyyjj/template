@@ -17,7 +17,6 @@
 <h1>取扱商品一覧</h1>
 
 
-商品ID、商品名、分類、単価、在庫、操作（編集）、
 <table style="width:680px;">
 <tr>
 <th>商品ID</th>
@@ -26,15 +25,21 @@
 <th>単価</th>
 <th>在庫</th>
 <th>操作</th>
+<th>操作</th>
 </tr>
-<tr>
-<td>01</td>
-<td>オリジナルマグカップ</td>
-<td>キッチン用品</td>
-<td>1.280円</td>
-<td>50</td>
-<td><button class="oprbtn">編集</button></td>
-</tr>
+
+<s:iterator value="paginatedProductList">
+  <tr>
+  <td><s:property value="product_id"/></td>
+  <td><s:property value="product_name"/></td>
+  <td><s:property value="category"/></td>
+  <td><s:property value="unit_price"/></td>
+  <td><s:property value="current_stock"/></td>
+  <td><button class="oprbtn">編集</button></td>
+  <td><button class="oprbtn">削除</button></td>
+  </tr>
+</s:iterator>
+
 </table>
 </div>
 
