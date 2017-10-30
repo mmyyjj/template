@@ -20,6 +20,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoProductEditPageAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 3201805201447792344L;
+
+	/**
 	 * 編集する商品のID
 	 * */
 	private int product_id;

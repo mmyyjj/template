@@ -12,6 +12,11 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 8335240204702805720L;
+
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object>();

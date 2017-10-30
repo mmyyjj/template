@@ -22,6 +22,11 @@ public class GoUserHistoryOutlineAction extends ActionSupport implements Session
 
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 4651159470271835594L;
+
+	/**
 	 * 注文履歴概要(ユーザー側)リスト
 	 * */
 	private ArrayList<HistoryOutlineDTO> u_historyOutlineList = new ArrayList<HistoryOutlineDTO>();

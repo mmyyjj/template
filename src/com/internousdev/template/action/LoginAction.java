@@ -23,6 +23,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -4948268538597713591L;
+
+	/**
 	 * ログイン中ユーザーのメールアドレス
 	 * */
 	/*ログイン時認証に使用 1/2*/

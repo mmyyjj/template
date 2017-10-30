@@ -21,6 +21,10 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ReloadCartAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -1122579304795322188L;
+	/**
 	 * セッション
 	 * */
 	private Map<String,Object> session = new HashMap<String, Object>();

@@ -21,6 +21,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoUserHistoryDetailAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -2713018664864935761L;
+
+	/**
 	 * 検索注文ID
 	 * */
 	private int order_id;

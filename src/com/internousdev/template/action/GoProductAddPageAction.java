@@ -20,6 +20,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoProductAddPageAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -473439074946064525L;
+
+	/**
 	 * 画像パスリスト
 	 * */
 	private ArrayList<String> imagePathList = new ArrayList<String>();

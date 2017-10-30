@@ -17,6 +17,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UpdateCartAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 8233451837323263388L;
+
+	/**
 	 * 商品ID
 	 * */
 	private int product_id;

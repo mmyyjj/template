@@ -23,6 +23,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UploadImageAction extends ActionSupport implements SessionAware, ServletRequestAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -2802101219829458324L;
+
+	/**
 	 * アップロードする画像ファイル
 	 * */
 	private File uploadFile;
