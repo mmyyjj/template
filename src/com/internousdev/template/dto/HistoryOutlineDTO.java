@@ -23,6 +23,11 @@ public class HistoryOutlineDTO {
 	private int order_id;
 
 	/**
+	 * ユーザーID
+	 * */
+	private int user_id;
+
+	/**
 	 * 合計金額
 	 */
 	private BigDecimal total_price;
@@ -64,6 +69,20 @@ public class HistoryOutlineDTO {
 	 */
 	public void setOrder_id(int order_id) {
 		this.order_id = order_id;
+	}
+
+	/**
+	 * @return user_id
+	 */
+	public int getUser_id() {
+		return user_id;
+	}
+
+	/**
+	 * @param user_id セットする user_id
+	 */
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
 	/**
