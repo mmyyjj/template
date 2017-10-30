@@ -77,7 +77,12 @@ public class LoginAction extends ActionSupport implements SessionAware{
 					&& password.equals((String)session.get("password")) ){
 				//user_name = ((LoginInfoDTO)session.get("loginInfo")).getUser_name();
 				loginError_message = "";
-				result = "nowLogin";
+				if((int)session.get("user_flg") == 0){
+					result = SUCCESS;
+				}else if((int)session.get("user_flg") == 1){
+					result="manager";
+				}
+
 				System.out.println("LoginAction-result:" + result);
 				return result;
 			} else {
@@ -106,7 +111,15 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("phone_number", lidto.getPhone_number());
 			session.put("user_flg", lidto.getUser_flg());
 			loginError_message= "";
-			result = SUCCESS;
+
+			/*ログイン成功後、ユーザーか管理者を分ける処理
+			 * 0ならユーザー、1なら管理者*/
+			if(lidto.getUser_flg() == 0){
+				result = SUCCESS;
+			}else if(lidto.getUser_flg() == 1){
+				result = "manager";
+			}
+
 		}
 
 		System.out.println("LoginAction-result:" + result);
