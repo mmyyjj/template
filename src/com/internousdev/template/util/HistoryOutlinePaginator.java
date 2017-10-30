@@ -37,7 +37,6 @@ public class HistoryOutlinePaginator {
 			maxPage = (allHistory / maxInPage) + 1;
 		}
 
-		System.out.println("ListPagination-maxPage:" + maxPage);
 		return maxPage;
 
 	}

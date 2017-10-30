@@ -24,15 +24,12 @@ public class ItemListPaginator {
 		int maxPage = 0;
 		int allItem = allItemList.size();
 
-		System.out.println("ItemListPagination-allItem:" +  allItem);
-
 		if(allItem % max_in_page == 0){
 			maxPage = (allItem / max_in_page);
 		}else if(allItem / max_in_page != 0){
 			maxPage = (allItem / max_in_page) + 1;
 		}
 
-		System.out.println("ItemListPagination-maxPage:" + maxPage);
 		return maxPage;
 
 	}
