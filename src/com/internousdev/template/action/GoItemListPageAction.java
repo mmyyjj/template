@@ -43,6 +43,12 @@ public class GoItemListPageAction extends ActionSupport implements SessionAware 
 	 * */
 	private List<ProductInfoDTO> paginatedItemList = new ArrayList<ProductInfoDTO>();
 
+
+	/**
+	 * 1ページに表示する件数
+	 * */
+	private int max_in_page = 3;
+
 	/**
 	 * 現在のページ数
 	 * */
@@ -77,8 +83,8 @@ public class GoItemListPageAction extends ActionSupport implements SessionAware 
 		allItemList = sidao.selectItem(selectWord, selectCategory);
 
 		/*最大ページ数とページネートされたリストを取得*/
-		maxPage = ilp.returnMaxPage(allItemList);
-		paginatedItemList = ilp.paginateItemList(allItemList, currentPage);
+		maxPage = ilp.returnMaxPage(allItemList, max_in_page);
+		paginatedItemList = ilp.paginateItemList(allItemList, currentPage, max_in_page);
 
 		if(paginatedItemList.size() > 0){
 			result = SUCCESS;
@@ -159,6 +165,24 @@ public class GoItemListPageAction extends ActionSupport implements SessionAware 
 	 */
 	public void setPaginatedItemList(List<ProductInfoDTO> paginatedItemList) {
 		this.paginatedItemList = paginatedItemList;
+	}
+
+
+
+	/**
+	 * @return max_in_page
+	 */
+	public int getMax_in_page() {
+		return max_in_page;
+	}
+
+
+
+	/**
+	 * @param max_in_page セットする max_in_page
+	 */
+	public void setMax_in_page(int max_in_page) {
+		this.max_in_page = max_in_page;
 	}
 
 
