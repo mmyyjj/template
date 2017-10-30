@@ -21,6 +21,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoManagerHistoryDetailAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -3680889668912817713L;
+
+	/**
 	 * 検索注文ID
 	 * */
 	private int order_id;

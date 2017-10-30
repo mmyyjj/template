@@ -21,6 +21,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoCustomerListAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -1326635712321027457L;
+
+	/**
 	 * 顧客情報の全リスト
 	 * */
 	private ArrayList<UserInfoDTO> allCustomerList = new ArrayList<UserInfoDTO>();

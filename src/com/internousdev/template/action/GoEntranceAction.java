@@ -11,6 +11,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoEntranceAction extends ActionSupport {
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 8463680786820724099L;
+
+	/**
 	 * 実行メソッド
 	 * @return result 結果
 	 * */

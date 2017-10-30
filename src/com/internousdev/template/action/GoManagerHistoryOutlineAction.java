@@ -21,6 +21,11 @@ public class GoManagerHistoryOutlineAction extends ActionSupport implements Sess
 
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -4816368753611879009L;
+
+	/**
 	 * 注文履歴概要(ユーザー側)リスト
 	 * */
 	private ArrayList<HistoryOutlineDTO> m_historyOutlineList = new ArrayList<HistoryOutlineDTO>();

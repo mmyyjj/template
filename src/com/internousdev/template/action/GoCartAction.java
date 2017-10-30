@@ -21,6 +21,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoCartAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = 7599166808534747549L;
+
+	/**
 	 * カート情報リスト
 	 * */
 	private List<CartItemDTO> cartItemList = new ArrayList<CartItemDTO>();

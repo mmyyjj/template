@@ -23,6 +23,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class GoItemListPageAction extends ActionSupport implements SessionAware {
 
 	/**
+	 * シリアルバージョンID
+	 */
+	private static final long serialVersionUID = -4140093082438444254L;
+
+	/**
 	 * 検索ワード
 	 * */
 	private String selectWord;
