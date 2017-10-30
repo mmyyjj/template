@@ -53,16 +53,13 @@
   <tr>
     <td>
       <s:form action="UploadImageAction"  method="post" enctype="multipart/form-data">
-        <input type="file"></input>
+        <input type="file" name="uploadFile" accept="image/*" required></input>
             <button class="oprbtn">画像追加</button>
       </s:form>
     </td>
   </tr>
 
 </table>
-
-
-
 
 
 
