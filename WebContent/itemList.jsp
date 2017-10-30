@@ -104,7 +104,7 @@
 <div class="item_list">
 <!-- ここからiterator処理 -->
 <s:iterator value="paginatedItemList">
-<s:form theme="simple" action="AddCartAction">
+
    <table class="item_table">
      <tr>
        <th colspan="3" style="font-size:16px; text-align:left; border:0px;"><s:property value="product_name"/></th>
@@ -119,20 +119,38 @@
        </td>
      </tr>
      <tr>
-     	<td style="border:0px"></td>
+
+     	<td style="border:0px">
+     	  <s:if test="current_stock <= 5 && current_stock > 0">
+     	    <font color="red"><small>残り<s:property value="current_stock"/>個!</small></font>
+     	  </s:if>
+     	  <s:if test="current_stock == 0">
+     	    <font color="red"><small>入荷待ち</small></font>
+     	  </s:if>
+     	</td>
+   <s:form theme="simple" action="AddCartAction">
        <td style="width:240px;text-align:right; padding-right:10px; border:0px;">
          購入数:
          <s:select name="order_number" list="{1,2,3,4,5,6,7,8,9,10}"  theme="simple">
          </s:select>個
        </td>
+
+       <s:if test="current_stock > 0">
        <td style="border:0px;">
        <s:hidden name="product_id" value='%{product_id}' />
        <s:hidden name="unit_price" value='%{unit_price}' />
          <button class="actbtn">カートに入れる</button>
-        </td>
+       </td>
+       </s:if>
+     </s:form>
+       <s:else>
+       <td style="border:0px;">
+          <button class="actbtn" style="border:1px; background-color:#dddddd; color:#999999 width:80px">入荷待ち</button>
+       </td>
+       </s:else>
      </tr>
    </table>
-</s:form>
+
    <hr>
 </s:iterator>
 <!-- ここまでiterator処理 -->
