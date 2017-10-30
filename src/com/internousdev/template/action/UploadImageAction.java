@@ -55,8 +55,6 @@ public class UploadImageAction extends ActionSupport implements SessionAware, Se
 			/*送られてきたリクエストから、画像の送り先ディレクトリを取得する*/
 			String basePath = request.getServletContext().getRealPath("/");
 
-			System.out.println("basePath:" + basePath);
-
 			File destFile = new File(basePath + "img", uploadFileFileName);//このパスの場所に、この名前で画像を保存したい。
 			FileUtils.copyFile(uploadFile, destFile);
 

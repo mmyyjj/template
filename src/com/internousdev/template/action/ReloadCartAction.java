@@ -25,6 +25,7 @@ public class ReloadCartAction extends ActionSupport implements SessionAware{
 	 * */
 	private Map<String,Object> session = new HashMap<String, Object>();
 
+	@SuppressWarnings("unchecked")
 	public String execute(){
 		String result = ERROR;
 

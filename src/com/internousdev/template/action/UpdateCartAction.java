@@ -51,7 +51,6 @@ public class UpdateCartAction extends ActionSupport implements SessionAware{
 			result =SUCCESS;
 		}
 
-		System.out.println("UpdateCartAction-resulr:" + result);
 		return result;
 
 	}
