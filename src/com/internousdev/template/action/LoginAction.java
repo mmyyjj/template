@@ -121,7 +121,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		}
 
-		System.out.println("LoginAction-result:" + result);
 		return result;
 
 

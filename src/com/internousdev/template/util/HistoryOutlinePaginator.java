@@ -29,8 +29,6 @@ public class HistoryOutlinePaginator {
 		int maxPage = 0;
 		int allHistory = allHistoryList.size();
 
-		System.out.println("ListPagination-allItem:" +  allHistory);
-
 		if(allHistory % maxInPage == 0){
 			maxPage = (allHistory / maxInPage);
 		}else if(allHistory / maxInPage != 0){
