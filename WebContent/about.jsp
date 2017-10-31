@@ -46,9 +46,9 @@
 お支払い方法は代金引換・クレジット決済の2種類をご利用いただけます。
 
 <table>
-<tr>
+<tr style="border:0px;">
 <td style="border:0px;">
-<s:form action="GoItemListPageAction">
+<s:form action="GoItemListPageAction" theme="simple">
 <button class="actbtn">トップに戻る</button>
 </s:form>
 <td>

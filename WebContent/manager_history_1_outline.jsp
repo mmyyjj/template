@@ -53,13 +53,13 @@
   <td style="width:80px">
     <s:form action="GoManagerHistoryDetailAction" theme="simple">
     <s:hidden name="order_id" value="%{order_id}"/>
-    <button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">購入商品</button>
+    <button class="oprbtn" style="width:70px; margin-left:10px; margin-right:10px;">購入商品</button>
     </s:form>
   </td>
   <td style="width:80px">
     <s:form action="DeleteHistoryAction" theme="simple">
     <s:hidden name="order_id" value="%{order_id}"/>
-    <button class="actbtn" style="width:70px; margin-left:10px; margin-right:10px;">削除</button>
+    <button class="oprbtn" style="width:70px; margin-left:10px; margin-right:10px;">削除</button>
     </s:form>
   </td>
 </tr>
@@ -75,17 +75,17 @@
 
 <div style="height:50px"></div>
 <table style="margin-right:0 auto; margin-left:0 auto;">
-<tr>
+<tr style="border:0px;">
   <td style="width:80px; border:0px;">
    <!-- 最初へボタン -->
     <s:if test="(current_page -1) >= 1 ">
       <s:form theme="simple" action="GoUserHistoryOutlineAction">
        <s:hidden name="current_page" value="%{1}"/>
-       <button class="actbtn"style="width:60px;">最初へ</button>
+       <button class="oprbtn"style="width:60px;">最初へ</button>
       </s:form>
     </s:if>
     <s:else>
-       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最初へ</button>
+       <button class="oprbtn"style="width:60px; background-color:#dddddd; color:#999999">最初へ</button>
     </s:else>
   </td>
   <!-- 戻るボタン -->
@@ -93,11 +93,11 @@
     <s:if test="(current_page -1) >= 1 ">
       <s:form theme="simple" action="GoUserHistoryOutlineAction">
       <s:hidden name="current_page" value="%{current_page-1}"/>
-      <button class="actbtn"style="width:60px;">戻る</button>
+      <button class="oprbtn" style="width:60px;">戻る</button>
     </s:form>
     </s:if>
     <s:else>
-       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">戻る</button>
+       <button class="oprbtn" style="width:60px; background-color:#dddddd; color:#999999">戻る</button>
     </s:else>
   </td>
   <!-- 進むボタン -->
@@ -105,11 +105,11 @@
     <s:if test="current_page < max_page ">
     <s:form theme="simple" action="GoUserHistoryOutlineAction">
     <s:hidden name="current_page" value="%{current_page+1}"/>
-    <button class="actbtn"style="width:60px;">進む</button>
+    <button class="oprbtn"style="width:60px;">進む</button>
     </s:form>
     </s:if>
     <s:else>
-       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">進む</button>
+       <button class="oprbtn"style="width:60px; background-color:#dddddd; color:#999999">進む</button>
     </s:else>
   </td>
   <!-- 最後へボタン -->
@@ -117,20 +117,22 @@
     <s:if test="current_page < max_page ">
     <s:form theme="simple" action="GoUserHistoryOutlineAction">
     <s:hidden name="current_page" value="%{max_page}"/>
-    <button class="actbtn" style="width:60px;">最後へ</button>
+    <button class="oprbtn" style="width:60px;">最後へ</button>
     </s:form>
   </s:if>
   <s:else>
-     <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最後へ</button>
+     <button class="oprbtn"style="width:60px; background-color:#dddddd; color:#999999">最後へ</button>
   </s:else>
 </td>
 </tr>
 </table>
 
+<div style="height:80px"></div>
+
 <table style="margin:0 auto; height:120px;">
-<tr>
+<tr  style="border:0px;">
 <s:form action="GoManagerTopAction" theme="simple">
-  <td style="border:0px"><button class="actbtn">戻る</button></td>
+  <td style="border:0px"><button class="oprbtn_large">戻る</button></td>
 </s:form>
 </tr>
 </table>

@@ -39,10 +39,10 @@
 <hr style="border:1px dashed">
 
 
-<table style="margin:0 auto; height:120px;">
-<tr>
+<table style="border:0px; margin:0 auto; height:120px;">
+<tr  style="border:0px;">
 <s:form action="GoManagerHistoryOutlineAction" theme="simple">
-  <td style="border:0px"><button class="actbtn">戻る</button></td>
+  <td style="border:0px"><button class="oprbtn_large">戻る</button></td>
 </s:form>
 </tr>
 </table>

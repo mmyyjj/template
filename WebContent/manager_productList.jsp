@@ -110,7 +110,7 @@
 </tr>
 </table>
 
-<div style="height:100px"></div>
+<div style="height:60px"></div>
 
 <!-- 商品追加ボタン -->
 <table  style="border:0px;">
@@ -123,9 +123,9 @@
 </tr>
 </table>
 
-<div style="height:100px"></div>
+<div style="height:60px"></div>
 
-<hr>
+<hr style="border:1px dashed">
 <!-- 商品画像の追加ボタン -->
 <h3>商品画像の追加</h3>
 <br>
@@ -143,10 +143,13 @@
 </table>
 
 
-<div style="height:100px"></div>
+<div style="height:60px"></div>
 
-<hr>
+<hr style="border:1px dashed">
 <!-- トップに戻るボタン -->
+
+<div style="height:80px"></div>
+
 <table style="border:0px;">
 <tr style="border:0px;">
 <s:form action="GoManagerTopAction" theme="simple">
