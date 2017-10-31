@@ -20,13 +20,13 @@
 <div style="height:50px;"></div>
 <h1>Manager's Pape TOP</h1>
 
-<a href="GoManagerProductListAction">・商品管理・</a><br>
+<a href="GoManagerProductListAction">■商品管理■</a><br>
 <br>
-<a href="GoManagerHistoryOutlineAction">・注文履歴・</a><br>
+<a href="GoManagerHistoryOutlineAction">■注文履歴確認■</a><br>
 <br>
-<a href="GoCustomerListAction">・顧客情報・</a><br>
+<a href="GoCustomerListAction">■顧客情報確認■</a><br>
 <br>
-<a href="LogoutAction">・ログアウト・</a><br>
+<a href="LogoutAction">■ログアウト■</a><br>
 
 </div>
 

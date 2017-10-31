@@ -132,7 +132,7 @@
 <table style="margin:0 auto; height:120px;">
 <tr  style="border:0px;">
 <s:form action="GoManagerTopAction" theme="simple">
-  <td style="border:0px"><button class="oprbtn_large">戻る</button></td>
+  <td style="border:0px"><button class="oprbtn_large">トップに戻る</button></td>
 </s:form>
 </tr>
 </table>
