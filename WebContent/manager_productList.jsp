@@ -17,7 +17,8 @@
 <div class="contents">
 <h1>取扱商品一覧</h1>
 <br>
-<s:property value="message"/>
+<font color="red"><s:property value="message"/></font>
+<br>
 <br>
 <table style="width:680px;">
 <tr>
@@ -35,8 +36,8 @@
   <td><s:property value="product_id"/></td>
   <td><s:property value="product_name"/></td>
   <td><s:property value="category"/></td>
-  <td><s:property value="unit_price"/></td>
-  <td><s:property value="current_stock"/></td>
+  <td><s:property value="unit_price"/> 円</td>
+  <td><s:property value="current_stock"/> 個</td>
   <td>
     <s:form action="GoProductEditPageAction">
     <s:hidden name="edit_product_id" value="%{product_id}"/>
