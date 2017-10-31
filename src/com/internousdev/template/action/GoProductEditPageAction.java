@@ -61,6 +61,7 @@ public class GoProductEditPageAction extends ActionSupport implements SessionAwa
 		pidto = sopdao.selectOneProduct(product_id);
 
 		if(pidto != null){
+			session.put("edit_product_id", product_id);
 			session.put("edit_product_name", pidto.getProduct_name());
 			session.put("edit_category", pidto.getCategory());
 			session.put("edit_unit_price", pidto.getUnit_price());
