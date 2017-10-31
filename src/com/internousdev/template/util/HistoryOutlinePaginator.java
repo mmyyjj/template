@@ -14,8 +14,6 @@ import com.internousdev.template.dto.HistoryOutlineDTO;
  * */
 public class HistoryOutlinePaginator {
 
-
-
 	/**
 	 * 1ページに表示する件数
 	 * */

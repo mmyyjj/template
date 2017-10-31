@@ -19,8 +19,8 @@ public class SelectCustomerListDAO {
 
 
 
-	/**顧客情報の検索を行うメソッド
-	 *
+	/**
+	 * 顧客情報の検索を行うメソッド
 	 * */
 	public ArrayList<UserInfoDTO> selectCustomerList(){
 
