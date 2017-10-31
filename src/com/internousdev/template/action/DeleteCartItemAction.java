@@ -36,8 +36,6 @@ public class DeleteCartItemAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 
-		System.out.println("eteCartItemAction-product_id:" + product_id);
-
 		String result = ERROR;
 		int successed_num = 0;
 		int user_id = (int)session.get("user_id");
