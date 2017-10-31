@@ -52,9 +52,14 @@
 </tr>
 <tr>
 <th rowspan="2">選択中の画像：</th><td><s:select name="edit_img_path" list="imagePathList" value="%{session.get('edit_img_path')}" theme="simple"/></td>
-
 </tr>
 </table>
+
+<br>
+<br>
+<label><input type="checkBox"required>確認</label>
+<br>
+<br>
 <br>
 <button class="oprbtn_large">完了</button>
 

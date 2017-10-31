@@ -49,10 +49,15 @@
 </td>
 </tr>
 <tr>
-<th rowspan="2">選択中の画像：</th><td><s:select name="new_img_path" list="imagePathList" theme="simple"/></td>
+<th>選択中の画像：</th><td><s:select name="new_img_path" list="imagePathList" theme="simple"/></td>
 
 </tr>
 </table>
+<br>
+<br>
+<label><input type="checkBox"required>確認</label>
+<br>
+<br>
 <br>
 <button class="oprbtn_large">追加</button>
 
