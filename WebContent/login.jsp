@@ -48,7 +48,7 @@
 <h1>ログイン画面</h1>
 
 ユーザー情報を入力してください<br>
-<small>Please input your user-infomation.</small>
+<!--<small>Please input your user-infomation.</small>-->
 <br>
 <font color="red"><s:property value="loginError_message"/></font>
 
@@ -60,7 +60,7 @@
 			<td>ユーザーアドレス:</td><td><input type="text" name="mail_address"/></td>
 		</tr>
 		<tr>
-			<td>パスワード:</td><td><input type="text" name="password"></td>
+			<td>パスワード:</td><td><input type="password" name="password"></td>
 		</tr>
 		<tr>
 			<td colspan="2"><button class="actbtn" style="margin-left:160px">ログイン</button></td>
