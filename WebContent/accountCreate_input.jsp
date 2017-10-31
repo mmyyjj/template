@@ -84,7 +84,11 @@
 </td>
 </tr>
 </table>
-
+<br>
+<br>
+<input type="checkBox" required>上記の情報で登録する
+<br>
+<br>
 
 <table>
 <tr>
