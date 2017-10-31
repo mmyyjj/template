@@ -14,8 +14,8 @@ CREATE TABLE user_info_table(
  postal_code VARCHAR(10) NOT NULL,
  street_address VARCHAR(200) NOT NULL,
  phone_number VARCHAR(20) NOT NULL,
- user_flg int(1) NOT NULL,
- login_flg int(1) NOT NULL,
+ user_flg int(1) DEFAULT 0 NOT NULL,
+ login_flg int(1) DEFAULT 0 NOT NULL,
  PRIMARY KEY(user_id),
  UNIQUE INDEX(mail_address)
 );
