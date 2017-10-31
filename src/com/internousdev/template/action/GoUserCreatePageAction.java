@@ -30,7 +30,7 @@ public class GoUserCreatePageAction extends ActionSupport implements SessionAwar
 	 * @return result 結果
 	 * */
 	public String execute (){
-		session.put("user_create", true);
+		session.put("account_create", true);
 		String result = SUCCESS;
 		return result;
 	}

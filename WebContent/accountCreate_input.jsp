@@ -31,7 +31,7 @@
 
 <s:property value="message"/>
 
-<s:form action="ConfirmAccountCreateAction">
+<s:form action="CreateNewAccountAction">
 <table style="border-collapse:collapse; height:280px; width:380px;">
 <tr>
 <th>

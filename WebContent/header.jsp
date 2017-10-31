@@ -57,8 +57,8 @@
 </th>
 <th style="width:50px"></th>
 <th><a href="GoAboutPageAction">ABOUT</a></th>
-<th>LOGIN</th>
-<th>CREATE ACCOUNT</th>
+<th><a href="GoLoginPageAction">LOGIN</a></th>
+<th><a href="GoUserCreatePageAction">CREATE ACCOUNT</a></th>
 </tr>
 </table>
 </s:else>
