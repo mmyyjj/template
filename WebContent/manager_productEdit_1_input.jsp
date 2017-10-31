@@ -20,7 +20,7 @@
 <small>商品情報を入力してください(商品IDは変更されません)</small>
 <br>
 <br>
-<form action="CompleteProductAddAction">
+<form action="ComlpeteProductEditAction">
 <table style="width:480px;">
 <tr>
 <th>商品名</th>
@@ -40,7 +40,9 @@
 </tr>
 <tr>
 <th>在庫</th>
-<td><input type="number" name="edit_current_stock" size="10" pattern="[0-9]{1,20}" min="1" required value="<s:property value='session.get("edit_current_stock")'/>"/>個</td>
+<td>
+  現在の在庫に加算、減算されます(在庫：<s:property value='session.get("edit_current_stock")'/>)
+  <input type="number" name="edit_current_stock" size="10" pattern="[0-9]{1,20}" required value="<s:property value='session.get("edit_current_stock")'/>"/>個</td>
 </tr>
 <tr>
 <th>説明<br>(300字以内)</th>
@@ -54,7 +56,7 @@
 </tr>
 </table>
 <br>
-<button class="oprbtn_large">追加</button>
+<button class="oprbtn_large">完了</button>
 
 </form>
 
