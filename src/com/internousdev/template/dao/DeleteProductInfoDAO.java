@@ -14,7 +14,7 @@ import com.internousdev.template.util.DBConnector;
  * */
 public class DeleteProductInfoDAO {
 
-	public int updateProduct(int product_id){
+	public int updateProduct(int delete_product_id){
 
 		int successed_num = 0;
 
@@ -27,7 +27,7 @@ public class DeleteProductInfoDAO {
 
 			PreparedStatement ps = con.prepareStatement(sql_delete);
 
-			ps.setInt(7, product_id);
+			ps.setInt(7, delete_product_id);
 
 			successed_num = ps.executeUpdate();
 

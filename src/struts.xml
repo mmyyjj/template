@@ -187,6 +187,11 @@
 		<result name="error" type="chain">GoManagerProductListAction</result>
 		</action>
 
+		<!-- DeleteProductInfoAction -->
+		<action name="DeleteProductInfoAction" class="com.internousdev.template.action.DeleteProductInfoAction" method="execute">
+		<result name="success" type="chain">GoManagerProductListAction</result>
+		<result name="error" type="chain">GoManagerProductListAction</result>
+		</action>
 
 
 
