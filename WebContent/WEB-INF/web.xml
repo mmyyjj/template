@@ -22,4 +22,9 @@
 <session-config>
   <session-timeout>10</session-timeout>
 </session-config>
+<listener>
+  <listener-class>
+   com.internousdev.template.util.TemplateHttpSessionListener
+  </listener-class>
+</listener>
 </web-app>
