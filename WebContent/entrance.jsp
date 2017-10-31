@@ -37,9 +37,18 @@
      </s:form>
    </td>
   </tr>
+  <tr>
+    <td style="padding-left:100px; margin:0 auto; border:0px; width:240px;" colspan="2">
+      <s:form theme="simple" action="GoUserCreatePageAction">
+        <button class="actbtn">新規ユーザー登録</button>
+      </s:form>
+   </td>
+  </tr>
 </table>
+<br>
+<br>
 
-
+<div style="height:100px;"></div>
 <footer>
 
 </footer>
