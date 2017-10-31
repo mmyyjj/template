@@ -69,6 +69,7 @@ public class CompleteProductAddAction extends ActionSupport implements SessionAw
 	 * */
 	public String execute(){
 		String result = ERROR;
+		message = "商品の追加に失敗しました。商品名が重複している可能性があります";
 		int successed_num = 0;
 
 		InsertProductDAO ipdao = new InsertProductDAO();

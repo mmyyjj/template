@@ -60,6 +60,7 @@ public class UploadImageAction extends ActionSupport implements SessionAware, Se
 
 	public String execute(){
 		String result = ERROR;
+		message = "画像の追加に失敗しました。同名のファイルが存在している可能性があります";
 
 		try{
 			/*送られてきたリクエストから、画像の送り先ディレクトリを取得する*/
