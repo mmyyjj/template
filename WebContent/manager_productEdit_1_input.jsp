@@ -12,7 +12,7 @@
 <body>
 <header>
   <s:include value="header_manager.jsp"/>
-</header></header>
+</header>
 
 <div class="contents">
 <h1>新規商品情報入力</h1>
