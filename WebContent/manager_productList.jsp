@@ -15,8 +15,9 @@
 
 <div class="contents">
 <h1>取扱商品一覧</h1>
-
-
+<br>
+<s:property value="message"/>
+<br>
 <table style="width:680px;">
 <tr>
 <th>商品ID</th>
@@ -54,18 +55,18 @@
 
 <div style="height:100px"></div>
 
-<table style="margin-right:0 auto; margin-left:0 auto;">
-<tr>
+<table style="border:0px; margin-right:0 auto; margin-left:0 auto;">
+<tr style="border:0px;">
   <td style="width:80px; border:0px;">
    <!-- 最初へボタン -->
     <s:if test="(current_page -1) >= 1 ">
       <s:form theme="simple" action="GoManagerProductListAction">
        <s:hidden name="current_page" value="%{1}"/>
-       <button class="actbtn"style="width:60px;">最初へ</button>
+       <button class="oprbtn"style="width:60px;">最初へ</button>
       </s:form>
     </s:if>
     <s:else>
-       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最初へ</button>
+       <button class="oprbtn"style="width:60px; background-color:#dddddd; color:#999999">最初へ</button>
     </s:else>
   </td>
   <!-- 戻るボタン -->
@@ -73,11 +74,11 @@
     <s:if test="(current_page -1) >= 1 ">
       <s:form theme="simple" action="GoManagerProductListAction">
       <s:hidden name="current_page" value="%{current_page-1}"/>
-      <button class="actbtn"style="width:60px;">戻る</button>
+      <button class="oprbtn"style="width:60px;">戻る</button>
     </s:form>
     </s:if>
     <s:else>
-       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">戻る</button>
+       <button class="oprbtn"style="width:60px; background-color:#dddddd; color:#999999">戻る</button>
     </s:else>
   </td>
   <!-- 進むボタン -->
@@ -85,11 +86,11 @@
     <s:if test="current_page < max_page ">
     <s:form theme="simple" action="GoManagerProductListAction">
     <s:hidden name="current_page" value="%{current_page+1}"/>
-    <button class="actbtn"style="width:60px;">進む</button>
+    <button class="oprbtn"style="width:60px;">進む</button>
     </s:form>
     </s:if>
     <s:else>
-       <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">進む</button>
+       <button class="oprbtn"style="width:60px; background-color:#dddddd; color:#999999">進む</button>
     </s:else>
   </td>
   <!-- 最後へボタン -->
@@ -97,11 +98,11 @@
     <s:if test="current_page < max_page ">
     <s:form theme="simple" action="GoManagerProductListAction">
     <s:hidden name="current_page" value="%{max_page}"/>
-    <button class="actbtn" style="width:60px;">最後へ</button>
+    <button class="oprbtn" style="width:60px;">最後へ</button>
     </s:form>
   </s:if>
   <s:else>
-     <button class="actbtn"style="width:60px; background-color:#dddddd; color:#999999">最後へ</button>
+     <button class="oprbtn"style="width:60px; background-color:#dddddd; color:#999999">最後へ</button>
   </s:else>
 </td>
 </tr>
@@ -109,24 +110,8 @@
 
 <div style="height:100px"></div>
 
-<table>
-  <tr>
-    <td>
-      <s:form action="UploadImageAction"  method="post" enctype="multipart/form-data">
-        <input type="file" name="uploadFile" accept="image/*" required></input>
-            <button class="oprbtn">画像追加</button>
-      </s:form>
-    </td>
-  </tr>
-
-</table>
-
-
-
-
-<div style="height:100px"></div>
-
-<table style="border:0px;">
+<!-- 商品追加ボタン -->
+<table  style="border:0px;">
 <tr style="border:0px;">
 <td style="border:0px; padding-top:5px; padding-bottom:5px;">
   <s:form action="GoProductAddPageAction">
@@ -134,12 +119,41 @@
   </s:form>
 </td>
 </tr>
-<tr>
-<s:form action="GoManagerTopAction">
+</table>
+
+<div style="height:100px"></div>
+
+<hr>
+<!-- 商品画像の追加ボタン -->
+<h3>商品画像の追加</h3>
+<br>
+<table style="width:480px">
+  <tr>
+        <s:form action="UploadImageAction"  method="post" enctype="multipart/form-data">
+    <td style="text-align:left; width:360px;">
+        <input type="file" name="uploadFile" accept="image/*" required></input>
+    </td>
+    <td>
+        <button class="oprbtn">画像追加</button>
+    </td>
+        </s:form>
+  </tr>
+</table>
+
+
+<div style="height:100px"></div>
+
+<hr>
+<!-- トップに戻るボタン -->
+<table style="border:0px;">
+<tr style="border:0px;">
+<s:form action="GoManagerTopAction" theme="simple">
 <td style="border:0px; padding-top:5px; padding-bottom:5px;"><button class="oprbtn_large">トップに戻る</button></td>
 </s:form>
 </tr>
 </table>
+
+
 <footer>
 </footer>
 </body>
