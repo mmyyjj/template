@@ -44,11 +44,11 @@
 <tr>
 <th>ご住所</th>
 <td><s:property value='session.get("postal_code")'/><br>
-<s:property value='session.get("postal_code")'/></td>
+<s:property value='session.get("street_address")'/></td>
 </tr>
 <tr>
 <th>ご連絡先</th>
-<td><s:property value='session.get("postal_code")'/><s:property value='session.get("phone_number")'/></td>
+<td><s:property value='session.get("phone_number")'/></td>
 </tr>
 </table>
 
