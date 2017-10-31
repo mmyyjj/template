@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.SelectImagePathDAO;
+import com.internousdev.template.dao.SelectOneProductDAO;
 import com.internousdev.template.dto.ProductInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -46,9 +47,13 @@ public class GoProductEditPageAction extends ActionSupport implements SessionAwa
 	public String execute(){
 		String result = ERROR;
 
+
+
+		/*画像パスリストの取得*/
 		SelectImagePathDAO sipdao = new SelectImagePathDAO();
 		imagePathList = sipdao.selectImagePath();
 
+		/*編集データの取得*/
 		ProductInfoDTO pidto = new ProductInfoDTO();
 		//TODO DAOはこれから
 		SelectOneProductDAO sopdao = new SelectOneProductDAO();

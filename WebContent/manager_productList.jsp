@@ -36,7 +36,7 @@
   <td><s:property value="unit_price"/></td>
   <td><s:property value="current_stock"/></td>
   <td>
-    <s:form>
+    <s:form action="GoProductEditPageAction">
     <s:hidden name="product_id" value="%{product_id}"/>
     <button class="oprbtn">編集</button>
     </s:form>

@@ -49,7 +49,7 @@
 </td>
 </tr>
 <tr>
-<th rowspan="2">選択中の画像：</th><td><s:select name="edit_img_path" list="imagePathList" theme="simple"/></td>
+<th rowspan="2">選択中の画像：</th><td><s:select name="edit_img_path" list="imagePathList" value="%{session.get('edit_img_path')}" theme="simple"/></td>
 
 </tr>
 </table>
