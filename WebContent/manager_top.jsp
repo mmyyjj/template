@@ -13,8 +13,11 @@
 </head>
 
 <body>
-
+<header>
+  <s:include value="header_manager.jsp"/>
+</header>
 <div class="contents">
+<div style="height:50px;"></div>
 <h1>Manager's Pape TOP</h1>
 
 <a href="GoManagerProductListAction">・商品管理・</a><br>
