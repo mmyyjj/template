@@ -100,6 +100,16 @@ public class CreateNewAccountAction extends ActionSupport implements SessionAwar
 			return result;
 		}
 
+		session.put("new_user_name",new_user_name);
+		session.put("new_mail_address_1", new_mail_address_1);
+		session.put("new_mail_address_2", new_mail_address_2);
+		session.put("new_postal_code_1", new_postal_code_1);
+		session.put("new_postal_code_2", new_postal_code_2);
+		session.put("new_street_address", new_street_address);
+		session.put("new_phone_number_1", new_phone_number_1);
+		session.put("new_phone_number_2", new_phone_number_2);
+		session.put("new_phone_number_3", new_phone_number_3);
+
 
 		/*はじめにパスワードの確認*/
 		if(new_password.equals(new_password_confirm) == false){
@@ -107,9 +117,10 @@ public class CreateNewAccountAction extends ActionSupport implements SessionAwar
 			return result;
 		}
 
-		String new_mail_address_all = new_mail_address_1 + new_mail_address_1;
-		String new_postal_code_all = new_postal_code_1 + new_postal_code_2;
-		String new_phone_number_all = new_phone_number_1 + new_phone_number_2 + new_phone_number_3;
+		String new_mail_address_all = new_mail_address_1 + "@" +  new_mail_address_2;
+		String new_postal_code_all = new_postal_code_1 + "-" + new_postal_code_2;
+		String new_phone_number_all = new_phone_number_1 + "-" + new_phone_number_2 + "-" + new_phone_number_3;
+
 
 		InsertNewUserDAO inudao = new InsertNewUserDAO();
 
@@ -119,6 +130,15 @@ public class CreateNewAccountAction extends ActionSupport implements SessionAwar
 		if(successed_num > 0){
 			result = SUCCESS;
 			session.put("account_create", null);
+			session.put("new_user_name", null);
+			session.put("new_mail_address_1", null);
+			session.put("new_mail_address_2", null);
+			session.put("new_postal_code_1", null);
+			session.put("new_postal_code_2", null);
+			session.put("new_street_address", null);
+			session.put("new_phone_number_1", null);
+			session.put("new_phone_number_2", null);
+			session.put("new_phone_number_3", null);
 		} else {
 			message = "新規登録に失敗しました。メールアドレスはすでに登録されている可能性があります。";
 		}

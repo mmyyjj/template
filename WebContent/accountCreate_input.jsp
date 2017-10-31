@@ -38,35 +38,42 @@
   お名前
 </th>
 <td>
-  <input type="text" name="new_user_name" required>様
+  <input type="text" name="new_user_name" required value="<s:property value='session.get("new_user_name")'/>">様
 </td>
 </tr>
 <tr>
 <th>メールアドレス</th>
 <td>
-  <input type="text" name="new_mail_address_1" style="width:120px;" pattern="[A-Z|a-z|0-9]{1,}" min="1" required/>@
-  <input type="text" name="new_mail_address_2" style="width:120px;" pattern="[A-Z|a-z|0-9]{1,}" min="1" required/>
+  <input type="text" name="new_mail_address_1" style="width:120px;"
+     pattern="[A-Z|a-z|0-9]{1,}" min="1" required value="<s:property value='session.get("new_mail_address_1")'/>">@
+  <input type="text" name="new_mail_address_2" style="width:120px;"
+     pattern="[A-Z|a-z|0-9]{1,}" min="1" required value="<s:property value='session.get("new_mail_address_2")'/>"/>
 </td>
 </tr>
 <tr>
 <th rowspan="2">ご住所</th>
 <td>
   郵便番号：
-   <input type="text" name="new_postal_code_1" style="width:40px;" pattern="[0-9]{3,}" maxlength="3" required/>-
-   <input type="text" name="new_postal_code_2" style="width:60px;" pattern="[0-9]{4,}" maxlength="4" required/>
+   <input type="text" name="new_postal_code_1" style="width:40px;"
+    pattern="[0-9]{3,}" maxlength="3" required value="<s:property value='session.get("new_postal_code_1")'/>"/>-
+   <input type="text" name="new_postal_code_2" style="width:60px;"
+    pattern="[0-9]{4,}" maxlength="4" required value="<s:property value='session.get("new_postal_code_2")'/>"/>
 </td>
 </tr>
 <tr>
 <td>
-  <textarea cols="30" name="new_street_address" rows="5" required></textarea>
+  <textarea cols="30" name="new_street_address" rows="5" required><s:property value='session.get("new_street_address")'/></textarea>
 </td>
 </tr>
 <tr>
 <th>ご連絡先電話番号</th>
 <td>
-  <input type="text" name="new_phone_number_1" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
-  <input type="text" name="new_phone_number_2" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
-  <input type="text" name="new_phone_number_3" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
+  <input type="text" name="new_phone_number_1" style="width:40px;"
+   pattern="[0-9]{1,}" min="1" maxlength="4" required value="<s:property value='session.get("new_phone_number_1")'/>" />-
+  <input type="text" name="new_phone_number_2" style="width:40px;"
+   pattern="[0-9]{1,}" min="1" maxlength="4" required value="<s:property value='session.get("new_phone_number_2")'/>"/>-
+  <input type="text" name="new_phone_number_3" style="width:40px;"
+   pattern="[0-9]{1,}" min="1" maxlength="4" required value="<s:property value='session.get("new_phone_number_3")'/>"/>-
 </td>
 </tr>
 <tr>
