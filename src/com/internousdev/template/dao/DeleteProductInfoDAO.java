@@ -27,7 +27,7 @@ public class DeleteProductInfoDAO {
 
 			PreparedStatement ps = con.prepareStatement(sql_delete);
 
-			ps.setInt(7, delete_product_id);
+			ps.setInt(1, delete_product_id);
 
 			successed_num = ps.executeUpdate();
 
