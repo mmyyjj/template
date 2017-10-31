@@ -94,6 +94,12 @@ public class CreateNewAccountAction extends ActionSupport implements SessionAwar
 	public String execute(){
 		String result = ERROR;
 
+		/*ブラウザバック/再読込されたときの処理*/
+		if(session.get("account_create") == null){
+			result = "reloaded";
+			return result;
+		}
+
 
 		/*はじめにパスワードの確認*/
 		if(new_password.equals(new_password_confirm) == false){
@@ -112,6 +118,7 @@ public class CreateNewAccountAction extends ActionSupport implements SessionAwar
 
 		if(successed_num > 0){
 			result = SUCCESS;
+			session.put("account_create", null);
 		} else {
 			message = "新規登録に失敗しました。メールアドレスはすでに登録されている可能性があります。";
 		}
