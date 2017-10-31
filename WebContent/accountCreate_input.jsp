@@ -31,8 +31,8 @@
 
 <s:property value="message"/>
 
-<s:form action="CreateNewAccountAction">
-<table style="border-collapse:collapse; height:280px; width:380px;">
+<s:form action="CreateNewAccountAction" theme="simple">
+<table style="border-collapse:collapse; height:280px; width:420px;">
 <tr>
 <th>
   お名前
@@ -73,7 +73,7 @@
   <input type="text" name="new_phone_number_2" style="width:40px;"
    pattern="[0-9]{1,}" min="1" maxlength="4" required value="<s:property value='session.get("new_phone_number_2")'/>"/>-
   <input type="text" name="new_phone_number_3" style="width:40px;"
-   pattern="[0-9]{1,}" min="1" maxlength="4" required value="<s:property value='session.get("new_phone_number_3")'/>"/>-
+   pattern="[0-9]{1,}" min="1" maxlength="4" required value="<s:property value='session.get("new_phone_number_3")'/>"/>
 </td>
 </tr>
 <tr>
