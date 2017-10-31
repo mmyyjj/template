@@ -45,15 +45,36 @@
 <br>
 お支払い方法は代金引換・クレジット決済の2種類をご利用いただけます。
 
-<table>
+<h3>---ABOUT US---</h3>
+会社名：プログラマカレッジ（御茶ノ水研修所）<br>
+住所：
+郵便番号113-0034<br>
+東京都文京区湯島3-2-12 御茶ノ水天神ビル2F<br>
+最寄り駅：<br>
+JR中央・総武線御茶ノ水駅　徒歩7分<br>
+東京メトロ丸の内線御茶ノ水駅　徒歩7分<br>
+電話番号：<br>
+000-0000-0000<br>
+実施カリキュラム：<br>
+アルゴリズム演習　データベース演習　バージョン管理システム演習<br>
+Linux/UNIX演習　サイト構築の流れ<br>
+Java演習　Java-DB接続　Javaサーバーサイド技術<br>
+MVCモデルとフレームワーク　<br>フレームワークを使ったサイト構築<br>
+プロトタイプサイト構築　ECサイト構築実践<br>
+
+<div style="height:50px;"></div>
+
+
+<table style="border:0px;">
 <tr style="border:0px;">
-<td style="border:0px;">
-<s:form action="GoItemListPageAction" theme="simple">
-<button class="actbtn">トップに戻る</button>
-</s:form>
-<td>
+  <td style="border:0px;">
+  <s:form action="GoItemListPageAction" theme="simple">
+  <button class="actbtn">トップに戻る</button>
+  </s:form>
+  </td>
 </tr>
 </table>
+
 <div style="height:50px;"></div>
 </div>
 
