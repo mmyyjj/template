@@ -19,6 +19,7 @@ public class GoAboutPageAction extends ActionSupport implements SessionAware{
 	 * シリアルバージョンID
 	 */
 	private static final long serialVersionUID = 8289117221907209344L;
+
 	/**
 	 * セッション
 	 * */

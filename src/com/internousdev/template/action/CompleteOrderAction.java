@@ -45,7 +45,6 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 		 * 同じくカラの状態でアクションが動いたら、画面更新がされたものとして別のページに飛ぶようにします。*/
 		if(session.get("cartItemList") == null){
 			result = "reloaded";
-			System.out.println("coAction-result:" + result);
 			return result;
 		}
 
