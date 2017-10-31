@@ -114,13 +114,13 @@
 	</tr>
 	<tr>
 	 <th>有効期限</th>
+	 	 <td>
+	   <s:select name="expiration_month" list="{1,2,3,4,5,6,7,8,9,10,11,12}"/>
+		月
+	 </td>
 	  <td>
 	    <s:select name="expiration_year" list="%{session.get('yearList')}" theme="simple"/>
 	   年
-	 </td>
-	 <td>
-	   <s:select name="expiration_month" list="{1,2,3,4,5,6,7,8,9,10,11,12}"/>
-		月
 	 </td>
 	</tr>
 	<tr>
