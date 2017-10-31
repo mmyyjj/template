@@ -53,6 +53,11 @@ public class CompleteProductAddAction extends ActionSupport implements SessionAw
 	private String new_img_path;
 
 	/**
+	 * 画面に表示するメッセージ
+	 * */
+	private String message;
+
+	/**
 	 * セッション
 	 * */
 	private Map<String, Object> session = new HashMap<String, Object>();
@@ -72,6 +77,7 @@ public class CompleteProductAddAction extends ActionSupport implements SessionAw
 				new_comment, new_img_path);
 
 		if(successed_num > 0){
+			message = "新規商品が追加されました";
 			result = SUCCESS;
 		}
 
@@ -187,6 +193,24 @@ public class CompleteProductAddAction extends ActionSupport implements SessionAw
 	 */
 	public void setNew_img_path(String new_img_path) {
 		this.new_img_path = new_img_path;
+	}
+
+
+
+	/**
+	 * @return message
+	 */
+	public String getMessage() {
+		return message;
+	}
+
+
+
+	/**
+	 * @param message セットする message
+	 */
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 

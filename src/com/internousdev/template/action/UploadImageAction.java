@@ -47,6 +47,11 @@ public class UploadImageAction extends ActionSupport implements SessionAware, Se
      */
     private HttpServletRequest request;
 
+    /**
+     * 画面に表示するメッセージ
+     * */
+    private String message;
+
 	/**
 	 * セッション
 	 * */
@@ -76,6 +81,7 @@ public class UploadImageAction extends ActionSupport implements SessionAware, Se
 		int successed_num = iipdao.InsertImagePath(uploadFileFileName);
 
 		if(successed_num > 0){
+			message = "画像が追加されました。";
 			result = SUCCESS;
 
 
@@ -146,6 +152,22 @@ public class UploadImageAction extends ActionSupport implements SessionAware, Se
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
 
+	}
+
+
+	/**
+	 * @return message
+	 */
+	public String getMessage() {
+		return message;
+	}
+
+
+	/**
+	 * @param message セットする message
+	 */
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 

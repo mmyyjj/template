@@ -48,6 +48,11 @@ public class ComlpeteProductEditAction extends ActionSupport implements SessionA
 	private String edit_img_path;
 
 	/**
+	 * 画面に表示するメッセージ
+	 * */
+	private String message;
+
+	/**
 	 * シリアルバージョンID
 	 */
 	private static final long serialVersionUID = 5014892195112552756L;
@@ -73,6 +78,7 @@ public class ComlpeteProductEditAction extends ActionSupport implements SessionA
 				edit_current_stock, edit_comment, edit_img_path);
 
 		if(successed_num > 0){
+			message = "商品情報の編集が完了しました";
 			result = SUCCESS;
 		}
 
@@ -176,6 +182,22 @@ public class ComlpeteProductEditAction extends ActionSupport implements SessionA
 	 */
 	public void setEdit_img_path(String edit_img_path) {
 		this.edit_img_path = edit_img_path;
+	}
+
+
+	/**
+	 * @return message
+	 */
+	public String getMessage() {
+		return message;
+	}
+
+
+	/**
+	 * @param message セットする message
+	 */
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 
