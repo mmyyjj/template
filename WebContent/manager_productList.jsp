@@ -37,11 +37,16 @@
   <td><s:property value="current_stock"/></td>
   <td>
     <s:form action="GoProductEditPageAction">
-    <s:hidden name="product_id" value="%{product_id}"/>
+    <s:hidden name="edit_product_id" value="%{product_id}"/>
     <button class="oprbtn">編集</button>
     </s:form>
   </td>
-  <td><button class="oprbtn">削除</button></td>
+  <td>
+    <s:form action="DeleteProductInfoAction">
+      <s:hidden name="delete_product_id" value="%{product_id}"/>
+      <button class="oprbtn">削除</button>
+    </s:form>
+  </td>
   </tr>
 </s:iterator>
 </table>

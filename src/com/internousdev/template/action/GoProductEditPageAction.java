@@ -28,7 +28,7 @@ public class GoProductEditPageAction extends ActionSupport implements SessionAwa
 	/**
 	 * 編集する商品のID
 	 * */
-	private int product_id;
+	private int edit_product_id;
 
 	/**
 	 * 画像パスリスト
@@ -58,10 +58,10 @@ public class GoProductEditPageAction extends ActionSupport implements SessionAwa
 		//TODO DAOはこれから
 		SelectOneProductDAO sopdao = new SelectOneProductDAO();
 
-		pidto = sopdao.selectOneProduct(product_id);
+		pidto = sopdao.selectOneProduct(edit_product_id);
 
 		if(pidto != null){
-			session.put("edit_product_id", product_id);
+			session.put("edit_product_id", edit_product_id);
 			session.put("edit_product_name", pidto.getProduct_name());
 			session.put("edit_category", pidto.getCategory());
 			session.put("edit_unit_price", pidto.getUnit_price());
@@ -79,26 +79,25 @@ public class GoProductEditPageAction extends ActionSupport implements SessionAwa
 
 
 
-	/**
-	 * @return product_id
-	 */
-	public int getProduct_id() {
-		return product_id;
-	}
 
 
 
 
 
 	/**
-	 * @param product_id セットする product_id
+	 * @return edit_product_id
 	 */
-	public void setProduct_id(int product_id) {
-		this.product_id = product_id;
+	public int getEdit_product_id() {
+		return edit_product_id;
 	}
 
 
-
+	/**
+	 * @param edit_product_id セットする edit_product_id
+	 */
+	public void setEdit_product_id(int edit_product_id) {
+		this.edit_product_id = edit_product_id;
+	}
 
 
 	/**
@@ -109,9 +108,6 @@ public class GoProductEditPageAction extends ActionSupport implements SessionAwa
 	}
 
 
-
-
-
 	/**
 	 * @param imagePathList セットする imagePathList
 	 */
@@ -120,15 +116,13 @@ public class GoProductEditPageAction extends ActionSupport implements SessionAwa
 	}
 
 
-
-
-
 	/**
 	 * @return session
 	 */
 	public Map<String, Object> getSession() {
 		return session;
 	}
+
 
 	/**
 	 * @param session セットする session
