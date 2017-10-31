@@ -159,8 +159,8 @@
 
 		<!-- GoProductAddPageAction -->
 		<action name="GoProductAddPageAction" class="com.internousdev.template.action.GoProductAddPageAction" method="execute">
-		<result name="success">manager_productAdd_1_input.jsp</result>
-		<result name="error">manager_productAdd_1_input.jsp</result>
+		<result name="success">manager_productAdd_input.jsp</result>
+		<result name="error">manager_productAdd_input.jsp</result>
 		</action>
 
 		<!-- UploadImageAction -->
@@ -177,7 +177,7 @@
 
 		<!-- GoProductEditPageAction -->
 		<action name="GoProductEditPageAction" class="com.internousdev.template.action.GoProductEditPageAction" method="execute">
-		<result name="success">manager_productEdit_1_input.jsp</result>
+		<result name="success">manager_productEdit_input.jsp</result>
 		<result name="error" type="chain">GoManagerProductListAction</result>
 		</action>
 
