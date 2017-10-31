@@ -29,6 +29,8 @@
 <br>
 <h3>お客様の情報を入力してください</h3>
 
+<s:property value="message"/>
+
 <s:form action="ConfirmAccountCreateAction">
 <table style="border-collapse:collapse; height:280px; width:380px;">
 <tr>
@@ -62,9 +64,9 @@
 <tr>
 <th>ご連絡先電話番号</th>
 <td>
-  <input type="text" name="phone_number_1" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
-  <input type="text" name="phone_number_2" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
-  <input type="text" name="phone_number_3" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
+  <input type="text" name="new_phone_number_1" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
+  <input type="text" name="new_phone_number_2" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
+  <input type="text" name="new_phone_number_3" style="width:40px;" pattern="[0-9]{1,}" min="1" maxlength="4" required/>-
 </td>
 </tr>
 <tr>
@@ -72,7 +74,7 @@
   パスワード
 </th>
 <td>
-  <input type="password" name="new_password_input" pattern="[a-z|A-Z|0-9]{8,16}" title="8字以上16字以内でご入力ください" required>
+  <input type="password" name="new_password" pattern="[a-z|A-Z|0-9]{8,16}" title="8字以上16字以内でご入力ください" required>
 </td>
 </tr>
 <tr>
@@ -86,7 +88,9 @@
 </table>
 <br>
 <br>
+<label>
 <input type="checkBox" required>上記の情報で登録する
+</label>
 <br>
 <br>
 
