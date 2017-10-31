@@ -187,7 +187,8 @@ window.onload = changeDisabled;
 </div>
 
 
-<footer style="margin-bottom:0%;">
+<footer style="padding-top:10px;">
+<font color="lightyellow">All Rights Reserved</font>
 </footer>
 </body>
 </html>

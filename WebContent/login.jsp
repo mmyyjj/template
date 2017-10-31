@@ -78,7 +78,8 @@
  </tr>
 </table>
 <div style="height:50px"></div>
-<footer>
+<footer style="padding-top:10px;">
+<font color="lightyellow">All Rights Reserved</font>
 </footer>
 </body>
 </html>
