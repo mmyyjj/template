@@ -95,7 +95,6 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 			}
 		}
 
-		System.out.println("AddCartAction-result:" + result);
 		return result;
 
 	}
