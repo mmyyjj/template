@@ -11,6 +11,7 @@
 </head>
 <body>
 <header>
+  <s:include value="header_manager.jsp"/>
 </header>
 
 <div class="contents">

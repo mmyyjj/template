@@ -19,6 +19,9 @@
 </style>
 </head>
 <body>
+<header>
+  <s:include value="header_manager.jsp"/>
+</header>
 
 <div class="contents" style="padding-top:40px;">
 <h1>ご購入履歴</h1>

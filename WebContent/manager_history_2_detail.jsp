@@ -11,7 +11,9 @@
 <link rel="stylesheet" type="text/css" href="css/manager_main_design.css">
 </head>
 <body>
-
+<header>
+  <s:include value="header_manager.jsp"/>
+</header>
 
 <div class="contents">
 
