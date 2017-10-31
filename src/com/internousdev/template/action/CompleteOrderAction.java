@@ -75,7 +75,6 @@ public class CompleteOrderAction extends ActionSupport implements SessionAware {
 			result = "nostock";
 		}
 
-		System.out.println("coAction-result:" + result);
 		return result;
 	}
 
