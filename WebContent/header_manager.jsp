@@ -29,7 +29,7 @@
 <table style="margin:0 auto; width:640px; height:24px; padding:40px; padding-top:5px;">
 <tr>
 <th style="font-size:20px; width:120px;">
-<a href="GoManagerAction">TOP</a>
+<a href="GoManagerTopAction">TOP</a>
 </th>
 <th>
 <a href="GoManagerProductListAction">■商品管理■</a>

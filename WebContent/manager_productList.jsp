@@ -16,7 +16,6 @@
 
 <div class="contents">
 <h1>取扱商品一覧</h1>
-<br>
 <font color="red"><s:property value="message"/></font>
 <br>
 <br>
@@ -55,7 +54,7 @@
 </table>
 </div>
 
-<div style="height:100px"></div>
+<div style="height:60px"></div>
 
 <table style="border:0px; margin-right:0 auto; margin-left:0 auto;">
 <tr style="border:0px;">
