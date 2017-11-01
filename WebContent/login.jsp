@@ -75,6 +75,11 @@
 	<button class="actbtn">入り口へ戻る</button>
   </s:form>
  </td>
+  <td style="border:0px;">
+  <s:form action="GoItemListPageAction">
+	<button class="actbtn">商品を見る</button>
+  </s:form>
+ </td>
  </tr>
 </table>
 <div style="height:50px"></div>
